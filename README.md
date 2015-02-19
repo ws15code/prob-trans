@@ -1,3 +1,3 @@
-# Probabilistic Transcription of Languages with No Native-Language Transcribers.
+# Probabilistic Transcription of Languages with No Native-Language Transcribers
 
-Repository containing workshop deliverables
+Repository containing code and deliverables from the workshop
