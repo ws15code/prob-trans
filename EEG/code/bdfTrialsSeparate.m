@@ -8,13 +8,13 @@ clc
 close all
 clear all
 
-subj = 'GD'; % be careful: with Martin, no padding at the end of the trial
+subj = 'GDtask'; % be careful: with Martin, no padding at the end of the trial
 
 currentTrialNumber = 0;
 
 for fileIdx = 1:1
     % Reading raw .bdf file
-    fileName = ['/media/System/WS15/eeg/' subj '/original/' subj num2str(fileIdx) '.bdf'];
+    fileName = ['/media/diliberg/System/WS15/eeg/' subj '/original/' subj num2str(fileIdx) '.bdf'];
     [EEG_raw, trigs] = Read_bdf(fileName);
 
     % Getting triggers
@@ -48,7 +48,7 @@ for fileIdx = 1:1
 %          eeg(135,:) = eeg(129,:);
 %          eeg(136,:) = eeg(130,:);
         
-        outputFileName = ['/media/System/WS15/eeg/' subj '/' subj '_fast_' num2str(trialCount) '.mat'];
+        outputFileName = ['/media/diliberg/System/WS15/eeg/' subj '/' subj '_fast_' num2str(trialCount) '.mat'];
         save(outputFileName, 'eeg', 'localTrig');
         
         trialCount = trialCount + 1;
@@ -67,7 +67,7 @@ for fileIdx = 1:1
 %          eeg(135,:) = eeg(129,:);
 %          eeg(136,:) = eeg(130,:);
         
-        outputFileName = ['/media/System/WS15/eeg/' subj '/' subj '_slow_' num2str(trialCount) '.mat'];
+        outputFileName = ['/media/diliberg/System/WS15/eeg/' subj '/' subj '_slow_' num2str(trialCount) '.mat'];
         save(outputFileName, 'eeg', 'localTrig');
         
         trialCount = trialCount + 1;

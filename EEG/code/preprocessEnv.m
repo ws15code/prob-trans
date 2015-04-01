@@ -1,5 +1,5 @@
 % Author:  Giovanni Di Liberto
-% Date:    19/01/2015
+% Date:    03/03/2015
 % Project: Vocoding Project
 %
 % This code extracts from the speech data its amplitude envelope. The

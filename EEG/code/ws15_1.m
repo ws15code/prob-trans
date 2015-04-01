@@ -59,7 +59,7 @@ modelParams.downFs = downFs;
 verbose = 0;
 subjects = [1];
 % preprocess eeg
-modelParams = preprocessEEG(modelParams, subjects, []);
+modelParams = preprocessEEG_pilot1(modelParams, subjects, []);
 preprocessEnv(modelParams);
 
 % preprocessEnv(modelParams, thresholdsToPreprocess);
