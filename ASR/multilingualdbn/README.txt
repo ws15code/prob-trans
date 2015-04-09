@@ -8,3 +8,7 @@ Multilingual SBS data:
 Total data: approx 20 hours
 Number of languages: 70 
 Data per language: about 17 minutes
+
+DBN config:
+input visible layer: 429 dim ( [39 MFCC + delta + delta^2 ] * 11 spliced )
+hidden layers: 6 layers, 1024 nodes per layer (hence no bottleneck layer)
