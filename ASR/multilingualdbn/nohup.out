@@ -1,0 +1,136 @@
+nohup: ignoring input
+run.sh --cmvn-optsf ../../turkish/s5_p_v2/exp/mono/cmvn_opts 3
+Run DBN pretraining ... 
+utils/subset_data_dir.sh: reducing #utt from 663908 to 15000
+Create config options in directory exp/config ...
+local/nnet/run_dnn.sh exp/config data/train
+supplied transform dir = 
+steps/nnet/make_fmllr_feats.sh --nj 10 --cmd run.pl data-fmllr/train data/train exp/config data-fmllr/train/log data-fmllr/train/data
+steps/nnet/make_fmllr_feats.sh: feature type is delta
+add-deltas ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/train/split10/1/utt2spk scp:data/train/split10/1/cmvn.scp scp:data/train/split10/1/feats.scp ark:- 
+WARNING (feat-to-dim:Close():kaldi-io.cc:446) Pipe apply-cmvn --utt2spk=ark:data/train/split10/1/utt2spk scp:data/train/split10/1/cmvn.scp scp:data/train/split10/1/feats.scp ark:- | add-deltas ark:- ark:- | had nonzero return status 36096
+steps/nnet/make_fmllr_feats.sh: feats = ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split10/JOB/utt2spk scp:data/train/split10/JOB/cmvn.scp scp:data/train/split10/JOB/feats.scp ark:- | add-deltas  ark:- ark:- |
+steps/nnet/make_fmllr_feats.sh: feature dimension is 39
+steps/nnet/make_fmllr_feats.sh: Done!, type delta, data/train --> data-fmllr/train, using : raw-trans None, gmm exp/config, trans None
+utils/subset_data_dir_tr_cv.sh data-fmllr/train data-fmllr/train_tr90 data-fmllr/train_cv10
+/ws/ifp-48_1/hasegawa/amitdas/work/kaldi/egs/multilingual/s5/utils/subset_data_dir.sh: reducing #utt from 15000 to 13442
+/ws/ifp-48_1/hasegawa/amitdas/work/kaldi/egs/multilingual/s5/utils/subset_data_dir.sh: reducing #utt from 15000 to 1558
+# steps/nnet/pretrain_dbn.sh --hid-dim 1024 --rbm-iter 20 data-fmllr/train exp/dnn4_pretrain-dbn 
+# Started at Mon Mar  9 14:57:38 CDT 2015
+#
+steps/nnet/pretrain_dbn.sh --hid-dim 1024 --rbm-iter 20 data-fmllr/train exp/dnn4_pretrain-dbn
+# INFO
+steps/nnet/pretrain_dbn.sh : Pre-training Deep Belief Network as a stack of RBMs, skip_cuda_check=false, use-gpu=yes
+	 dir       : exp/dnn4_pretrain-dbn 
+	 Train-set : data-fmllr/train 
+
+# PREPARING FEATURES
+Preparing train/cv lists
+15000 exp/dnn4_pretrain-dbn/train.scp
+copy-feats scp:exp/dnn4_pretrain-dbn/train.scp_non_local ark,scp:/tmp/tmp.44RCJuMEo2/train.ark,exp/dnn4_pretrain-dbn/train.scp 
+LOG (copy-feats:main():copy-feats.cc:100) Copied 15000 feature matrices.
+apply_cmvn disabled (per speaker norm. on input features)
+Getting feature dim : copy-feats scp:exp/dnn4_pretrain-dbn/train.scp ark:- 
+WARNING (feat-to-dim:Close():kaldi-io.cc:446) Pipe copy-feats scp:exp/dnn4_pretrain-dbn/train.scp ark:- | had nonzero return status 36096
+39
+Using splice +/- 5 , step 1
+Renormalizing MLP input features into exp/dnn4_pretrain-dbn/tr_splice5-1_cmvn-g.nnet
+compute-cmvn-stats ark:- - 
+nnet-concat --binary=false exp/dnn4_pretrain-dbn/tr_splice5-1.nnet - exp/dnn4_pretrain-dbn/tr_splice5-1_cmvn-g.nnet 
+LOG (nnet-concat:main():nnet-concat.cc:53) Reading exp/dnn4_pretrain-dbn/tr_splice5-1.nnet
+LOG (nnet-concat:main():nnet-concat.cc:65) Concatenating -
+cmvn-to-nnet - - 
+LOG (compute-cmvn-stats:main():compute-cmvn-stats.cc:165) Wrote global CMVN stats to standard output
+LOG (compute-cmvn-stats:main():compute-cmvn-stats.cc:168) Done accumulating CMVN stats for 10000 utterances; 0 had errors.
+LOG (cmvn-to-nnet:main():cmvn-to-nnet.cc:144) Written model to -
+LOG (nnet-concat:main():nnet-concat.cc:82) Written model to exp/dnn4_pretrain-dbn/tr_splice5-1_cmvn-g.nnet
+steps/nnet/pretrain_dbn.sh: feats = ark:copy-feats scp:exp/dnn4_pretrain-dbn/train.scp ark:- |
+steps/nnet/pretrain_dbn.sh: feat dim = 429, num hid layers = 1024
+
+# PRE-TRAINING RBM LAYER 1
+Initializing 'exp/dnn4_pretrain-dbn/1.rbm.init'
+Pretraining 'exp/dnn4_pretrain-dbn/1.rbm' (input gauss, lrate 0.01, iters 40)
+rbm-convert-to-nnet --binary=true exp/dnn4_pretrain-dbn/1.rbm exp/dnn4_pretrain-dbn/1.dbn 
+LOG (rbm-convert-to-nnet:main():rbm-convert-to-nnet.cc:69) Written model to exp/dnn4_pretrain-dbn/1.dbn
+
+# PRE-TRAINING RBM LAYER 2
+Computing cmvn stats 'exp/dnn4_pretrain-dbn/2.cmvn' for RBM initialization
+cmvn-to-nnet - exp/dnn4_pretrain-dbn/2.cmvn 
+LOG (cmvn-to-nnet:main():cmvn-to-nnet.cc:144) Written model to exp/dnn4_pretrain-dbn/2.cmvn
+Initializing 'exp/dnn4_pretrain-dbn/2.rbm.init'
+Pretraining 'exp/dnn4_pretrain-dbn/2.rbm' (lrate 0.4, iters 20)
+nnet-concat exp/dnn4_pretrain-dbn/1.dbn - exp/dnn4_pretrain-dbn/2.dbn 
+rbm-convert-to-nnet --binary=true exp/dnn4_pretrain-dbn/2.rbm - 
+LOG (nnet-concat:main():nnet-concat.cc:53) Reading exp/dnn4_pretrain-dbn/1.dbn
+LOG (nnet-concat:main():nnet-concat.cc:65) Concatenating -
+LOG (rbm-convert-to-nnet:main():rbm-convert-to-nnet.cc:69) Written model to -
+LOG (nnet-concat:main():nnet-concat.cc:82) Written model to exp/dnn4_pretrain-dbn/2.dbn
+
+# PRE-TRAINING RBM LAYER 3
+Computing cmvn stats 'exp/dnn4_pretrain-dbn/3.cmvn' for RBM initialization
+cmvn-to-nnet - exp/dnn4_pretrain-dbn/3.cmvn 
+LOG (cmvn-to-nnet:main():cmvn-to-nnet.cc:144) Written model to exp/dnn4_pretrain-dbn/3.cmvn
+Initializing 'exp/dnn4_pretrain-dbn/3.rbm.init'
+Pretraining 'exp/dnn4_pretrain-dbn/3.rbm' (lrate 0.4, iters 20)
+rbm-convert-to-nnet --binary=true exp/dnn4_pretrain-dbn/3.rbm - 
+nnet-concat exp/dnn4_pretrain-dbn/2.dbn - exp/dnn4_pretrain-dbn/3.dbn 
+LOG (nnet-concat:main():nnet-concat.cc:53) Reading exp/dnn4_pretrain-dbn/2.dbn
+LOG (nnet-concat:main():nnet-concat.cc:65) Concatenating -
+LOG (rbm-convert-to-nnet:main():rbm-convert-to-nnet.cc:69) Written model to -
+LOG (nnet-concat:main():nnet-concat.cc:82) Written model to exp/dnn4_pretrain-dbn/3.dbn
+
+# PRE-TRAINING RBM LAYER 4
+Computing cmvn stats 'exp/dnn4_pretrain-dbn/4.cmvn' for RBM initialization
+cmvn-to-nnet - exp/dnn4_pretrain-dbn/4.cmvn 
+LOG (cmvn-to-nnet:main():cmvn-to-nnet.cc:144) Written model to exp/dnn4_pretrain-dbn/4.cmvn
+Initializing 'exp/dnn4_pretrain-dbn/4.rbm.init'
+Pretraining 'exp/dnn4_pretrain-dbn/4.rbm' (lrate 0.4, iters 20)
+rbm-convert-to-nnet --binary=true exp/dnn4_pretrain-dbn/4.rbm - 
+nnet-concat exp/dnn4_pretrain-dbn/3.dbn - exp/dnn4_pretrain-dbn/4.dbn 
+LOG (nnet-concat:main():nnet-concat.cc:53) Reading exp/dnn4_pretrain-dbn/3.dbn
+LOG (nnet-concat:main():nnet-concat.cc:65) Concatenating -
+LOG (rbm-convert-to-nnet:main():rbm-convert-to-nnet.cc:69) Written model to -
+LOG (nnet-concat:main():nnet-concat.cc:82) Written model to exp/dnn4_pretrain-dbn/4.dbn
+
+# PRE-TRAINING RBM LAYER 5
+Computing cmvn stats 'exp/dnn4_pretrain-dbn/5.cmvn' for RBM initialization
+cmvn-to-nnet - exp/dnn4_pretrain-dbn/5.cmvn 
+LOG (cmvn-to-nnet:main():cmvn-to-nnet.cc:144) Written model to exp/dnn4_pretrain-dbn/5.cmvn
+Initializing 'exp/dnn4_pretrain-dbn/5.rbm.init'
+Pretraining 'exp/dnn4_pretrain-dbn/5.rbm' (lrate 0.4, iters 20)
+rbm-convert-to-nnet --binary=true exp/dnn4_pretrain-dbn/5.rbm - 
+nnet-concat exp/dnn4_pretrain-dbn/4.dbn - exp/dnn4_pretrain-dbn/5.dbn 
+LOG (nnet-concat:main():nnet-concat.cc:53) Reading exp/dnn4_pretrain-dbn/4.dbn
+LOG (nnet-concat:main():nnet-concat.cc:65) Concatenating -
+LOG (rbm-convert-to-nnet:main():rbm-convert-to-nnet.cc:69) Written model to -
+LOG (nnet-concat:main():nnet-concat.cc:82) Written model to exp/dnn4_pretrain-dbn/5.dbn
+
+# PRE-TRAINING RBM LAYER 6
+Computing cmvn stats 'exp/dnn4_pretrain-dbn/6.cmvn' for RBM initialization
+cmvn-to-nnet - exp/dnn4_pretrain-dbn/6.cmvn 
+LOG (cmvn-to-nnet:main():cmvn-to-nnet.cc:144) Written model to exp/dnn4_pretrain-dbn/6.cmvn
+Initializing 'exp/dnn4_pretrain-dbn/6.rbm.init'
+Pretraining 'exp/dnn4_pretrain-dbn/6.rbm' (lrate 0.4, iters 20)
+rbm-convert-to-nnet --binary=true exp/dnn4_pretrain-dbn/6.rbm - 
+nnet-concat exp/dnn4_pretrain-dbn/5.dbn - exp/dnn4_pretrain-dbn/6.dbn 
+LOG (nnet-concat:main():nnet-concat.cc:53) Reading exp/dnn4_pretrain-dbn/5.dbn
+LOG (nnet-concat:main():nnet-concat.cc:65) Concatenating -
+LOG (rbm-convert-to-nnet:main():rbm-convert-to-nnet.cc:69) Written model to -
+LOG (nnet-concat:main():nnet-concat.cc:82) Written model to exp/dnn4_pretrain-dbn/6.dbn
+
+# REPORT
+# RBM pre-training progress (line per-layer)
+exp/dnn4_pretrain-dbn/log/rbm.1.log:progress: [55.5757 49.5452 48.1813 47.6311 47.4387 47.2182 47.1979 46.7638 46.6104 46.4614 46.4797 46.3444 46.3829 46.1896 46.4449 46.3023 46.2313 46.0453 46.1196 46.0875 46.021 46.1074 46.1544 46.3201 46.1047 46.0707 46.0323 46.1122 46.0563 46.1266 46.024 46.3006 46.1941 46.0972 46.0088 46.0994 46.0759 46.0273 46.1166 46.164 46.2845 46.1229 46.0311 46.0492 46.1017 46.0421 46.0971 46.0278 46.2741 46.199 46.0685 45.9777 46.0932 46.0235 46.0226 46.0932 46.1514 46.2775 46.1094 45.9975 46.061 46.0742 46.0015 46.0856 46.0314 46.2686 46.1611 46.0408 45.9798 46.0739 46.0093 46.0285 46.0768 46.1424 46.2702 46.0781 45.9889 46.0492 46.0526 45.9965 46.0683 46.0452 46.2435 46.1402 46.0435 45.9691 46.0566 46.0237 46.0255 46.0281 46.1432 46.2442 46.0631 45.9855 46.0314 46.0611 45.9634 46.0678 46.0433 46.2963 46.0552 46.0546 45.9436 46.0384 46.0274 46.0308 46.0031 46.1551 46.2064 46.0577 45.9798 46.0474 46.0383 45.9699 46.0725 46.0422 46.2783 46.0264 46.0604 45.9501 46.0547 46.0117 46.0567 45.9665 46.1892 46.1636 46.0624 45.9605 46.0321 46.0383 45.9547 46.044 46.0823 46.2584 46.0244 46.0347 45.9447 46.0484 46.015 46.0626 45.937 46.1777 46.1809 46.0729 45.9404 46.0255 46.0355 45.9304 46.0637 46.0718 46.2601 46.0172 46.0211 45.9474 46.0172 45.9998 46.0504 45.9342 46.1852 46.1527 46.0568 45.917 46.0103 46.0136 45.9524 46.0535 46.0688 46.2487 46.0303 45.9996 45.9459 46.041 45.9729 46.0612 45.9432 46.2062 46.1154 46.0682 45.9259 46.0212 45.9986 45.9531 46.0446 46.0807 46.2401 46.0342 45.9776 45.9664 46.0377 45.9975 46.0403 45.9527 46.2178 46.1379 46.0169 45.943 46.0194 45.9768 45.9555 46.0599 46.0859 46.2138 46.0504 45.9327 46.0117 46.0296 45.9738 46.0381 45.9685 46.2139 46.1316 46.0018 45.9341 46.0551 45.9601 45.9774 46.0287 46.0991 46.2236 46.0398 45.9471 46.0084 46.0209 45.945 46.038 45.9813 46.2097 46.1093 46.0072 45.9367 46.0503 45.9603 45.992 46.0093 46.1004 46.2228 46.024 45.9548 45.998 46.0171 45.9446 46.0407 46.0091 46.1879 46.1002 46.0065 45.9177 46.0102 46.0045 45.9918 45.9755 46.1188 46.1889 46.0129 45.9498 46.0156 46.0203 45.9312 46.0171 46.0169 46.2668 46.0119 46.0318 45.9077 46.0102 45.9876 46.0047 45.9596 46.136 46.1621 46.0236 45.952 46.0144 45.9978 45.9323 46.0277 46.0195 46.2351 45.9877 46.0319 45.9221 46.025 45.9702 46.0413 45.9145 46.1667 46.1433 46.0356 45.9305 46.0148 46.006 45.9216 46.0183 46.0537 46.2376 46.0047 45.9976 45.9245 46.0032 45.9832 46.0424 45.91 46.1713 46.1297 46.0538 45.9226 45.9866 46.0169 45.9256 46.0278 46.0535 46.2547 45.9888 45.9923 45.9259 46.009 45.982 46.0533 45.9149 46.1961 46.1246 46.0526 45.9162 46.0043 45.9956 45.9275 46.0403 46.0581 46.2348 46.0044 45.9813 45.9255 46.0212 45.9619 46.0458 45.9247 46.1988 46.1021 ]
+exp/dnn4_pretrain-dbn/log/rbm.2.log:progress: [8.23422 6.03719 5.86389 5.78805 5.76466 5.73658 5.72217 5.64006 5.59691 5.55399 5.51993 5.47993 5.47338 5.41054 5.43721 5.38769 5.33917 5.29166 5.26945 5.23617 5.2117 5.22739 5.2436 5.26043 5.22857 5.22626 5.21787 5.22148 5.2189 5.23288 5.21493 5.26293 5.25128 5.22554 5.21968 5.22237 5.21557 5.21532 5.22959 5.2454 5.25493 5.23459 5.21632 5.22399 5.22013 5.21756 5.23103 5.21642 5.26142 5.25033 5.2216 5.21754 5.22766 5.21138 5.21999 5.22687 5.24697 5.25612 5.23509 5.21441 5.22694 5.22068 5.21407 5.23032 5.21976 5.25951 5.24624 5.22087 5.22011 5.22624 5.21134 5.21872 5.22427 5.24646 5.2574 5.23244 5.21678 5.22645 5.21815 5.21242 5.22983 5.22974 5.25625 5.24125 5.22317 5.21816 5.22198 5.21456 5.22031 5.22445 5.24792 5.2578 5.22766 5.21858 5.22407 5.22007 5.21002 5.23135 5.22753 5.26582 5.23421 5.22538 5.21572 5.2198 5.21325 5.22397 5.22225 5.24924 5.2537 5.22941 5.21644 5.22743 5.21709 5.21204 5.23077 5.23006 5.26533 5.22538 5.23128 5.21581 5.22336 5.21315 5.22663 5.21938 5.25483 5.24928 5.23224 5.21552 5.22532 5.22138 5.21254 5.22523 5.23778 5.25985 5.22611 5.22872 5.21673 5.22079 5.21319 5.23121 5.21245 5.25458 5.25261 5.23078 5.21459 5.22241 5.22067 5.20847 5.22988 5.23868 5.25995 5.22637 5.22532 5.21608 5.22025 5.21455 5.2325 5.20986 5.25996 5.24869 5.22931 5.2153 5.22281 5.21748 5.20945 5.23058 5.24126 5.26001 5.22882 ]
+exp/dnn4_pretrain-dbn/log/rbm.3.log:progress: [7.22675 5.16739 4.96382 4.90005 4.88739 4.86865 4.86399 4.79686 4.77105 4.73914 4.71118 4.68633 4.68712 4.64025 4.66758 4.63117 4.59567 4.55591 4.54241 4.51514 4.50103 4.5138 4.52902 4.53974 4.51212 4.50813 4.50201 4.49967 4.49897 4.51389 4.49727 4.54024 4.53018 4.50568 4.49879 4.50481 4.49465 4.49621 4.51057 4.52537 4.53244 4.51304 4.49847 4.50557 4.49749 4.49596 4.51065 4.49855 4.53728 4.52723 4.50273 4.49927 4.50613 4.49282 4.50031 4.50466 4.52672 4.53158 4.51468 4.49617 4.50697 4.49681 4.49387 4.51098 4.50048 4.53689 4.52449 4.50216 4.50102 4.50515 4.48992 4.5016 4.50674 4.52539 4.53366 4.51424 4.49592 4.50622 4.4978 4.49336 4.51109 4.50738 4.53526 4.52145 4.50508 4.49868 4.50147 4.4911 4.50039 4.50665 4.52531 4.53236 4.50709 4.49841 4.50401 4.49885 4.49281 4.50868 4.50961 4.53963 4.51306 4.50488 4.49684 4.50067 4.49374 4.50441 4.50401 4.52731 4.52948 4.51039 4.49826 4.50876 4.49484 4.49289 4.51002 4.51106 4.53913 4.50618 4.50978 4.49695 4.50255 4.49139 4.50604 4.49948 4.53098 4.52665 4.51307 4.49501 4.50592 4.49738 4.49271 4.50604 4.51797 4.53498 4.50668 4.50957 4.49894 4.50091 4.49354 4.51186 4.49417 4.53178 4.52936 4.50785 4.49563 4.50287 4.50074 4.4896 4.51237 4.51945 4.53654 4.50799 4.50668 4.4973 4.49833 4.49426 4.51121 4.49366 4.53689 4.52579 4.50885 4.49622 4.50304 4.49581 4.49194 4.51065 4.52097 4.53367 4.51019 ]
+exp/dnn4_pretrain-dbn/log/rbm.4.log:progress: [5.73937 4.22836 4.06681 4.01892 4.00877 3.99826 3.99455 3.94574 3.9253 3.89891 3.87995 3.85879 3.86546 3.8266 3.85579 3.83004 3.80229 3.77105 3.76218 3.7409 3.73408 3.74679 3.75908 3.77204 3.74891 3.74494 3.73846 3.73646 3.73706 3.7505 3.7335 3.77545 3.76724 3.74385 3.73998 3.74217 3.73316 3.73557 3.74882 3.7597 3.76824 3.75317 3.7385 3.74597 3.73643 3.73533 3.75008 3.73719 3.77385 3.76723 3.74299 3.74143 3.74517 3.73102 3.74047 3.74445 3.76289 3.76939 3.75577 3.73745 3.7464 3.73693 3.73427 3.75002 3.73983 3.77356 3.76372 3.74378 3.74112 3.74366 3.7319 3.741 3.74539 3.76241 3.77184 3.75351 3.73939 3.74538 3.73688 3.73409 3.74919 3.74608 3.77108 3.7602 3.74659 3.74025 3.74227 3.73153 3.74209 3.74544 3.76393 3.77187 3.74986 3.74167 3.74374 3.73825 3.73409 3.74939 3.74804 3.77715 3.75482 3.74819 3.73896 3.7402 3.73351 3.74456 3.74519 3.76288 3.76992 3.75152 3.73834 3.74726 3.73616 3.73686 3.75088 3.74928 3.77749 3.7507 3.751 3.738 3.74091 3.73284 3.74591 3.7394 3.76908 3.76628 3.75332 3.73915 3.74572 3.73765 3.73551 3.74685 3.75718 3.77301 3.75038 3.75197 3.74018 3.73941 3.7351 3.75006 3.73479 3.76953 3.7699 3.75169 3.73842 3.74267 3.7401 3.7325 3.7517 3.75645 3.77399 3.74834 3.74887 3.73969 3.73726 3.73401 3.75249 3.73413 3.77275 3.76671 3.75068 3.739 3.74384 3.73592 3.73467 3.75141 3.75837 3.77321 3.75262 ]
+exp/dnn4_pretrain-dbn/log/rbm.5.log:progress: [5.31483 3.76841 3.60603 3.56894 3.56568 3.55764 3.55975 3.51792 3.50197 3.48308 3.46619 3.45122 3.46062 3.42761 3.45669 3.43482 3.41269 3.38477 3.38038 3.36312 3.35895 3.37343 3.38369 3.3948 3.37267 3.36914 3.36313 3.36159 3.36209 3.37594 3.359 3.3969 3.39068 3.36916 3.36332 3.36617 3.3555 3.36097 3.37441 3.38382 3.39081 3.37868 3.36405 3.36992 3.35979 3.36157 3.37482 3.3614 3.39769 3.39168 3.36859 3.36397 3.36667 3.3548 3.36412 3.3704 3.38579 3.39244 3.37813 3.36283 3.37015 3.36104 3.35963 3.37539 3.36263 3.39513 3.38742 3.36943 3.36486 3.36873 3.35422 3.36545 3.37158 3.38452 3.39472 3.37821 3.36271 3.36881 3.36142 3.35796 3.3748 3.37024 3.39401 3.38572 3.36988 3.36431 3.36743 3.3561 3.36635 3.37147 3.38624 3.39338 3.37296 3.36663 3.36824 3.3619 3.35786 3.37452 3.37204 3.40134 3.37678 3.37276 3.36293 3.36452 3.35713 3.36886 3.36956 3.38677 3.39245 3.37571 3.36283 3.37116 3.35876 3.36082 3.37496 3.37396 3.39906 3.3718 3.37576 3.3628 3.36584 3.35793 3.37109 3.36656 3.39065 3.38991 3.37777 3.36147 3.37047 3.36108 3.36144 3.37134 3.37951 3.39622 3.37305 3.37541 3.36445 3.36492 3.35879 3.37504 3.3612 3.39253 3.39263 3.37717 3.36261 3.36686 3.36215 3.35782 3.37508 3.37961 3.39633 3.37288 3.37291 3.36429 3.36215 3.35946 3.37651 3.36065 3.39765 3.38977 3.37498 3.36382 3.36792 3.35939 3.35977 3.3755 3.3835 3.39623 3.37591 ]
+exp/dnn4_pretrain-dbn/log/rbm.6.log:progress: [4.19725 3.1583 3.03131 3.00314 3.00374 2.99878 3.00454 2.96872 2.95783 2.93998 2.92664 2.91573 2.92778 2.89984 2.92914 2.91598 2.89726 2.87205 2.87132 2.85443 2.85662 2.8689 2.87766 2.89052 2.87137 2.86713 2.86096 2.85633 2.85792 2.87223 2.85559 2.89167 2.88621 2.86837 2.8622 2.86417 2.85316 2.85866 2.87009 2.8786 2.88777 2.87605 2.86241 2.86808 2.85696 2.85831 2.87262 2.8581 2.89244 2.88833 2.86687 2.8626 2.86544 2.85127 2.86227 2.86711 2.88077 2.88935 2.87701 2.86113 2.86786 2.85792 2.85779 2.87165 2.85988 2.89229 2.88704 2.86769 2.86463 2.86592 2.85194 2.86255 2.86893 2.88123 2.89085 2.87522 2.86222 2.86774 2.85732 2.85769 2.87281 2.86643 2.8911 2.88122 2.86933 2.8623 2.86414 2.85328 2.86397 2.87018 2.88214 2.89173 2.87324 2.86354 2.86579 2.85968 2.85629 2.8712 2.86835 2.89601 2.87623 2.87217 2.86111 2.8622 2.85402 2.86583 2.86736 2.88342 2.88917 2.87546 2.86204 2.86892 2.8566 2.8591 2.87142 2.86989 2.89407 2.87058 2.8747 2.85985 2.86389 2.85408 2.86887 2.86383 2.88822 2.88703 2.87661 2.86044 2.86727 2.85715 2.85957 2.86825 2.87567 2.89171 2.87219 2.87455 2.86183 2.86196 2.8568 2.87187 2.85865 2.88751 2.88997 2.87561 2.86031 2.86495 2.85973 2.85645 2.87137 2.87572 2.89268 2.87046 2.87156 2.86247 2.85944 2.85773 2.87436 2.85747 2.89186 2.88779 2.87334 2.86181 2.86498 2.85735 2.85844 2.87184 2.87821 2.89217 2.87312 ]
+
+Pre-training finished.
+Success
+Removing features tmpdir /tmp/tmp.44RCJuMEo2 @ ifp-48
+train.ark
+# Accounting: time=35252 threads=1
+# Ended (code 0) at Tue Mar 10 00:45:10 CDT 2015, elapsed time 35252 seconds
