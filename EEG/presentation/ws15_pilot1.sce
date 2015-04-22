@@ -53,7 +53,7 @@ trial {
 	picture pic_0;
 	code = "Start";
 	port_code = 254;
-   time = 0;
+   time = 1000;
 } start_trial;
 
 trial {
@@ -114,7 +114,7 @@ array<int> presentationOrder2[] = { 2,2,14,26,27,9,14,5,15,22,5,3,5,22,16,8,5,16
 int nFiles = 28;
 
 int nRepetitionsStage;
-int nRepetitions1 = 10; # for each trial # one trial will have 84 presentations
+int nRepetitions1 = 80; # for each trial # one trial will have 84 presentations
 int nRepetitions2 = 140; # for each trial
 
 int pauseStage;
@@ -181,6 +181,7 @@ begin
 		end;
 		event1.set_stimulus( sounds[currentSoundIdx] );
 		event1.set_delta_time(random( pauseStage - maxJitter, pauseStage + maxJitter ));
+		event1.set_port_code(100+currentSoundIdx);
 		stim_trial.present();
 		
 		j = j + 1;

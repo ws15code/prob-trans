@@ -37,8 +37,8 @@
 <dsd>C:\Users\eegRoom2\Documents\Presentation\Giovanni\WS15\stimuli</dsd>
 <dxv>8</dxv>
 <efs>
-<filename>C:\Users\eegRoom2\Documents\Presentation\Giovanni\WS15\stimuli\vocodedTrial.sce</filename>
 <filename>C:\Users\eegRoom2\Documents\Presentation\Giovanni\WS15\stimuli\ws15_pilot1.sce</filename>
+<filename>C:\Users\eegRoom2\Documents\Presentation\Giovanni\WS15\stimuli\vocodedTrial.sce</filename>
 </efs>
 <exclusive_mouse>1</exclusive_mouse>
 <exp_version></exp_version>
@@ -143,13 +143,22 @@
 <one_processor>2</one_processor>
 <oports>
 <p>
-<cs></cs>
-<is></is>
-<os></os>
-<piai>COM1</piai>
-<pian>Serial Port</pian>
-<pihpn>COM1</pihpn>
-<pindex>0</pindex>
+<ama>0</ama>
+<ami>0</ami>
+<at>0</at>
+<dpw>5</dpw>
+<dsdi>0</dsdi>
+<dsi>0</dsi>
+<dsn>Data port</dsn>
+<igm>0</igm>
+<il>0</il>
+<ivm>0</ivm>
+<piai>LPT1</piai>
+<pian>Parallel Port</pian>
+<pihpn>LPT1</pihpn>
+<pindex>1</pindex>
+<rs>1</rs>
+<rt>0</rt>
 </p>
 </oports>
 <out_encrypt_key></out_encrypt_key>
@@ -428,7 +437,7 @@
 <attenuation>0</attenuation>
 <do_attenuation>0</do_attenuation>
 <do_volume>1</do_volume>
-<volume>0.9</volume>
+<volume>1.0</volume>
 </svl>
 <swp>1</swp>
 <text_encoding>utf8</text_encoding>
