@@ -7,7 +7,7 @@ clear all
 % Data files parameters
 modelParams.eegPath = '/media/diliberg/System/WS15/eeg';
 modelParams.audioPath = '/media/diliberg/System/WS15/stimuli';
-modelParams.subjectNames = {'GDtask'};
+modelParams.subjectNames = {'DDtask'};
 modelParams.fileFormat = ['mat']; % '.mat' because the files are in that format after the separation in trials and conditions
 modelParams.nElectrodes = [128];
 
@@ -58,9 +58,17 @@ modelParams.downFs = downFs;
 %% Preprocessing
 verbose = 0;
 subjects = [1];
-% preprocess eeg
-modelParams = preprocessEEG_pilot2(modelParams, subjects, []);
+
 preprocessEnv(modelParams);
+modelParams = preprocessEEG_pilot2(modelParams, subjects, []); % Chopping + filtering
+
+exportEEG4ICA(modelParams, subjects);
+
+% To Perform ICA here with EEG lab
+
+importEEGAfterICA(modelParams, subjects);
+
+noiseRemovalExport(modelParams, subjects);
 
 % preprocessEnv(modelParams, thresholdsToPreprocess);
 % preprocessSgram(modelParams, thresholdsToPreprocess);
@@ -118,12 +126,14 @@ epocsResult = epochsAvgPre_pilot2(modelParams, subjects, reference, verbose); % 
 % Avg all phonemes
 sub=1;
 x = squeeze(mean(epocsResult.trialsAvg(sub,1).data));
-figure;plot(detrend(x'))
+% figure;plot(detrend(x'))
+figure;plot((x'))
 % figure;plot(detrend(x(60,:)))
 % figure;plot(x')
 
 x = squeeze(mean(epocsResult.trialsAvg(sub,2).data));
-figure;plot(detrend(x'))
+% figure;plot(detrend(x'))
+figure;plot((x'))
 % figure;plot(detrend(x(60,:)))
 % figure;plot(x')
 
@@ -136,12 +146,13 @@ for condition = 1:2
         x(ph,:,:) = squeeze(epocsResult.trialsAvg(sub,condition).data(ph,:,:));
     end
 
+    stimulusName = {'ba','be','da','de','fa','fe','ga','ge','ka','ke','ma','me','na','ne','pa','pe','ta','te','va','ve','xda','xde','xsa','xse','xtxa','xtxe','za','ze'};
     figure; imagesc(squeeze(sum(x)))
 
     figure;
     for ph = 1:28
        subplot(5,6,ph)
-       toPlot(ph,:) = detrend(squeeze(mean(x(ph,avgElecMastoids,:),2)))';
+       toPlot(ph,:) = (squeeze(mean(x(ph,avgElecMastoids,:),2)))';
        plot(toPlot(ph,:))
     end
     
@@ -169,9 +180,35 @@ verbose = 0;
 subjects = 1;
 [trainDataEnv,modelParams] = trainEnv_pilot2(modelParams, subjects, reference, verbose);
 
-figure;imagesc(modelParams.lags_ms,1:28,squeeze(mean(trainDataEnv.trialsAvg(1,1).data(avgElecMastoids,:,:))))
-figure;imagesc(modelParams.lags_ms,1:28,squeeze(mean(trainDataEnv.trialsAvg(1,2).data(avgElecMastoids,:,:))))
+stimulusName = {'ba','be','da','de','fa','fe','ga','ge','ka','ke','ma','me','na','ne','pa','pe','ta','te','va','ve','xda','xde','xsa','xse','xtxa','xtxe','za','ze'};
+    
 
+figure;imagesc(modelParams.lags_ms,1:28,squeeze(mean(trainDataEnv.trialsAvg(1,1).data(avgElecMastoids,:,:))))
+set(gca,'yticklabel',[])
+set(gca,'YTick',1:28)
+yTicks = get(gca,'ytick');
+ax = axis; %Get left most x-position
+HorizontalOffset = 2;
+% Reset the ytick labels in desired font
+for i = 1:length(yTicks)
+    %Create text box and set appropriate properties
+     text(ax(1) - HorizontalOffset,yTicks(i)+0.15,stimulusName(i),...
+         'HorizontalAlignment','Right','interpreter', 'tex');   
+end
+    
+figure;imagesc(modelParams.lags_ms,1:28,squeeze(mean(trainDataEnv.trialsAvg(1,2).data(avgElecMastoids,:,:))))
+set(gca,'yticklabel',[])
+set(gca,'YTick',1:28)
+yTicks = get(gca,'ytick');
+ax = axis; %Get left most x-position
+HorizontalOffset = 2;
+% Reset the ytick labels in desired font
+for i = 1:length(yTicks)
+    %Create text box and set appropriate properties
+     text(ax(1) - HorizontalOffset,yTicks(i)+0.15,stimulusName(i),...
+         'HorizontalAlignment','Right','interpreter', 'tex');   
+end
+    
 for condition = 1:2
     figure;
     for trial = 1:40
@@ -191,7 +228,6 @@ for condition = 1:2
     end
 
     % figure; imagesc(modelParams.lags_ms,1:28,sumPlot)
-    stimulusName = {'ba','be','da','de','fa','fe','ga','ge','ka','ke','ma','me','na','ne','pa','pe','ta','te','va','ve','xda','xde','xsa','xse','xtxa','xtxe','za','ze'};
     figure; imagesc(modelParams.lags_ms,1:28,sumPlot2./repmat(std(sumPlot2'),size(sumPlot2,2),1)')
 
     set(gca,'yticklabel',[])

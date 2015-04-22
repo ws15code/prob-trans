@@ -40,7 +40,7 @@ function [trainData, modelParams] = trainEnv_pilot2(modelParams, subjectsIdx, re
                 filename = [modelParams.eegPath '/' (modelParams.subjectNames{subIndex}) ... 
                         '/' (modelParams.subjectNames{subIndex}) '_' cell2mat(conditionLabel(conditionIdx)) ...
                         '_' num2str(fileIndex) '.' modelParams.fileFormat(subIndex,:)];
-                load(strcat(filename(1:end-4), ['_preprocessed' modelParams.bandPassfilter '.mat']))
+                load(strcat(filename(1:end-4), ['_preprocessed' modelParams.bandPassfilter '_afterICA.mat']))
 
                 % Reference each electrodes:
                 if (reference == 1)
@@ -50,12 +50,12 @@ function [trainData, modelParams] = trainEnv_pilot2(modelParams, subjectsIdx, re
                 end
 
                 % Updating fs
-                if (modelParams.fs ~= fs)
-                    if (verbose > 1)
-                        disp(['Warning: changing fs to the preprocessed file downsampling value: ' num2str(fs) ' Hz'])
-                    end
-                    modelParams.fs = fs;
-                end
+%                 if (modelParams.fs ~= fs)
+%                     if (verbose > 1)
+%                         disp(['Warning: changing fs to the preprocessed file downsampling value: ' num2str(fs) ' Hz'])
+%                     end
+%                     modelParams.fs = fs;
+%                 end
 
                 % Preparing env concatenation
                 envelopeConcat = zeros(28,length(localTrig));
@@ -67,7 +67,7 @@ function [trainData, modelParams] = trainEnv_pilot2(modelParams, subjectsIdx, re
                     end
                     phCode = trigs(idx) - 100;
                     if (phCode > 0) % This should always be the case
-                        envelopeConcat(phCode,idx:idx+length(env(phCode).data)-1) = 1;
+                        envelopeConcat(phCode,idx:idx+round(length(env(phCode).data)/4)-1) = 1;
                     end
 %                     if phCode >= 1 && phCode <= 28
 %                         envelopeConcat(idx:idx+length(env(phCode).data)-1) = envelopeConcat(idx:idx+length(env(phCode).data)-1) + env(phCode).data';
@@ -84,15 +84,15 @@ function [trainData, modelParams] = trainEnv_pilot2(modelParams, subjectsIdx, re
                     disp('Downsampling')
                 end
                 
-                eegData = downsample(eegData',modelParams.fs/modelParams.downFs)'; % Usually it doesn't do anything
+%                 eegData = downsample(eegData',modelParams.fs/modelParams.downFs)'; % Usually it doesn't do anything
 
-                if (modelParams.downFs < modelParams.fs) % Usually false
-%                     envelope = resample(double(envelope),modelParams.downFs,modelParams.fs);
-                    envelope = downsample(double(envelope'),modelParams.fs/modelParams.downFs)';
-                    % Artifact correction - the envelope of an auditory
-                    % stimulus can't have negative values
-%                     envelope(envelope < 0) = 0;
-                end
+%                 if (modelParams.downFs < modelParams.fs) % Usually false
+% %                     envelope = resample(double(envelope),modelParams.downFs,modelParams.fs);
+%                     envelope = downsample(double(envelope'),modelParams.fs/modelParams.downFs)';
+%                     % Artifact correction - the envelope of an auditory
+%                     % stimulus can't have negative values
+% %                     envelope(envelope < 0) = 0;
+%                 end
                 %auContrastSignal = zscore(auContrastSignal')';
 
                 trainData.stimulus(subIndex, fileCount, conditionIdx).data = envelope;

@@ -8,7 +8,7 @@ clc
 close all
 clear all
 
-subj = 'GDtask';
+subj = 'DDtask';
 
 currentTrialNumber = 0;
 
@@ -28,9 +28,9 @@ for fileIdx = 1:2
 %     x(x==254);
 %     trigs(find(x==254)) = [222,222,1:100]; % The first two trials were repeated
     trialsIdxStart = find(x==254);
-    if fileIdx == 1
-        trialsIdxStart = trialsIdxStart(3:end); % The first two trials were repeated
-    end
+%     if fileIdx == 1
+%         trialsIdxStart = trialsIdxStart(3:end); % The first two trials were repeated
+%     end
     trialsIdxEnd = [trialsIdxStart(2:end)-8,length(trigs)];
     trialsIdxEnd - trialsIdxStart; % This should give us the trial length.. why is the variability so bad? Anyway, We trust the 254 as trial start, that should be guaranteed
 

@@ -14,7 +14,7 @@ function epocsResult = epochsAvgPre_pilot2(modelParams, subjectsIdx, reference, 
         % Resetting previous counters
         for condition = 1:2
             for ph = 1:28
-                wSum(condition,ph).data = zeros(128,modelParams.fs*0.5); % 500 ms
+                wSum(condition,ph).data = zeros(128,modelParams.downFs*0.5); % 500 ms
             end
         end
         fileCount = 1;
@@ -23,6 +23,7 @@ function epocsResult = epochsAvgPre_pilot2(modelParams, subjectsIdx, reference, 
 
         % Given a subject - for each input file
         for fileIndex = modelParams.filesNum
+            fileIndex
             if (verbose > 1)
                 disp(['Trial ', num2str(fileIndex)])
             else
@@ -34,7 +35,7 @@ function epocsResult = epochsAvgPre_pilot2(modelParams, subjectsIdx, reference, 
                 filename = [modelParams.eegPath '/' (modelParams.subjectNames{subIndex}) ... 
                         '/' (modelParams.subjectNames{subIndex}) '_' cell2mat(conditionLabel(condition)) ...
                         '_' num2str(fileIndex) '.' modelParams.fileFormat(subIndex,:)];
-                load(strcat(filename(1:end-4), ['_preprocessed' modelParams.bandPassfilter '.mat']))
+                load(strcat(filename(1:end-4), ['_preprocessed' modelParams.bandPassfilter '_afterNoiseRemoval.mat']))
                 
                 % Reference each electrodes:
                 if (reference == 1)
@@ -57,8 +58,10 @@ function epocsResult = epochsAvgPre_pilot2(modelParams, subjectsIdx, reference, 
                 end
                 
                 for ph = 1:28
+%                     ph
                     for idx = phIdxs(ph).idxs
-                        wSum(condition,ph).data = wSum(condition,ph).data + eegData(:,idx:idx+modelParams.fs*0.5-1);
+%                         idx
+                        wSum(condition,ph).data = wSum(condition,ph).data + eegData(:,idx:idx+modelParams.downFs*0.5-1);
                     end
                 end
             end
