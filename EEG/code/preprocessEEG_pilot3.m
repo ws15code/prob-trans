@@ -4,9 +4,9 @@
 %
 % This code performs the preprocessing of the EEG data
 
-function modelParams = preprocessEEG_pilot2(modelParams, subjectsIdx, rejectedChannels)
+function modelParams = preprocessEEG_pilot3(modelParams, subjectsIdx, rejectedChannels)
     load(['filters/' modelParams.bandPassfilter]);
-    conditionLabel = {'noTask';'task'};
+    conditionLabel = {'part1';'part2'};
     
     for subIndex=subjectsIdx
         % Given a subject - for each input file

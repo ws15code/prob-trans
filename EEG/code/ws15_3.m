@@ -7,7 +7,7 @@ clear all
 % Data files parameters
 modelParams.eegPath = '.';
 modelParams.audioPath = '../stimuli';
-modelParams.subjectNames = {'DDtask'};
+modelParams.subjectNames = {'GDreverse'};
 modelParams.fileFormat = ['mat']; % '.mat' because the files are in that format after the separation in trials and conditions
 modelParams.nElectrodes = [128];
 
@@ -78,15 +78,15 @@ end
 %% Preprocessing
 
 preprocessEnv(modelParams);
-modelParams = preprocessEEG_pilot2(modelParams, subjects, []); % Chopping + filtering
+modelParams = preprocessEEG_pilot3(modelParams, subjects, []); % Chopping + filtering
 
-exportEEG4ICA(modelParams, subjects);
+exportEEG4ICA_3(modelParams, subjects);
 
 % To Perform ICA here with EEG lab
 
-importEEGAfterICA(modelParams, subjects);
+importEEGAfterICA_3(modelParams, subjects);
 
-noiseRemovalExport(modelParams, subjects);
+noiseRemovalExport_3(modelParams, subjects, 0);
 
 % preprocessEnv(modelParams, thresholdsToPreprocess);
 % preprocessSgram(modelParams, thresholdsToPreprocess);
@@ -190,7 +190,7 @@ end
 
 %% Canonical correlation
 modelParams.fs = 128; % after preprocessing
-trainCanonVar = trainCanon(modelParams, subjects, reference);
+trainCanonVar = trainCanon_3(modelParams, subjects, reference);
 
 
 %% Simple classification (on groups of size 'm')
@@ -198,7 +198,7 @@ trainCanonVar = trainCanon(modelParams, subjects, reference);
 downFs = 128; % Hz
 maxLatency = 0.40; % seconds
 groupSize = 25;
-classificationResult = simpleClassification(modelParams, subjects, reference, downFs, maxLatency, groupSize, trainCanonVar); % before preprocessing and after referencing
+classificationResult = simpleClassification_3(modelParams, subjects, reference, downFs, maxLatency, groupSize, trainCanonVar); % before preprocessing and after referencing
 
 % TODO: provare tipo cocktail party: 1 modello risp envelope, ricostruire
 % env e confrontarla con le 28 possibili
