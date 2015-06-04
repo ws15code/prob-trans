@@ -1,0 +1,6 @@
+## Scripts to assess the feature distance between foreign phoneme inventories and English
+The script `choose-foreign.R` can be run from the terminal (`Rscript choose-foreign.R`) and outputs ordered lists of the mean “one-to-many” value for each language. See the comments within the script itself for further details. There are some intermediate objects created that may be of interest; if so, the script can be run interactively in your favorite R IDE (alternatively, tell @drammock what you want and he can edit the script to dump .tsv files for you).
+
+### Notes
+1. The phonemicization of English used here is from the Stanford Phonology Archive. FYI it is slightly odd in its representation of English vowels.
+2. The PHOIBLE data used here is a dump from [this specific commit of the PHOIBLE dev repo](https://github.com/phoible/phoible/commit/cf0042299188e6e94d7a610ff32702e340f2ec80). Note that PHOIBLE uses a pseudo-binary feature system comprising `- + 0` that encodes feature heirarchy (i.e., a phoneme that is `- coronal` will be zero-valued for all features subsumed under `coronal`, such as `strident`). PHOIBLE also makes use of “contour features” for the more complex phonemes, so values like `-,+ high` are possible for speech sounds that are phonologically a single unit but phonetically change quality over time.
