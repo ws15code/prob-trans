@@ -5,15 +5,17 @@ clear all
 
 %%
 % Data files parameters
-modelParams.eegPath = '.';
-modelParams.audioPath = '../stimuli';
+modelParams.eegPath = '../data';
+modelParams.audioPath = '../presentation'; %'../data/MM/stimuli';
+modelParams.sgramFilters = './filters/sgram/sgramFilters.mat';
 modelParams.subjectNames = {'MM'};
 modelParams.fileFormat = ['mat']; % '.mat' because the files are in that format after the separation in trials and conditions
-modelParams.nElectrodes = [34];
+modelParams.nElectrodes = 34;
 
 % Building elecPosFile
 modelParams.elecPosFile = cell(1,length(modelParams.nElectrodes));
-modelParams.elecPosFile(modelParams.nElectrodes == 128) = cellstr('./HEADMAPS/chanlocs_128');
+% modelParams.elecPosFile(modelParams.nElectrodes == 128) = cellstr('./HEADMAPS/chanlocs_128');
+modelParams.elecPosFile(modelParams.nElectrodes == 34) = cellstr('./HEADMAPS/chanlocs_34');
 
 modelParams.filesNum = 1:50; % 40 trials for each condition (slow / fast)
 modelParams.fs = 1000; % Hz
@@ -25,20 +27,22 @@ modelParams.bandPassfilter = 'BPF_1to25'; %'BSTOP50' %'BPF_05to25_stable'%'BPF_0
 % modelParams.highPassfilter = 'HPF_01';%'LPF_15';%'BPF_1to15'; %'BSTOP50' %'BPF_05to25_stable'%'BPF_05to25_but'
 % modelParams.lowPassfilter = 'LPF_15';%'LPF_15';%'BPF_1to15'; %'BSTOP50' %'BPF_05to25_stable'%'BPF_05to25_but'
 % modelParams.sgramFilters = './filters/sgram/sgramFilters.mat';
+% 
 
-startLag = -150;
-endLag = 600;
 
 
 % Ridge parameters
-ridgeEnv = 1;
+% ridgeEnv = 1;
 % ridgeST  = 100;%100;
 % ridgePh  = 10;%250;
 % ridgeFea = 100;
 % ridgeFS  = 250;
 
 % Setting downsampling frequency and time lag
-downFs = 128;    % Hz
+startLag = 0;
+endLag = 400;
+
+downFs = 1000;    % Hz - not in preprocessing, only in classification
 
 freq = downFs;
 lag_ms = [startLag, endLag]; % ms
@@ -48,12 +52,12 @@ lag
 
 modelParams.lag = lag;
 modelParams.lags_ms = lags_ms;
-modelParams.ridgeEnv = ridgeEnv;
+modelParams.downFs = downFs;
+% modelParams.ridgeEnv = ridgeEnv;
 % modelParams.ridgeST  = ridgeST;
 % modelParams.ridgePh  = ridgePh;
 % modelParams.ridgeFea = ridgeFea;
 % modelParams.ridgeFS  = ridgeFS;
-modelParams.downFs = downFs;
 
 verbose = 0;
 subjects = [1];
@@ -77,16 +81,20 @@ end
 
 %% Preprocessing
 
+modelParams.filesNum = 1:50;
+
 preprocessEnv(modelParams);
+preprocessSgram(modelParams);
 modelParams = preprocessEEG_pilot3UW(modelParams, subjects, []); % Chopping + filtering
 
 % exportEEG4ICA_3(modelParams, subjects);
 
-% To Perform ICA here with EEG lab
+% TODO: to Perform ICA here with EEG lab
+% Issue: ICA requires downsampling (otherwise the data is too much)
 
 % importEEGAfterICA_3(modelParams, subjects);
 
-noiseRemovalExport_3UW(modelParams, subjects, 0);
+% noiseRemovalExport_3UW(modelParams, subjects, 0);
 
 % preprocessEnv(modelParams, thresholdsToPreprocess);
 % preprocessSgram(modelParams, thresholdsToPreprocess);
@@ -94,15 +102,9 @@ noiseRemovalExport_3UW(modelParams, subjects, 0);
 % modelParams = preprocessConcat(modelParams, subjects, [], 0);
 % modelParams = preprocessPhConcat(modelParams, subjects, verbose); % stimSampleLength
 
-%% ICA export/import
-% toExport = false;
-% modelParams = exportForICA(modelParams,128,toExport);
-% modelParams = importAfterICA(modelParams,128);
-
 %% Referencing
-% reference = 1; % Global
-reference = 1; % Mastoids
-% reference = -1; % None
+reference = 1; % 1: Global, 0: Mastoids, -1: none
+
 if (reference == 1)
     disp('Using global reference')
 elseif (reference == 0)
@@ -111,48 +113,17 @@ else
     disp('Warning: no references used!')
 end
 
-
-% avgElecMastoids = [61:63 54:56]; % right
-avgElecMastoids = [61:63 54:56 106:108 115:117]; % [49,49];
-% avgElecMastoids = [106:108 115:117]; % left
-% avgElecGlobalFront = [63 64 108 109];
-
-
-% %% Epochs avg
-% verbose = 0;
-% epocsResult = epochsAvg_pilot2(modelParams, subjects, reference, verbose); % before preprocessing and after referencing
-% 
-% sub=1;
-% x = squeeze(mean(epocsResult.trialsAvg(sub,1).data(:,avgElecMastoids,:),2));
-% figure;plot(detrend(x'))
-% figure;plot(detrend(x(60,:)))
-% figure;plot(x')
-% 
-% x = epocsResult.trialsAvg(sub,2).data;
-% figure;plot(detrend(x'))
-% figure;plot(detrend(x(60,:)))
-% figure;plot(x')
-% 
-
-
 %% Epochs avg after preprocessing
 verbose = 0;
-% modelParams.filesNum = [1:28,30,32:33,35:50];
 epocsResult = epochsAvgPre_pilot2(modelParams, subjects, reference, verbose); % before preprocessing and after referencing
 
 % Avg all phonemes
 sub=1;
 x = squeeze(mean(epocsResult.trialsAvg(sub,1).data));
-% figure;plot(detrend(x'))
 figure;plot((x'))
-% figure;plot(detrend(x(60,:)))
-% figure;plot(x')
 
 x = squeeze(mean(epocsResult.trialsAvg(sub,2).data));
-% figure;plot(detrend(x'))
 figure;plot((x'))
-% figure;plot(detrend(x(60,:)))
-% figure;plot(x')
 
 % Gfp ph comparison
 clear toPlot
@@ -189,19 +160,19 @@ for condition = 1:2
 end
 
 %% Canonical correlation
-modelParams.fs = 128; % after preprocessing
+modelParams.filesNum = 1:10; % Subset used for canonical correlation (can't be used for classification)
 trainCanonVar = trainCanon_3(modelParams, subjects, reference);
 
 
 %% Simple classification (on groups of size 'm')
-% TODO: To remove trials with feedback! Wrong or correct ***************************************
-downFs = 1000; % Hz
-maxLatency = 0.40; % seconds
-groupSize = 25;
-classificationResult = simpleClassification_3UW(modelParams, subjects, reference, downFs, maxLatency, groupSize, trainCanonVar); % before preprocessing and after referencing
+modelParams.filesNum = 11:50; % Subset used for canonical correlation (can't be used for classification)
 
-% TODO: provare tipo cocktail party: 1 modello risp envelope, ricostruire
-% env e confrontarla con le 28 possibili
+maxLatency = endLag / 1000; % seconds
+groupSize = 25;
+% Classification
+classificationResult = simpleClassification_3UW(modelParams, subjects, reference, downFs, maxLatency, groupSize, []); % before preprocessing and after referencing
+% Classification with canonical correlation mapping
+classificationResultCanon = simpleClassification_3UW(modelParams, subjects, reference, downFs, maxLatency, groupSize, trainCanonVar); % before preprocessing and after referencing
 
 %% Forward model fit %%
 

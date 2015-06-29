@@ -99,6 +99,9 @@ function modelParams = preprocessEEG_pilot3(modelParams, subjectsIdx, rejectedCh
 
 
 %             save(strcat(filename(1:end-4), ['_preprocessed' modelParams.bandPassfilter '.mat']), 'eegData', 'startSample', 'endSample', 'fs', 'mastoids', 'localTrig');
+            filename = [modelParams.eegPath '/' (modelParams.subjectNames{subIndex}) ... 
+                    '/' (modelParams.subjectNames{subIndex}) conditionLabel ...
+                    '_' num2str(file_index) '.mat'];
             save(strcat(filename(1:end-4), ['_preprocessed' modelParams.bandPassfilter '.mat']), 'eegData', 'startSample', 'endSample', 'fs', 'sylCode', 'startIdx');
 
         end

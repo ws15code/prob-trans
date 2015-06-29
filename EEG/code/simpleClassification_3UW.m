@@ -7,12 +7,207 @@
 % speech signal to the correspondent recorded EEG
 
 function classificationResult = simpleClassification_3UW(modelParams, subjectsIdx, reference, downFreq, maxLatency, groupSize, trainCanonVar)
-    conditionLabel = 'fwd_rev';
-    %load('revBool.mat') % 1: reversed; 0: forward % to check!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    stimulusName = {'ba','be','da','de','fa','fe','ga','ge','ka','ke','ma','me','na','ne','pa','pe','ta','te','va','ve','xda','xde','xsa','xse','xtxa','xtxe','za','ze'};
+    conditionLabel = {'fwd_rev'};
+
+    if isempty(trainCanonVar)
+        canon = false;
+    else
+        canon = true;
+    end
     
-    canon = false;
-    interval = 1:5:40*10; %1:50;
-    avgElecMastoids = 1:4:34; %[61:63 54:56 106:108 115:117]; 
+    interval = 1:5:(maxLatency*1000);
+    usedElec = 1:4:34;
+    
+    % Loading sgram stimuli
+    for syl = 1:28
+        filename = [modelParams.audioPath '/s_m102_' cell2mat(stimulusName(syl)) '.sph_sgram.mat'];
+        load(filename); % sgram, fsSgram
+        sgramAll(syl).data = sgram;
+%         sgram(ph).data = resample(sgram,128,modelParams.fsOrig); %envelope;
+%         figure;plot(resample(envelope,128,512))
+    end
+    for syl = 29:28*2
+        filename = [modelParams.audioPath '/s_m102_' cell2mat(stimulusName(syl-28)) '.sph_sgram.mat'];
+        load(filename); % sgram, fsSgram
+        sgramAll(syl).data = flip(sgram,2);
+    end
+           
+    % Reducing fBands
+    for syl = 1:28*2
+        count = 1;
+        for i=1:4:128
+            sgramAll(syl).data(count,:) = sum(sgramAll(syl).data(i:i+3,:),1);
+            count = count + 1;
+        end
+        sgramAll(syl).data = sgramAll(syl).data(1:128/4,:);
+    end   
+                
+    disp('Running trainEnv function')
+    for subIndex = subjectsIdx
+         % Resetting previous counters
+        for condition = 1
+            wSum(condition).data = [];
+        end
+
+        disp(['Subject ', num2str(subIndex)])
+
+        % Given a subject - for each input file
+        for conditionIdx = 1
+            fileCount = 1;
+            globalCountSyl = 1;
+            for fileIndex = modelParams.filesNum
+                disp(sprintf('\b.'))
+            
+                % Loading eeg
+                filename = [modelParams.eegPath '/' (modelParams.subjectNames{subIndex}) ... 
+                        '/' (modelParams.subjectNames{subIndex}) cell2mat(conditionLabel(conditionIdx)) ...
+                        '_' num2str(fileIndex) '.' modelParams.fileFormat(subIndex,:)];
+                load(strcat(filename(1:end-4), ['_preprocessed' modelParams.bandPassfilter '.mat']))% '_afterNoiseRemoval.mat']))
+
+                % Reference each electrodes:
+                eegData = eegData(1:modelParams.nElectrodes(subIndex),:);
+                if (reference == 1)
+                    eegData = eegData-repmat(squeeze(mean(eegData,1)),[modelParams.nElectrodes(subIndex) 1]); 
+                elseif (reference == 0)
+                    eegData = eegData-repmat(squeeze(mean(mastoids,1)),[modelParams.nElectrodes(subIndex) 1]); 
+                end
+
+                % Preparing env concatenation
+%                 trigs = diff(localTrig);
+%                 trigs(trigs<0) = 0;
+%                 trigs(1) = localTrig(1);
+                maxIdx = 0;
+                for syl = 1:28*2
+                    phIdxs(syl).idxs = round(startIdx(sylCode==syl)/44100*modelParams.fs)+1;
+                    if ~isempty(phIdxs(syl).idxs)
+                        maxIdx = max(maxIdx,max(phIdxs(syl).idxs));
+                    end
+                %                     length(phIdxs(ph).idxs)
+                end
+                
+                lenTrial = 0.55*modelParams.fs;
+                lenSgramTrial = lenTrial * 32;
+                lenEEGTrial = lenTrial * size(eegData,1);
+                sgramTrial = zeros(0,lenSgramTrial); %zeros(0,size(sgramAll(1).data,1));
+                eegTrial = zeros(0,lenEEGTrial);
+                labelsClass = zeros(0,1);
+            
+                %for idx = find(trigs)
+                for syl = 1:28*2
+                    syl
+                    for idx = phIdxs(syl).idxs
+                        if ~isempty(idx)
+                            phCode = syl;
+                            localSgram = flip(sgramAll(phCode).data,2)';
+                            localSgram = localSgram(:)'; % If reverse (>28), it's already flipped
+%                                 figure;plot(localSgram)
+                            localEEG = eegData(:,idx:idx+lenTrial-1)';
+                            localEEG = localEEG(:)';
+
+                            sgramTrial = [sgramTrial;zeros(1,lenSgramTrial)];
+                            sgramTrial(end,1:length(localSgram)) = localSgram;
+                            
+                            eegTrial = [eegTrial;zeros(1,lenEEGTrial)];
+                            eegTrial(end,1:length(localEEG)) = localEEG;
+                            
+                            labelsClass = [labelsClass,syl];
+                            
+                            globalCountSyl = globalCountSyl + 1;
+                        end
+                    end
+                end
+                
+%                 sgram = resample(sgram',modelParams.downFs,modelParams.fs)'; 
+%                 eegData = downsample(eegData',modelParams.fs/modelParams.downFs)'; % Usually it doesn't do anything
+                if fileIndex == 1
+                    stimConcat = sgramTrial;
+                    eegDataConcat = eegTrial;
+                else
+                    stimConcat = [stimConcat;sgramTrial];
+                    eegDataConcat = [eegDataConcat;eegTrial];
+                end
+                
+%                 % Saving the vespa into an array
+%                 trainData.trials(subIndex, fileCount, conditionIdx).data = w;
+                fileCount = fileCount + 1;
+            end
+            
+            labelsClass = labelsClass(idxPerm);
+            eegDataConcat = eegDataConcat(idxPerm,:);
+            
+            if canon
+                % Does order matter? Random sorting
+                idxPerm = randperm(1:size(stimConcat,1));
+
+                B = trainCanonVar.B(condition).data;
+                % V = (Y - repmat(mean(Y),N,1))*B
+                Y = eegDataConcat';
+                N = size(Y,1);
+                eegDataConcat = ((Y-repmat(mean(Y),N,1))*B)';
+            end
+            
+            % TODO: grouping epochs
+            
+%             [A,B,r,U,V,stats] = canoncorr(stimConcat(idxPerm,:),eegDataConcat(idxPerm,:));
+            % TODO: cross-valid
+            for crossValid = 1:5
+                disp(sprintf('\b_'))
+                trainIdx = ones(1,); % 14 consonants
+                trainIdx(find(mod((1:length(trainIdx))-crossValid,21)==0)) = 0;
+                trainIdx = logical(trainIdx);
+                testIdx = ~trainIdx;
+                
+%                 [class, err] = classify(data(testIdx,:),data(trainIdx,:),ceil(labelSyl(condition).data(trainIdx)/2),'diagQuadratic');
+
+                for featureNum = 1:size(feaMap,1) % stop
+                    label2Classify = feaMap(featureNum,labelSyl(condition).data-28*(condition-1));
+
+                    [class, err] = classify(data(testIdx,:),data(trainIdx,:),label2Classify(trainIdx),'diagLinear');
+        %             model = svmtrain(data(trainIdx,:),labelSyl(condition).data(trainIdx));
+        %             class = svmclassify(data(testIdx,:),data(trainIdx,:),labelSyl(condition).data(trainIdx),'diagQuadratic');
+                    if crossValid == 1
+                        conf(featureNum).data = confusionmat(class,label2Classify(testIdx));
+                    else
+                        conf(featureNum).data = conf(featureNum).data + confusionmat(class,label2Classify(testIdx));
+                    end
+                end
+            end
+            for featureNum = 1:size(feaMap,1)
+                label2Classify = feaMap(featureNum,labelSyl(condition).data-28*(condition-1));
+
+                acc(featureNum) = (conf(featureNum).data(1,1)+conf(featureNum).data(2,2))/(conf(featureNum).data(1,1)+conf(featureNum).data(1,2)+conf(featureNum).data(2,2)+conf(featureNum).data(2,1));
+                ratio(featureNum) = length(find(label2Classify))/length(label2Classify);    
+            end
+            acc
+            ratio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+conditionLabel = 'fwd_rev';
+    
+    if isempty(trainCanonVar)
+        canon = false;
+    else
+        canon = true;
+    end
+    
+    interval = 1:5:(maxLatency*1000);
+    usedElec = 1:4:34;
     
     dataFreq = modelParams.fs; %fsOrig;
     erpLengthDown = round(downFreq*maxLatency); % maxLatency has to be in seconds
@@ -30,9 +225,9 @@ function classificationResult = simpleClassification_3UW(modelParams, subjectsId
             erp(2).data = zeros(0,1,length(interval));%erpLengthDown); % condition, erp, elec, timeWin500 ms
             erp(3).data = zeros(0,1,length(interval));%erpLengthDown); % condition, erp, elec, timeWin500 ms
         else
-            erp(1).data = zeros(0,length(avgElecMastoids),length(interval)); % condition, erp, elec, timeWin500 ms
-            erp(2).data = zeros(0,length(avgElecMastoids),length(interval)); % condition, erp, elec, timeWin500 ms
-            erp(3).data = zeros(0,length(avgElecMastoids),length(interval)); % condition, erp, elec, timeWin500 ms
+            erp(1).data = zeros(0,length(usedElec),length(interval)); % condition, erp, elec, timeWin500 ms
+            erp(2).data = zeros(0,length(usedElec),length(interval)); % condition, erp, elec, timeWin500 ms
+            erp(3).data = zeros(0,length(usedElec),length(interval)); % condition, erp, elec, timeWin500 ms
         end
         labelSyl(1).data = []; % array which contains the syllables lables for each 'erp'
         labelSyl(2).data = [];
@@ -69,7 +264,7 @@ function classificationResult = simpleClassification_3UW(modelParams, subjectsId
 %                     length(phIdxs(ph).idxs)
             end
 
-                eegData = downsample(eegData',dataFreq/downFreq)';
+            eegData = downsample(eegData',dataFreq/downFreq)';
             % Canonical correlation
             if canon
                 B = trainCanonVar.B(condition).data;
@@ -84,7 +279,7 @@ function classificationResult = simpleClassification_3UW(modelParams, subjectsId
                     tmpData = eegData(:,idx:idx+currentErpLength-1);
                     tmpData = tmpData(:,interval);
                     if ~canon
-                        tmpData = tmpData(avgElecMastoids,:);
+                        tmpData = tmpData(usedElec,:);
                     end
                     erp(condition).data(size(erp(condition).data,1)+1,:,:) = tmpData;
                     labelSyl(condition).data(size(labelSyl(condition).data)+1) = syl;
