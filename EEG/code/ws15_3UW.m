@@ -103,7 +103,7 @@ modelParams = preprocessEEG_pilot3UW(modelParams, subjects, []); % Chopping + fi
 % modelParams = preprocessPhConcat(modelParams, subjects, verbose); % stimSampleLength
 
 %% Referencing
-reference = 1; % 1: Global, 0: Mastoids, -1: none
+reference = -1; % 1: Global, 0: Mastoids, -1: none
 
 if (reference == 1)
     disp('Using global reference')
@@ -117,18 +117,21 @@ end
 verbose = 0;
 epocsResult = epochsAvgPre_pilot2(modelParams, subjects, reference, verbose); % before preprocessing and after referencing
 
+%%
 % Avg all phonemes
 sub=1;
-x = squeeze(mean(epocsResult.trialsAvg(sub,1).data));
+x = squeeze(mean(epocsResult.trialsAvg(sub,1).data(1:28,:,:)));
 figure;plot((x'))
 
-x = squeeze(mean(epocsResult.trialsAvg(sub,2).data));
+sub=1;
+x = squeeze(mean(epocsResult.trialsAvg(sub,1).data(29:28*2,:,:)));
 figure;plot((x'))
 
 % Gfp ph comparison
+selElec = 1:34;
 clear toPlot
 sub=1;
-for condition = 1:2
+for condition = 1
     clear x
     for ph = 1:28
         x(ph,:,:) = squeeze(epocsResult.trialsAvg(sub,condition).data(ph,:,:));
@@ -140,7 +143,7 @@ for condition = 1:2
     figure;
     for ph = 1:28
        subplot(5,6,ph)
-       toPlot(ph,:) = (squeeze(mean(x(ph,avgElecMastoids,:),2)))';
+       toPlot(ph,:) = (squeeze(mean(x(ph,selElec,:),2)))';
        plot(toPlot(ph,:))
     end
     
@@ -168,11 +171,12 @@ trainCanonVar = trainCanon_3(modelParams, subjects, reference);
 modelParams.filesNum = 11:50; % Subset used for canonical correlation (can't be used for classification)
 
 maxLatency = endLag / 1000; % seconds
-groupSize = 25;
+groupSize = 15;
 % Classification
 classificationResult = simpleClassification_3UW(modelParams, subjects, reference, downFs, maxLatency, groupSize, []); % before preprocessing and after referencing
 % Classification with canonical correlation mapping
 classificationResultCanon = simpleClassification_3UW(modelParams, subjects, reference, downFs, maxLatency, groupSize, trainCanonVar); % before preprocessing and after referencing
+% // Canon good for last feature?? But only that ..., only when (:) not '
 
 %% Forward model fit %%
 

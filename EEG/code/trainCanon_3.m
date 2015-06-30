@@ -85,7 +85,6 @@ function trainCanonVar = trainCanon_3(modelParams, subjectsIdx, reference)
             
                 %for idx = find(trigs)
                 for syl = 1:28*2
-                    syl
                     for idx = phIdxs(syl).idxs
                         if ~isempty(idx)
                             phCode = syl;
@@ -126,7 +125,7 @@ function trainCanonVar = trainCanon_3(modelParams, subjectsIdx, reference)
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             
             % Does order matter? Random sorting
-            idxPerm = randperm(1:size(stimConcat,1));
+            idxPerm = randperm(size(stimConcat,1));
             [A,B,r,U,V,stats] = canoncorr(stimConcat(idxPerm,:),eegDataConcat(idxPerm,:));
             
 %             [w,modelParams.lags_ms] = mTRF(stimConcat',eegDataConcat',modelParams.downFs,0,modelParams.lags_ms(1),modelParams.lags_ms(end),modelParams.ridgeEnv);
