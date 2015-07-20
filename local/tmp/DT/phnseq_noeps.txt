@@ -1,0 +1,850 @@
+Creating vocab for P2P English: vocab=local/tmp/DT/EN.vocab, fst=local/tmp/DT/engtag.fst.bin
+Creating vocab for G2P Dutch: grapheme_vocab=local/tmp/DT/DT.ortho.vocab, phone_vocab = local/tmp/DT/DT.phone.vocab, fst=local/tmp/DT/DT_G2P.fst.bin
+Done
+
+Creating Union FST: G2P Dutch FST - U - P2P English FST:
+1 = local/tmp/DT/DT_G2P.fst.bin
+2 = local/tmp/DT/engtag.fst.bin
+Union = local/tmp/DT/U.fst.bin
+0	1	eps	eps
+0
+1	2	eps	eps
+1	3	<EN>	eps
+2	2	<silence>	SIL
+2	2	B	b
+2	2	b	b
+2	2	b	p
+2	4	C	x
+2	4	c	x
+2	2	D	d
+2	2	d	d
+2	2	d	t
+2	2	F	f
+2	2	f	f
+2	2	G	ɣ
+2	2	g	ɣ
+2	2	g	x
+2	2	H	ɦ
+2	2	h	ɦ
+2	2	J	j
+2	2	j	j
+2	2	K	k
+2	2	k	k
+2	2	L	l
+2	2	l	l
+2	2	M	m
+2	2	m	m
+2	2	N	n
+2	2	n	n
+2	5	n	eps
+2	2	P	p
+2	2	p	p
+2	2	R	r
+2	2	r	r
+2	2	S	s
+2	2	s	s
+2	2	T	t
+2	2	t	t
+2	2	V	v
+2	2	v	v
+2	2	W	ʋ
+2	2	w	ʋ
+2	2	Z	z
+2	2	z	z
+2	2	a	ɑ
+2	6	a	aː
+2	2	i	i̯
+2	2	u	u̯
+2	7	u	u̯
+2	2	e	ɛ
+2	2	e	ə
+2	8	e	eː
+2	9	e	eps
+2	2	i	ɪ
+2	2	i	ə
+2	10	i	iː
+2	11	i	ɛi̯
+2	11	i	iː
+2	11	i	ə
+2	2	o	ɔ
+2	12	o	oː
+2	13	o	uː
+2	2	u	ʏ
+2	14	u	yː
+2	15	u	œy̯
+2	16	u	yu̯
+2	17	x	k
+2	2	y	ɪ
+2	2	y	j
+2	2	q	k
+2	1	eps	eps
+2
+3	3	ɑ	ɑ
+3	3	æ	æ
+3	3	ʌ	ʌ
+3	3	ɔ	ɔ
+3	3	aʊ	aʊ
+3	3	ə	ə
+3	3	aɪ	aɪ
+3	3	b	b
+3	3	tʃ	tʃ
+3	3	d	d
+3	3	ð	ð
+3	3	ɛ	ɛ
+3	3	ɛə	ɛə
+3	3	eɪ	eɪ
+3	3	f	f
+3	3	ɡ	ɡ
+3	3	h	h
+3	3	ɪ	ɪ
+3	3	i	i
+3	3	dʒ	dʒ
+3	3	k	k
+3	3	ɫ	ɫ
+3	3	m	m
+3	3	n	n
+3	3	ŋ	ŋ
+3	3	oʊ	oʊ
+3	3	ɔɪ	ɔɪ
+3	3	p	p
+3	3	r	r
+3	3	s	s
+3	3	ʃ	ʃ
+3	3	t	t
+3	3	θ	θ
+3	3	ʊ	ʊ
+3	3	u	u
+3	3	v	v
+3	3	w	w
+3	3	j	j
+3	3	z	z
+3	3	ʒ	ʒ
+3	1	<EN>	eps
+3
+4	2	h	eps
+5	2	g	ŋ
+6	2	a	eps
+7	2	w	eps
+8	2	e	eps
+9	2	u	øː
+10	2	e	eps
+11	2	j	eps
+12	2	o	eps
+13	2	e	eps
+14	2	u	eps
+15	2	i	eps
+16	2	w	eps
+17	2	eps	s
+Done
+
+Creating FSA for Dutch (mixed with L2) sentences
+Computing acceptors...
+Finished building 100 acceptors
+Finished building 200 acceptors
+Finished building 300 acceptors
+Finished building 400 acceptors
+Finished building 500 acceptors
+Finished building 600 acceptors
+Finished building 700 acceptors
+dutch_140903_358463-1   ɛ n t ɑ n ə s ɦ ə t n ʏ t ə j t v ɔ ɔ r m ʏ z ə ə k ə n t ɑ n n ə ə t z ɔ m ɑ ɑ r m ʏ z ə ə k m ɑ ɑ r ɦ ə t p ə s t ə m ʏ z ə ə k ʏ ə t r ʏ ə m
+dutch_140903_358463-10   d ə p ə ɑ t ə k s p l ɔ s ə ə ə n t ə j ɑ r ə n z ə s t ə x m ə t t ə ə v ə n ə ə n s ʏ ə t ə n t ɔ n ə s ə ə ɑ f k ɔ m s t ə x ə p l ʏ ə t ə
+dutch_140903_358463-11   
+dutch_140903_358463-12   
+dutch_140903_358463-14   
+dutch_140903_358463-15   b l ɔ f ɦ ə t k l ə ə n ə ɔ r k ə s t t ə t ɔ l l j t ɔ t s ə n f r ɑ n k p ɔ ə ə ə n x r ɔ ə p t ɔ ɔ r m ɑ ɑ r ɦ ə t ə s ɦ ə t v ə ə r t ɑ l v ɑ n t ɔ ə m ɑ ɑ r t ɑ t
+dutch_140903_358463-16   t ɔ ɔ n z ə t ə n t ə t ɑ x eps t ə x ə r j ɑ r ə n m ə t m ə x ɑ ɦ ə t s ɑ l s t ə p ɔ m t ɔ r ə s t ɑ j ə n ə s t ə t ɑ l l ə s
+dutch_140903_358463-17   
+dutch_140903_358463-18   ɛ n ɦ ə t n ʏ m m ə r s t ə l ə n m ə j v ɑ n v ɑ n t ə k ɦ ɔ ʏ t m ɑ x t ɑ n x ə ə n x r ɔ t ə ɦ ə t z ə j n ɦ ə t x r ɔ ə ə t ʋ ə l ʏ ə t
+dutch_140903_358463-19   t ɔ t ə ə n ʋ ɑ r ə k l ɑ s s ə ə k ə r t ə ə s t ə ə v ɑ s t t ə t ɔ p v ə j f v ɑ n n ə t ə r l ɑ n t s ə s ɔ n x s ɑ l l ə r t ə j t ə n ɦ ɑ ɑ l
+dutch_140903_358463-2   eː eps n ɦ ɑ l v ə ʏ ʏ r n ə t ə r p ɔ p z ɔ ɑ l s ɑ n ɔ ʏ k t ə ə t ə z ə f ə ɑ t ʏ r ə ɔ p ə n t ə m ə t x ə r l t ə n ʏ m m ə r ə ə n
+dutch_140903_358463-20   
+dutch_140903_358463-3   œy̯ eps t t ə eps r i ɛ f ɛ m eps ə t ə r l ɑ n t s ə t ɔ p t ə ə n ɑ l l ə r t ə j t ə n ə n ə ə n v ɑ n t ə p ə t ə r ə x ə t ɑ r ə s
+dutch_140903_358463-4   ɣ ɔ ə t l ɑ t ə n ʋ ə ə ə r s t ə v ə n s t ə l s t ɑ ɑ n p ə j ɦ ə t ɔ n t s t ɑ ɑ n v ɑ n n ə t ə r p ɔ p ʋ ɑ t ə s t ɑ t n ɔ ʏ
+dutch_140903_358463-5   
+dutch_140903_358463-6   ɑ r t ə ə s t ə n t ə ə n ə n t ɔ n ə s ə ə ɔ p x ə x r ɔ ə ə t ə t ə ə l m ɑ n p r ɔ t ɦ ə r s z ə j n t ə x r ɔ n t l ə x x ə r s x ə ʋ ə ə s t v ɑ n
+dutch_140903_358463-7   
+dutch_140903_358463-8   ɑ x eps t ə n v ə j f t ə x ɦ ə t n ʏ m m ə r ʋ ə r t ə n ə ə n p r ʏ s s ə l s ə s t ʏ t ə ɔ ɔ p x ə n ɔ m ə n ə n ʏ ə t x ə p r ɑ x eps t ə n ə ə n ɔ p l ɑ x ə v ɑ n
+dutch_140903_358463-9   
+dutch_140910_359813-16   t ə j t ə n s t ə j ɑ r ə n z ə v ə n t ə x k ʋ ɑ m ə n ə r ʏ ə t ɑ l l ə ɦ ɔ ə k ə n v l ɑ ɑ m s ə v ɔ l k s
+dutch_140910_359813-17   
+dutch_140910_359813-18   
+dutch_140910_359813-19   
+dutch_140910_359813-2   v ɔ r ə x ə ʋ ə ə k l ə x eps t ə n ʋ ə t ə n ə t ə r p ɔ p t ɔ ɔ r m ʏ z ə ə k x ə m ɑ ɑ k t t ɔ ɔ r n ə t ə r l ɑ n t s ə
+dutch_140910_359813-20   
+dutch_140910_359813-3   ɑ r t ə ə s t ə n m ɑ ɑ r ɦ ɔ ə z ə t ɦ ə t m ə t p ə l p ɔ p z ə j n p ə l x ə s x eps ə ɑ r t ə ə s t ə n ə n t ə r n ɑ t ə ɔ n ɑ ɑ l
+dutch_140910_359813-4   
+dutch_140910_359813-5   oː eps k t ə x ə s x eps ə ə t ə n ə s v ɑ n p ə l p ɔ p p ə x ə n t ə n t ə j ɑ r ə n v ə j f t ə x s l ə x eps t s p ə j ʏ ə t z ɔ n t ə r ə n x t ʏ ə k t ə r ə ə n
+dutch_140910_359813-6   
+dutch_140910_359813-7   ɑ t ə r ɔ ɔ k ʋ ə l m ə ə r ɑ ɑ n t ɑ n ə n n ə t ə r l ɑ n t m ɑ ɑ r t ə m ə ə s ə t ɑ r t ə ə t ə n p l ə n k ə n ʏ ə t ə n ɦ ə t k l ɑ k k ə l ɔ ɔ s n ɑ s p ə l ə n
+dutch_140910_359813-8   v ɑ n t ə x r ɔ t ə p ʏ ə t ə n l ɑ n t s ə v ɔ ɔ r p ə ə l t ə m ɑ ɑ r j ɑ k ʏ ə s p r ə l t ɑ t ʋ ɑ s n ɑ t ʏ ʏ r l ə j k ɦ ə l ə ɑ n t ə r
+dutch_140910_359813-9   ɛ k ɔ ə k j ə ɦ ɔ ɔ r ɦ ə m ɦ ə ə r m ə t n ə m ə k ʏ ə t t ə p ɑ s
+dutch_140910_359833-1   ɛ n m ɑ ɑ r z ə v ə n t ə ə n k ʋ ɑ m ə n ə x z ə n s p ə t r ɔ x ə n ʏ ə t t ə ɔ n t ə r z ɔ ə k s r ɑ ɑ ɑ t v ɔ ɔ r v ə ə l ə x ɦ ə ə t k ʋ ɑ m x ə s t ə r
+dutch_140910_359833-11   oː eps k ɔ v ə r t ə s x eps ʏ l t v r ɑ ɑ x ʋ ɔ r t t ə n ɦ ə t r ɑ p p ɔ r t n ə ə t t ʏ ə t ə l ə j k v ə ə l
+dutch_140910_359833-12   ʋ ə s t ə r s ə r ə x ə r ə n x ə n x ɑ ɑ n ə r v ɑ n ʏ ə t t ɑ t ɦ ə t v l ə ə x t ʏ ə x ə s n ə ə r x ə ɦ ɑ ɑ l t t ɔ ɔ r ə ə n p ɔ ə f r ɑ k ə t ə ə t s ʋ ɑ t t
+dutch_140910_359833-13   
+dutch_140910_359833-14   
+dutch_140910_359833-15   d ə l ə j k s t ə s ə ə x ə n l ə j k t ə t x ə t ə ə l t ə ə ə n x r ɔ ɔ t ə n s l ɑ x x ɑ t ʋ ɑ ɑ r ʏ z ə ə t t ɑ t ɦ ə t m ə t ɑ ɑ l n ɑ ɑ r p ə n n ə n ə s x ə p ɔ x ə n
+dutch_140910_359833-16   ʋ ɑ t t ʏ s t ʏ ə t t ɔ p ɦ ə t f ə ə t t ɑ t m ə t ɑ l ə t ə ə l t j ə s m ə t ɦ ɔ x ə s n ə l ɦ ə ə t ɦ ə t t ɔ ə s t ə l z ə j n p ə n n ə n x ə t r ɔ n x ə n
+dutch_140910_359833-18   ɦ ə t x ə p r ʏ ə k t ə s x ə m ɑ ɑ k t v ɑ n ɦ ə t f ɑ m ə ʏ z ə p ɔ ə k r ɑ k ə t t ə ə t ʏ s ʋ ɑ n n ə ə r t ə ə
+dutch_140910_359833-19   b ə j ɦ ə t t ɔ ə l k ɔ m t ʏ ə t ə ə n s p ɑ t ə n ə ə n ə n x ə l ə j k ə ə n r ə x ə n v ɑ n m ə t ɑ l ə t ə ə l t j ə s
+dutch_140910_359833-2   ɑ v ɔ n t m ə t z ə j n v ɔ ɔ r l ɔ p ə j x ə r ɑ p p ɔ r t n ɑ ɑ r t ə v l ə ə x r ɑ m p m ɦ z ə v ə n t ə ə n ʋ ɑ ɑ r p ə j ɑ l l ə t ʋ ə ə ɦ ɔ n t ə r t ɑ x eps t
+dutch_140910_359833-3   
+dutch_140910_359833-4   ɔ r x ɑ n ə s ɑ t ə ə s ɦ ɔ ɔ p t ə n ɔ p m ə ə r z ɔ z ə x t ɦ ə t r ɑ p p ɔ r t ɦ ə l ə m ɑ ɑ l n ə ə t s ɔ v ə r t ə v l ə ə x r ɔ ʏ t ə v ɑ n m ɦ z ə v ə n t ə ə n
+dutch_140910_359833-5   v l ɔ ɔ x ʋ ɑ ɑ r ɑ n t ə r ə m ɑ ɑ t s x eps ɑ p p ə j ə n j ʏ ə s t ɔ m ɦ ə ə n v l ɔ x ə n t ɔ x eps z ə ə n l ʏ x eps t v ɑ ɑ r t t ə s k ʏ n t ə x ə ɑ n t r ə ʋ x eps
+dutch_140910_359833-6   ɑ r l ə t ɔ n ɦ ə t v ɔ ɔ r l ɔ p ə j x l ʏ x eps t v ɑ ɑ r t ɔ n t ə r z ɔ ə k ɑ l s ə ə n p ə l ɑ n x r ə j k ə ə ə r s t ə s t ɑ p ɔ m ʏ ə t t ə v ə n t ə n ʋ ɑ t ə r x ə p ə ʏ r t ə s m ə t v l ə ə x
+dutch_140910_359833-7   
+dutch_140917_361300-10   ɔ m t ɑ t ɦ ə j n ɑ ɑ r ə ə x ə n z ə x x ə n ɔ n t t r ɑ x ə l ə j k p s j x eps ə s x eps l ə j t t ɦ ə t ʋ ɑ s t ɔ ə n t ə ə ə r s t ə k ə ə r t ɑ t t ə ə v r ɑ ɑ x
+dutch_140917_361300-11   v ɑ n ʏ ə t t ə x ə v ɑ n x ə n ə s x ə f ɔ r m ʏ l ə ə r t ʋ ə r t t ɔ t n ʏ t ɔ ə k r ə ə x ɦ ə j x ə ə n ɑ n t ʋ ɔ ɔ r t
+dutch_140917_361300-12   oː eps k v ə r ɔ ɔ r z ɑ ɑ k t t ɔ ɔ r ɦ ə t f ə ə t t ɑ t ɦ ə j x ə v ɑ n x ə n z ə t n ə ə t ɑ l l ə ə n ə n
+dutch_140917_361300-13   eː eps n x ə v ɑ n x ə n ə s m ɑ ɑ r t ɑ t ɦ ə j x ə v ɑ n x ə n z ə t ə n ə ə n s t r ɑ m ə ə n
+dutch_140917_361300-14   i̯ n ə ə n z ə ə k t ə p ə ə l t t ɑ t n ə ə t t ɔ t n ʏ t ɔ ə ɔ p ə ə n
+dutch_140917_361300-15   ɔ f ɑ n t ə r m ɑ n ə ə r v ə r p ə t ə r t ə s l ɑ ɑ t s t ɑ ɑ n x ə n ə z ə n
+dutch_140917_361300-16   i̯ s ə n ɦ ə j x ɑ ɑ t ə r v ɑ n ʏ ə t t ɑ t ɦ ə t ɔ ɔ k n ə ə t k ɑ n x ə n ə z ə n ʋ ɔ r t ə n
+dutch_140917_361300-17   i̯ k m ɑ ɑ k ɦ ə ə l t ʏ ə t ə l ə j k t ɑ t ɦ ə t l ə v ə n v ɔ ɔ r m ə j x ə ə n z ə n ɦ ə ə f t ə n t ɑ t ə k ɑ l l ə s ɦ ə p x ə p r ɔ
+dutch_140917_361300-19   l ə j t ə n v ə r ɔ ɔ r z ɑ ɑ k t ə s t ɔ ɔ r ɦ ə t ə n t ə v ə t ʏ ə l ə p r ɔ p l ə ə m v ɑ n f r ɑ n k ɔ f t ɔ ɔ r t ə x ə v ɑ n x ə n ə s ɔ m s t ɑ n t ə x ɦ ə t ə n
+dutch_140917_361300-2   v ə l ə m ə s t r ə j v ə n ə n t ə ə t ə z ə ʋ ə ə k z ə j n v ə r z ɔ ə k t ɔ t ə ʏ t ɦ ɑ n ɑ s ə ə z ɑ x ə n x ə ʋ ə l l ə x t ɦ ə t ə s
+dutch_140917_361300-20   m ə n ə s t ə r ə ə v ɑ n j ʏ s t ə t ə ə ə n p r ʏ s s ə l ɦ ə ə f t n ʏ t ɔ ə s t ə m m ə n x x ə x ə v ə n ɔ m v ɑ n t ə n p l ə k ə v ɔ ɔ r ɑ x eps t ə n v ə ə r t ə x ʏ ʏ r n ɑ ɑ r
+dutch_140917_361300-3   v ɔ ɔ r ɦ ə t ə ə r s t t ɑ t ə ə n ə ʏ t ɦ ɑ n ɑ s ə ə v ə r z ɔ ə k v ɑ n ə ə n p ə l x ə s x eps ə x ə v ɑ n x ə n ə ə s x ɔ ə t x ə k ə ʏ r t v ɑ n t ə n p l ə k ə m ə ə n t
+dutch_140917_361300-4   
+dutch_140917_361300-5   ɑ l s ɦ ə t x ɑ ɑ t ɔ m t ə p ə ɦ ɑ n t ə l ə n x v ɑ n x ə v ɑ n x ə n ə n t ə ə p s j x eps ɔ l ɔ x ə s x eps ə p r ɔ p l ə m ə n ɦ ə p p ə n v ɔ l x ə n s v ɑ n t ə n p l ə k ə
+dutch_140917_361300-6   m ɑ ɑ r ə r z ə j n ə n t ə l ɔ ɔ p v ɑ n t ə v ɔ ɔ r p ə j ə j ɑ r ə n t ɑ l v ɑ n t ɔ k t ə r s ə n p s j x eps ə ɑ t ə r s
+dutch_140917_361300-7   v ɑ n t ə n p l ə k ə z ɑ x z ə l f n ɔ x t ʋ ə ə ɔ p t ə ə s z ɔ z ə ə ɦ ə j t ə x ə n ɦ ə t p ə l x ə s x eps ə v r t p r ɔ x r ɑ m m ɑ
+dutch_140917_361300-8   
+dutch_140917_361300-9   ɔ n t t r ɑ ɑ x ə l ə j k p s j x eps ə s x eps l ə j t ə n ɑ l p ə j n ɑ t r ə ə j ɑ ɑ r x ə l ə t ə n v r ɔ ə x v ɑ n t ə n p l ə k ə ɔ m ə ʏ t ɦ ɑ n ɑ s ə ə
+dutch_140917_361318-1   
+dutch_140917_361318-10   
+dutch_140917_361318-11   
+dutch_140917_361318-12   
+dutch_140917_361318-13   u̯ t r ə x eps t p ʏ k k ə s ə n t ə n ə k ə s x eps ɔ ʏ t ə n t ə ə n ɑ t ə ɔ n ɑ l ə p ə k ə n t ɦ ə ə t x ə n ə ə t z ə ə l ɑ n t ɦ ə ə f t
+dutch_140917_361318-14   s ʏ r r ə n t ə r ə n z ʏ ə t ɦ ɔ l l ɑ n t ɦ ə ə f t z ə j n k r ɔ m m ə j ɔ n x ə n s m ɑ ɑ r t ɑ ɑ r ɦ ɔ ʏ t t ɦ ə t ɔ ɔ k ʋ ə l ə ə n p ə ə t j ə p ə j ɔ p
+dutch_140917_361318-15   
+dutch_140917_361318-16   b ɔ ə r x r ɔ n ə n x ə n p ə ɦ ɑ l v ə ə t ə s t r ɑ ɑ l ɔ ɔ k ɦ ə ə l x ə ʋ ɔ ɔ n x ə l t ə r l ɑ n t n ɑ t ʏ ʏ r l ə j k n ɔ r m ɑ ɑ l
+dutch_140917_361318-17   m ɑ ɑ r ɔ ɔ k x ɔ ə t x ɑ ɑ n ə n t ə x ɔ ə t ə p ə ɑ t l ə s ə n t r ə n t ɦ ə m ɔ ɔ ə ʋ ɑ r k ə n s k ə
+dutch_140917_361318-18   
+dutch_140917_361318-19   t ʋ ɑ r r ə s t ə r ʋ ə j l l ə m p ʏ r x ɦ ə t s t r ə r k s t ə t ə x ə n ʋ ɔ ɔ r t ə x t ə s m ə t r ɔ ʋ ə n ɦ ə z ə n ə ə t ɔ ə f l ɔ t t ə m ə n
+dutch_140917_361318-2   
+dutch_140917_361318-20   
+dutch_140917_361318-3   
+dutch_140917_361318-4   t r ɔ ʏ p ɑ t ə ʏ r ə t ə s t r ɑ ɑ l ə n t ə ɑ x eps t ə r ɦ ɔ ə k s ə p ɑ n t n ɔ r m ɑ ɑ l t ə ə p ə ə t ə ə ə n x r ɔ t ə f ɑ n s ɦ ə p p ə n
+dutch_140917_361318-6   
+dutch_140917_361318-7   
+dutch_140917_361318-8   
+dutch_140917_361318-9   
+dutch_140920_362010-1   
+dutch_140920_362010-10   
+dutch_140920_362010-11   eː eps n ə j z ə r s t ə r k ə t r ɑ t ə t ə ə ə n ɦ ə t ɔ ɔ s t ə n v ɑ n ɦ ə t l ɑ n t j ɑ ɑ n ɑ l ə s t ə n p ə ʋ ə r ə n t ɑ t t ə ɔ v ə r n ɑ m ə p ɔ x ə n x
+dutch_140920_362010-12   eː eps n t ə f ə n s ə ə v ə ɑ x eps t ə r x r ɔ n t ɦ ə ə f t s ɑ p m ə l l ə r ɔ p z ə j n p ə ʏ r t p r ɔ p ə r ə n ɔ p t ə ə m ɑ n ə ə r t ə
+dutch_140920_362010-13   ɔ v ə r n ɑ m ə t ə v ɔ ɔ r k ɔ m ə n ə s ɦ ə t v ə r ɦ ɑ ɑ l t ɔ ɔ r ɦ ə t n ɔ x x r ɔ t ə r ə ɑ p ə n l ə x p ə k ə n t v ɑ n
+dutch_140920_362010-14   
+dutch_140920_362010-15   ɦ ə p p ə n x ə m ɑ ɑ k t ə s t ɑ n t ə ɑ n ɑ l j s ə m ɑ ɑ r ɦ ə ə n ə k ə n ɦ ə ə f t p l ə ə f t n ə ə x ə z ə x t
+dutch_140920_362010-16   f ɑ m ə l ə ə ɦ ə ə n ə k ə n ə n t ə p ə r s ɔ ɔ n v ɑ n x eps ə r l ə ə n t ə ɦ ə ə n ə k ə n ɦ ə ə f t t ə ə ə r s t ə
+dutch_140920_362010-19   
+dutch_140920_362010-2   
+dutch_140920_362010-20   
+dutch_140920_362010-3   d r ɔ n k ə n ə s t ʏ s ə ə n ə n t ə r ə s s ɑ n t ə p ɑ r t ə j v ɔ ɔ r ʋ ə ə ɦ ə t k ɑ n p ə t ɑ l ə n ə ɦ ɦ ə t p ə t r ə j f ɔ n t ə r
+dutch_140920_362010-4   
+dutch_140920_362010-5   b r ɔ u̯ eps ə r ə j ə n ə s t ə x r ɔ ɔ t s t ə p ə ə r p r ɔ ʋ ə r v ɑ n ə ʏ r ɔ p ɑ ə n ə ə n v ɑ n t ə x r ɔ ɔ t s t ə m ə r k ə n t ə r
+dutch_140920_362010-6   ʋ ə r ə l t m ə t m ə ə r t ɑ n t ʋ ə ə ɦ ɔ n t ə r t v ə j f t ə x v ə r s x eps ə l l ə n t ə p ə ə r ə n ə n ɦ ə t ɑ s s ɔ r t ə m ə n t ʋ ɑ ɑ r ɔ n t ə r p ɑ
+dutch_140920_362010-7   ɔ v ə n ɦ ə ə n ə k ə n t ʏ s ɑ m s t ə l ə n t ə s p ə r ɑ t ɔ s j ɑ ə r ʋ ə r k ə n ɔ ɔ k n ɔ x ə ə n s r ʏ ə m ə ə n ə n t ɑ x eps t ə x
+dutch_140920_362010-8   d ʏ ə z ə n t m ə n s ə n m ɑ ɑ r j ɑ ɦ ə t k ɑ n n ɑ t ʏ ʏ r l ə j k t ʏ s ɑ l t ə j t n ɔ x x r ɔ t ə r v ɑ n t ɑ ɑ r t ɑ t ɦ ə t v ɑ n ɔ ɔ r s p r ɔ n x z ʏ ə t ɑ f r ə k ɑ ɑ n
+dutch_140920_362010-9   s ə s ɑ p m ə l l ə r p ɔ x ə n x ə n ɦ ə ə f t x ə t ɑ ɑ n ɦ ə ə n ə k ə n ə n t ə l ə j v ə n ə n t ə r ə s s ɑ n t ɑ l l ə ə n ɑ l ɔ m t ɑ t s ɑ p m ə l l ə r
+dutch_140924_362685-10   
+dutch_140924_362685-12   k ʏ n s t f l ʏ ə t ə r ɦ ə j ʋ ɑ s ə ə n ɔ n t ə r n ə m ə n t ə n v ə ə l z ə j t ə x ɑ r t ə ə s t m ə t x ə v ɔ ə l v ɔ ɔ r t ə m ɑ r k t ə n
+dutch_140924_362685-13   
+dutch_140924_362685-14   
+dutch_140924_362685-15   
+dutch_140924_362685-2   ɛ x eps t ə ə u̯ eps ə n ɔ ʏ t ə s v ɑ l t ɦ ə t ɔ p t ɑ t ɦ ə t ə n t ə ɑ f x ə l ɔ p ə n j ɑ r ə n t ʏ ə t ə l ə j k ə n t ə l ə f t z ə t
+dutch_140924_362685-3   
+dutch_140924_362685-4   
+dutch_140924_362685-9   
+dutch_140924_362689-1   d r ə ə ɦ ɔ n t ə r t v ə j f t ə x ɑ ʏ s t r ɑ l ə ə k ɔ m ə n ə n n ɑ ɑ r s j t n ə j k ɔ m ə n m ə t ə ə x ə n
+dutch_140924_362689-10   d ə t ə ɔ n ə l ə k ɑ n ɔ s t ə ɦ ə l ə ɦ ɑ v ə n t ɔ ɔ r v ɑ r ə n ə n t ɑ n ɦ ə p p ə n z ə ə ə n x r ɔ t ə m ɑ n ə f ə s t ɑ t ə ə ə n t ɑ n
+dutch_140924_362689-11   
+dutch_140924_362689-13   ɛ r ə s x ə ʋ ɔ ɔ n t ə r ə x ə r ə n x z ɑ l ʋ ə l n ə ə t v ɔ ɔ r n ə ə t s x ə ə n t ə r ə s s ə ə r t z ə j n t ə n k ə k z ɔ m ɑ ɑ r ə ɦ j ɑ v ɔ l x ə n s m ə j ʋ ɔ r t ə n ə r x ɔ ə ə ə m ɑ n ə f ə s t ɑ t ə ə s
+dutch_140924_362689-14   
+dutch_140924_362689-18   oː eps k ə n ə ə n ɑ n t ə r ə r ə l ɑ t ə ə f t r ɑ t ə t ə ɔ n ə l ə k ɑ n ɔ z ɔ ʏ t ə n z ə ɔ ɔ r s p r ɔ n k ə l ə j k ɦ ə p p ə n ʋ ə l l ə n x ə t ɑ ɑ n m ɑ ɑ r v ɑ n ʋ ə x ə
+dutch_140924_362689-2   ɣ ə m ɑ ɑ k t ə v ə ə r m ə t ə r l ɑ n x ə t r ɑ t ə t ə ɔ n ə l ə k ɑ n ɔ s ɔ m t ə l ɑ t ə n z ə ə n t ɑ t z ə ʋ ə l l ə n v ə x eps t ə n
+dutch_140924_362689-3   ɔ m x l ɔ p ɑ l ʋ ɑ r m ə n x t ə s t ɔ p p ə n ə n ɦ ə t t ə v ə r m ə n t ə r ə n ɔ m t ɑ t z ə n ə ə t ɦ ʏ n ə ə l ɑ n t ɔ n t ə r ʋ ɑ t ə r ʋ ə l l ə n l ɑ t ə n l ɔ p ə n
+dutch_140924_362689-4   ɑ l l ə ɑ l l ə ɦ ɔ ɔ f t ə n v ɑ n t ə ə ə l ɑ n t ə n k ɔ m ə n ɔ ɔ k n ɑ ɑ r ɑ ʏ s t r ɑ l ə ə t ɔ ə ɔ m t ə l ɑ t ə n z ə ə n t ɑ t z ə ə x eps t ʋ ə l l ə n v ə x eps t ə n v ɔ ɔ r ə ɦ
+dutch_140924_362689-6   l ɔ p ə n n ə ə u̯ eps ə l ɑ n t ə r ə n ə ə n ɦ ə l ə ɑ ɑ n t ɑ l k l ə ə n ə t ɔ r p j ə s ɦ ə p p ə n z ə m ɔ ə t ə n v ə r p l ɑ ɑ t s ə n v ə r t ə r ə n l ɑ n t n ɑ ɑ r
+dutch_140924_362689-7   b ə n n ə n l ɑ n t t ɔ ə n ɑ ɑ r ɦ ɔ x ə r x ə l ə x ə n x r ɔ n t ə n v ɔ ɔ r t ə t ɔ ə k ɔ m s t ʋ ɔ r t t ɦ ə t ə ə n x ə x ɑ n t ə s x eps x r ɔ ɔ t p r ɔ p l ə ə m ɑ l s t ə l ɑ n t ə n ɑ l s ɑ ʏ s t r ɑ l ə ə ʋ ə ə
+dutch_140924_362689-8   ɣ ə r ə n ə r ɔ ɔ k m ɑ ɑ r ə ə t s ɑ ɑ n t ə t ɔ ə n ə n v ə ə l v ɑ n t ə ə l ɑ n t ə n z ə j n ɑ l ɦ ə ə l l ɑ n x x r ɔ ə n z ə j n
+dutch_140924_362689-9   
+dutch_140924_362693-1   s t ɔ l t ə ə ɦ ɑ t t ə s t ə j t s t ə l ə ə s p l ɑ n k m ə t ə ə n k ə n t ɔ f z ə s ə n
+dutch_140924_362693-12   ɛ r x l ə ʏ k ɔ m m ə ɦ ə ə r j ʏ ə s t t ə m ə k s ə n m ə t ɑ l l ə r l ə ə s ɔ ɔ r t ə n m ə n s ə n ə n ʋ ɑ n t ɑ n t ə r s
+dutch_140924_362693-13   n ə t z ɔ x ɔ ə t ə n n ə t ə r l ɑ n t p l ə j v ə n m ɑ ɑ r ɦ ə t ə s ɦ ə t ə s n ʏ ɦ ə ə f t ɦ ə t x ə ʋ ɔ ɔ n ə ə n m ɔ ɔ ə ə v ə n ʋ ə x eps t
+dutch_140924_362693-14   ɣ ə v ɔ n t ə n ə k v ə n t ɦ ə t n ʏ n ɑ t ʏ ʏ r l ə j k ɔ n t z ə t t ə n t l ə ʏ k ɔ m p ə t r ɔ k k ə n t ə z ə j n m ə t j ɑ t ə
+dutch_140924_362693-18   l ə s m ɑ ɑ r ɦ ə t ə s t ʏ s n ə ə t t ə ɦ ə l ə t ɑ x ɦ ə t ə s t ʋ ə ə ʏ ʏ r n ɑ s x eps ɔ ɔ l ə n t ɑ t ə s ɔ p m ɑ ɑ n t ɑ x
+dutch_140924_362693-2   b ə z ɔ x eps t ə n ə ə n l ə r ɑ r ə s ə n z ə k ʋ ɑ m ə n p ə j m ə j t ə r ə x eps t ɔ p ə ə n x ə x ə v ə n m ɔ m ə n t ə n ə k ɦ ɑ t ə r
+dutch_140924_362693-3   aː eps n v ɑ n k ə l ə j k ɦ ə l ə m ɑ ɑ l x ə ə n z ə n ə n ɔ m t ɑ t ə k n ə t ʏ ə t n ə t ə r l ɑ n t k ʋ ɑ m ə n ə ə x ə n l ə j k n ə ə t v ɑ n p l ɑ n ʋ ɑ s ɔ m n ə t ə r l ɑ n t s ə
+dutch_140924_362693-4   l ə s ɦ ə ə r t ə x ə v ə n m ɑ ɑ r t ɔ ə n j ɑ t ɔ ə n p ə t ɑ x eps t ə k m ə ə n ə k z ə ə v ɑ n n ɔ ʏ j ɑ
+dutch_140924_362693-5   l ɑ ɑ t ə k ɦ ə t p r ɔ p ə r ə n ə n j ɑ v ɔ n t ɦ ə t ɔ n t z ə t t ə n t l ə ʏ k ɦ ə p ə ə n l ə ʏ k
+dutch_140924_362693-6   
+dutch_140924_362693-7   
+dutch_140927_363452-1   ʋ ə j x ɑ ɑ n s ɑ m ə n ə ə n r ə s ɔ t t ɔ m ɑ k ə n m ɑ ɑ r ə ə n r ə s ɔ t t ɔ ə s ə ə x ə n l ə j k
+dutch_140927_363452-11   ɛ n p r ɔ t ə ə n ə n x r ɔ ɔ t v ə r s x eps ə l ə n ɑ l l ə s ə ə x ə n l ə j k ʋ ə l t ə n k ə k ə n ɦ ə t ʋ ɔ r t t ɦ ə t ʋ ɔ r t t
+dutch_140927_363452-12   t ə x ə n ʋ ɔ ɔ r t ə x ʋ ɔ r t t ɦ ə t ɔ ɔ k ʋ ə l ʋ ə ə r ə ə n p ə ə t j ə x ə p r ʏ ə k t ə n ɑ l x ə m ə ə n p r ɔ ɔ t t ɑ t ɦ ə t n ə ə t t ɑ t z ɑ l n ə ə t
+dutch_140927_363452-14   ɣ ɑ ɑ t t ʏ s v ə ɑ ɑ l t ə ə ʋ ɦ ɔ l ə x r ɑ ə n s ə n t ə t p r ɔ ɔ t ə n z ʏ s p r ɔ ɔ t ə n t ə x ə n ʋ ɔ ɔ r t ə x k ʏ n j ə ɔ ɔ k ɑ l
+dutch_140927_363452-17   m ə t s p ə l t ʋ ə p ə x ə n n ə n m ə t p ɑ p j p r ə ə t ʏ s t ʋ ə ə s t ʏ k j ə s
+dutch_140927_363452-18   t ʋ ə ə s t ʏ k j ə s t ʋ ə ə t ə ə n t j ə s k n ɔ f l ɔ ɔ k ɦ ɑ l v ə ʋ ɔ r t ə l ə n
+dutch_140927_363452-19   
+dutch_140927_363452-20   s j ɑ r l ɔ t t ə n k l ə ə n ə p l ɔ k j ə s x ə s n ə t ə n v ə ə r t ə x m ə l ə l ə t ə r ɔ l ə ə t ʋ ə ə ɦ ɔ n t ə r t
+dutch_140927_363452-3   m ɑ ɑ r t ə ə t ɑ l ə ɑ n ə n ʋ ɑ r ə n v r ɔ ə x ə r ɔ ɔ k ə n n ə t ə r l ɑ n t ə n ɦ ə t r ɔ m ə ə n s ə t ə j t p ə r k t ʏ s ə k n ə ə m ɑ ɑ n t ɑ t
+dutch_140927_363452-5   ɛ n ʋ ə x ə p r ʏ ə k ə n t ə t k ə ə r ə ə n x r ɑ ɑ n ʋ ɑ t t ʏ s ɑ l ɔ ə r ɔ ʏ t ə s
+dutch_140927_363452-8   ɣ ə n p l ə k t ə ɔ ə r x r ɔ ə n t ə s k ɔ m ə n ʋ ə ə r t ə r ʏ x ə n ɔ ɔ k t ə ɔ ə r
+dutch_140927_363452-9   ɣ r ɑ n ə n k ɔ m ə n ʋ ə ə r t ə r ʏ x ɔ u̯ eps ə x r ɔ ə n t ə s ɔ u̯ eps ə x r ɑ n ə n t ə ɔ r ə x ə n ə l ə
+dutch_140927_363458-1   p l ʏ s p ə r s ɔ n ə ə l n ɑ ɑ r ə r ɑ k ə n t ɑ ɑ r n ɑ ɑ s t n ɔ x ə ə n k ə ə r z ɔ n ɦ ɔ n t ə r t t ə r t ə x m ə l ə t ɑ ə r ə t r ɑ ə n ə r s ə n t ɑ n x ɑ ɑ t ɦ ə t ə n t ɔ t ɑ ɑ l
+dutch_140927_363458-10   i̯ s ə r ɑ l ə n ɑ ʏ x ʏ s t ʏ s z ə j n ə r p ɔ x ə n x ə n x ə t ɑ ɑ n ɔ m p ə j t ə ɑ m ə r ə k ɑ n ə n ə n ɦ ə t x ə v l ə ə t ə k ɔ m ə n z ɔ t ɑ t n ə t ə r l ɑ n t
+dutch_140927_363458-11   
+dutch_140927_363458-12   ɣ ə n x ɦ ə t v ə r ɦ ɑ ɑ l t ɑ t p r ə m ə ə r r ʏ t t ə ɦ ə v ə x t ə l ə ʏ r x ə s t ə l t z ɔ ʏ z ə j n x ə ʋ ə ə s t ɔ m t ɑ t t ə ɑ m ə r ə k ɑ n ə n
+dutch_140927_363458-13   
+dutch_140927_363458-14   l ə p ə ə t ə ə z ɔ ʏ t ə n ɑ m ə r ə k ɑ n ə n n ɔ x v ə r s ə n ɦ ə t x ə ɦ ə ʏ x ə n l ə x x ə n ə ɦ n ə t ə r l ɑ n x x ə n x ʋ ə l m ə t eps f s ɪ k s t i n s eps ə l ʏ x eps t
+dutch_140927_363458-15   i̯ n m ɑ ɑ r ʋ ə ə x ə r t ə n v ə r v ɔ l x ə n s t ə p ɔ m p ɑ r t ə r ə n ə n ʋ ə l t ə n ʋ ə l v ə r v ɔ l x ə n s ʋ ə l x ə ʋ ɔ ɔ n m ə ə p r ɑ
+dutch_140927_363458-16   t ə n ɔ v ə r v ɑ n ɑ l l ə s ə n n ɔ x ʋ ɑ t t ɑ t ɦ ə ə f t t ə ɑ m ə r ə k ɑ n ə n x ə ə r x ə r t m ɑ ɑ r t ɑ t z ɑ l n ʏ t ʏ s ɑ n t ə r s x
+dutch_140927_363458-17   
+dutch_140927_363458-18   
+dutch_140927_363458-2   s ɔ m s z ɔ n v ə ə r ɦ ɔ n t ə r t m ɑ n m ə l ə t ɑ ə r p ə r s ɔ n ə ə l n ɔ ʏ t ə ə x ə v ə x eps t v l ə ə x t ʏ ə x ə n t ə ə k ʏ n n ə n ɑ l v ɔ l x ə n t ə ʋ ə ə k ɑ l ʋ ɔ r t
+dutch_140927_363458-20   ɔ p p ɔ s ə t ə ə p ɑ r t ə j ə n t ə ə z ə j n ɦ ə t ə ə n s m ə t t ə s t r ɑ t ə x ə ə t ə ə ɦ ə t k ɑ p ə n ə t n ʏ k ə ə s t z ə j ɦ ə t m ə t ʏ ə t z ɔ n
+dutch_140927_363458-3   ɛ n ə n x ə z ə t p ɔ v ə n ə r ɑ k t ɑ t x ɑ ɑ n z ə t ɔ ə n p ɔ m m ə n x ɔ ɔ ə ə n z ə z ʏ l l ə n l ʏ x eps t s t ə ʏ n x ə v ə n ɑ ɑ n ə r ɑ k
+dutch_140927_363458-4   ɛ z ə ə n k ɔ ə r t ə s x eps ə x ə v ə x eps t s t r ɔ ə p ə n t ə ə s l ɑ ɑ x s r ɑ k ə n m ə t t ə ə s l ɑ m ə t ə s x eps ə s t ɑ ɑ t ɑ ɑ n t ə ə ə n z ə t z ə j n
+dutch_140927_363458-5   ɛ r f l ə n k ə ɔ n t ə r ɦ ɑ n t ə l ə n x ə n ə n v ɔ ɔ ɔ r p ə r ə ə ə t ə n x ə n v ɔ ɔ r ɑ f x ə x ɑ ɑ n v ɔ ɔ r ɑ l t ʏ s m ə t t ə ɑ m ə r ə k ɑ n ə n z ɔ
+dutch_140927_363458-6   
+dutch_140927_363458-8   ʋ ə l ʋ ə l x r ɑ ɑ x m ɑ ɑ r ɦ ə t k ɑ p ə n ə t z ɔ ʏ t ɔ x eps ɔ ɔ k ɦ ə ə l l ɑ n x ɦ ə p ə n x ə t ʋ ə j f ə l t ɔ v ə r m ə l ə t ɑ ə r ə s t ə ʏ n
+dutch_140927_363458-9   ɛ n t ə v r ɑ ɑ x ʋ ɑ ɑ r ʏ ə t t ɑ n t ə ə s t ə ʏ n z ɔ ʏ m ɔ ə t ə n p ə s t ɑ ɑ n ɑ x eps t ə r t ə s x eps ə r m ə n
+dutch_140927_363460-1   
+dutch_140927_363460-10   n ɑ t ʏ ʏ r l ə j k ə ə n ɦ ə ə l x r ɔ ɔ t v ə r s x eps ə l n ɑ t ʏ ʏ r l ə j k ʋ ɑ n t ə n n ə t ə r l ɑ n t v ɑ n t ə ə n ə k ɔ r n ɑ ɑ r t ə ɑ n t ə r ə k ɔ r t ɔ ə j ə m ə s s x eps ə ə n
+dutch_140927_363460-11   d r ə ə t r ə ə ʏ ʏ r t j ə s ə r ɔ v ə r m ə t t ə p ʏ s v ɑ n x r ɔ n ə n x ə n m ɑ ɑ s t r ə x eps t m ɑ ɑ r v ɔ ɔ r t ə r ə s t ə s ɦ ə t ɦ ə l ə m ɑ ɑ l n ə k s ə ə x ə n l ə j k m ɑ ɑ r ɦ ə ə r
+dutch_140927_363460-14   s ə ə z ɔ ə n k ɔ m ə n ə r s t ə ə t s p ə t ə r ə s p ə l ə r s p ə x ə n ʋ ɑ s ɦ ə t ʋ ə l j ɑ j ɑ n ə ə m ɑ n t k ə n t ə n ʋ ə ə ə x ə n l ə j k m ɑ ɑ r ʋ ə l t ə s p ə l ə r s
+dutch_140927_363460-16   f l ə n k ə p ɔ ɔ s t x ə x ə v ə n ə ə x ə n l ə j k ə n z ɔ z ə ə j ə t ɑ t ʋ ə l t ɑ t z ɔ l ɑ n t ə n x ə l ə ɦ ɑ ɑ r t ɔ ə x ə k ɔ m ə n
+dutch_140927_363460-17   ɔ m t ə n ɑ t ʏ ʏ r l ə j k j ɑ ɦ ə t z ə j n t ɔ x eps ɑ l l ə m ɑ ɑ l j ɔ n x ə n s t ə ə t ɔ x eps ɑ l l ə m ɑ ɑ l ə n t ə r n ɑ t ə ɔ n ɑ l s ɦ ə p p ə n x ə s p ə ə l t ə n t ə ə t ɔ x eps
+dutch_140927_363460-18   j ɑ n ɑ ɑ r ɑ ʏ s t r ɑ l ə ə ʋ ə l l ə n k ɔ m ə n ə n n ʏ z ə ə j ə ɔ ɔ k ə n n ə t ə r l ɑ n t t ɑ t n ʏ ɔ ɔ k x ɑ ɑ n t ə ə s t ɑ t x ə ʋ ɔ ɔ n s p ə l ə r s
+dutch_140927_363460-19   d ʏ s ə n n ə t ə r l ɑ n t n ɑ ɑ r ɑ ʏ s t r ɑ l ə ə ʋ ə l l ə n k ɔ m ə n ɑ l l ə ə n ə s ɦ ə t ɦ ə ə l m ɔ ə ə l ə j k ɔ m ə n t ə ɑ l ə ɑ x ʏ ə p ə n n ə n t ə k ɔ m ə n ʋ ɑ n t j ɑ
+dutch_140927_363460-2   
+dutch_140927_363460-5   n ɔ ʏ s ɔ ʋ ə ə s ɔ ɦ ə t ə s z ʋ ɑ ɑ r ʋ ɑ n t j ə v l ə ə x t t ə ə n ʏ ʏ r t j ə s ə n t ɑ t ə s z ə x m ɑ ɑ r v ɑ n ɑ f
+dutch_140927_363460-6   n ɑ ɑ r ə x j p t ə v l ə ə x ə n p ə j v ɔ ɔ r p ə ə l t z ɔ m ɔ ə t j ə ɦ ə t z ə ə n
+dutch_140927_363460-7   ɛ ə x ə n l ə j k ə n j ə k ɔ m t ə n ə ə n j ɑ ə n ə ə n j ɑ ə n ə ə n ɑ n t ə r ə t ə j t s ə p k ɔ m j ə ʋ ə ə r
+dutch_141001_364296-11   
+dutch_141001_364296-12   SIL n t ɑ t z ə j n p ə ɑ m ə n ʋ ɔ n ə n x ə n m ɑ ɑ r t ɑ n ʋ ə l m ə t ə v ə n ə ə n s t ʏ k j ə l ʏ z ə
+dutch_141001_364296-14   ɦ ə t ə s l ə f ə l ɔ n x l ə ɑ s ə z ɔ ɑ l s t ɑ t m ə t t ə m ə ə s t ə r ə t ə r ə m ə n t l ə v ə n x ə n ɑ ʏ s t r ɑ l ə ə
+dutch_141001_364296-15   i̯ n k l ɑ ɑ r z ə j n ə n ʋ ə ɦ ə p p ə n ɔ p z ə x eps ɑ l ə ə n ɑ ɑ r t ə x ə l ə j s t m ə t m ə n s ə n t ə ə ə n t ə r ə s s ə ɦ ə p p ə n
+dutch_141001_364296-16   m ɑ ɑ r ɦ ə t k ʏ n n ə n n ɑ t ʏ ʏ r l ə j k m ə ə r z ə j n t ʏ s ɦ ə t z ɑ l z ə k ə r ə ə t s z ə j n ʋ ɑ ɑ r ə k ɔ v ə r z ɑ l s p r ə k ə n t ə j t ə n s t ə ə m ə t t ɑ x
+dutch_141001_364296-17   
+dutch_141001_364296-18   z ə j n ə r v ə ə l m ə n s ə n m ə t v r ɑ x ə n ɔ v ə r n ɔ ʏ ɦ ɔ ə k ɑ n ə k t ɑ t n ɔ ʏ v ɔ ɔ r m ə z ə l f ɦ ə t p ə s t x ə p r ʏ ə k v ɑ n m ɑ k ə n
+dutch_141001_364296-19   
+dutch_141001_364296-2   ɔ k t ɔ p ə r ə s t ʏ s v ɔ l x ə n t ə ʋ ə ə k ə ə n ɔ p ə n t ɑ x s t ə l t n ə ə t ɑ l l ə ə n t ə t ə ʏ r ə n ɔ p ə n v ɔ ɔ r n ə t ə r l ɑ n t s ə s ə n ə ɔ r ə n m ɑ ɑ r ɔ ɔ k v ɔ ɔ r ɔ ʏ t ə r ə
+dutch_141001_364296-20   ɦ ɔ ə ə n ɦ ɔ ə t ə m ɑ n ɑ x m ə n t t ɑ ɑ r v ɑ n v ə r ɑ n t ə r t ɔ m t ʏ s ɔ p t ə v ə r x r ə j z ə n x t ʏ s z ə x m ɑ ɑ r v ɔ ɔ r t ə p ə r ə ə t ə n
+dutch_141001_364296-4   d ʏ s t ə ə ʋ ɑ ɑ r s x eps ə j n l ə j k ʋ ə l l ə n x ɑ ɑ n n ɑ t ə n k ə n ɔ v ə r ɦ ʏ n ɔ ʏ t ə r ə t ɑ x ə n ɦ ɔ ə z ə t ɑ t x ɑ ɑ n v ɔ ɔ r p ə ə r ə ə t ə n
+dutch_141001_364296-5   ɛ m ə k t ə n k t ɑ t t ə m ə ə s t ə m ə n s ə n v ɔ ɔ r n ɑ m ə l ə j k ʏ ə t t ə ə ɑ s t ə r n s ʏ p ʏ r p s
+dutch_141001_364296-6   
+dutch_141001_364296-7   
+dutch_141001_364296-9   z ə j n ə n ɦ ə t f ə ə t t ɑ t ə r n ə t ə r l ɑ n t s ə ɑ p p ə l t ɑ ɑ r t ɔ p ɦ ə t m ə n ʏ s t ɑ ɑ t z ɑ l t ɑ ɑ r z ə k ə r ʋ ɑ t t ə m ɑ k ə n ɦ ə p p ə n
+dutch_141001_364304-1   m ɔ r x ə n ə s f r ɑ n s ɦ ə r t ɔ x s ɔ n z ə t ɑ ɑ l ə k s p ə r t
+dutch_141001_364304-10   ɛ v ə n ə ə n ə ə n t j ə x ɑ ɑ n ʋ ɑ n t ə l ə n ə n ɑ l s z ə t ə r ʏ x z ə j n z ə ə ə k t ə ə s
+dutch_141001_364304-11   aː eps n k ɔ m ə n ə n t ə ə z ə x t ə ɦ p ɑ p ɑ j ə m ɔ ə t ə v ə n k ɔ m ə n ʋ ɑ n t ə ɦ
+dutch_141001_364304-16   b ɔ x eps t ə n k r ɔ n k ə l t ə n ɑ l s ə k l ə n k s l ɑ n x s m ə k ə j k t ɑ n z ə ə ə k ə n ɔ r m
+dutch_141001_364304-17   s t ə ə l ə ɑ f x r ɔ n t ə n m ə t t ɑ ɑ r ɔ n t ə r p r ɑ x eps t ə x p l ɑ u̯ eps ʋ ɑ t ə r ə k l ə x t ə k r ə ə p ə l ə n
+dutch_141001_364304-18   i̯ n t ə p ʏ ə k ə n ə ə t ə r ə k ə ə r v r ɑ ɑ x ə k m ə ɑ f ɦ ɔ ə x ɑ ɑ n z ə r ə ɑ x ə r ə n
+dutch_141001_364304-19   l ɔ v ə ə s ə n t ɦ ə ɑ ə r m ɔ r x ə n ɔ p eps r t i ɛ ɫ v i r eps r ɔ x r ɑ m m ɑ ə ɦ
+dutch_141001_364304-2   t ə z ə ə n m ə t z ə j n t ɔ x eps t ə r ə n ɦ ə t eps r t i ɛ ɫ v i r eps r ɔ x r ɑ m m ɑ l ɔ v ə ə s ə n t ɦ ə ɑ ə r
+dutch_141001_364304-20   t ə z ə ə n ə n n ə t ə r l ɑ n t ə n j ə t ə n k t n ɑ t ʏ ʏ r l ə j k ɔ k ə ə t ɑ n ʋ ə l ə k z ə l f ɔ ɔ k ʋ ə l ə v ə n z ə ə n ɦ ɔ ə t ə t ɑ l l ə m ɑ ɑ l ə s ɑ f x ə l ɔ p ə n
+dutch_141001_364304-3   ʋ ə z ɔ n t ə n ɑ l ə ə r t ə r z ə j n v ə r ɦ ɑ ɑ l ʏ ə t ɔ v ə r t ə z ə ɔ n v ə r ʋ ɑ x eps t ə ɔ n t m ɔ ə t ə n x m ɑ ɑ r ɦ ə ə r n ɔ x ə v ə n ə ə n k l ə ə n s t ʏ k j ə
+dutch_141001_364304-4   v ɔ ɔ r ɦ ə t x ə v ɑ l j ə ɦ ə t n ə ə t ʋ ə s t f r ɑ n s ə m ə x r ə ə r t ə ə ə n j ɑ ɑ r x ə l ə t ə n m ə t z ə j n t ʋ ə ə t ə x ə z ə n n ɑ ɑ r
+dutch_141001_364304-9   m ɑ ʏ t ə n t ə ə s t ɑ t ə s m ə j n v r ɔ u̯ eps ə n z ɔ ɔ n t ə ə z ə j n
+dutch_141001_364308-10   
+dutch_141001_364308-14   ɦ ə t x ɑ ɑ t v ɑ n ɑ f t ə n ɔ ɔ r t k ɑ n t v ɑ n t ə ɦ ɑ r p ɔ ʏ r p r ə t x ə ə n t ɑ n x ɑ ɑ n ʋ ə t ə x ə l ə j k ɔ v ə r t ə ɦ ɑ r p ɔ ʏ r p r ə t x ə
+dutch_141001_364308-15   ɦ ə p p ə n ʋ ə ɔ ɔ k ə ə n ə ə x ə n s t ɑ r t t ə j t m ə t ɦ ə t ɔ r ɑ n j ə t ə ɑ m ɔ m k ʋ ɑ r t v ɔ ɔ r ɑ x eps t s ɔ x eps t ə n t s ə n t ɑ n x ɑ ɑ n ʋ ə
+dutch_141001_364308-16   
+dutch_141001_364308-17   
+dutch_141001_364308-18   z ə x t z ə x j ə j j ʏ l l ə ə p ə l ə t ɔ n ə s v ɔ l m ɑ ɑ r k ʏ n n ə n m ə n s ə n z ə x eps t ɑ n t ɔ x eps n ɔ x ɔ p x ə v ə n
+dutch_141001_364308-2   
+dutch_141001_364308-3   
+dutch_141001_364308-5   ɔ n t ə r t ə ə t v ɑ n ɦ ə t s j t n ə j r ə t ə s f ə s t ə v ɑ l ʋ ɑ t t ʋ ə ə ʋ ə k ə n l ɑ n x t ʏ ʏ r t v ɑ n
+dutch_141001_364308-6   d ə r t ə ə n t ɔ t z ə s ə n t ʋ ə n t ə x ɔ k t ɔ p ə r t ʋ ə ə ʋ ə k ə n l ɑ n x f ə s t ə v ɑ l m ə t ɑ l l ə r l ə ə
+dutch_141001_364308-7   
+dutch_141001_364308-9   j ɑ t ɑ t k l ɔ p t t ʋ ɑ ɑ l f k ə l ɔ m ə t ə r ə s v ɔ ɔ r ɑ l ə s v ɔ ɔ r ɑ l m ə ə l ɔ ɔ p f ə ə t s ə n ə n ʋ ə j t ɔ ə n v ɔ ɔ r ɑ l
+dutch_141001_364310-2   d ɑ t z ə x r ɔ t ə p r ɔ p l ə m ə n ɦ ə p p ə n m ə t ʋ ɑ t ə r s t ɔ r ə n x ə n ə n j ɔ ɦ ɑ n n ə s p ʏ r x ə n ɔ m s t r ə
+dutch_141001_364310-3   k ə n ɔ m s t r ə k ə n ə n ɑ l ʋ ə k ə n l ɑ n x ʋ ɔ r t t ɦ ə t l ə v ə n t ɑ ɑ r z ʏ ʏ r x ə m ɑ ɑ k t ɦ ə t ə s ə ə n v ə r ɔ ʏ
+dutch_141003_364898-10   ɔ n t ə r ɦ ɑ n t ə l ə n x ə n t ɑ ɑ r ɔ v ə r z ə j n ə n ɦ ə t t ə ə p s t ə x ə ɦ ə ə m x ə v ɔ ə r t ɔ m t ə v ɔ ɔ r k ɔ m ə n t ɑ t ə r ɔ ɔ k m ɑ ɑ r ə ə t s
+dutch_141003_364898-11   
+dutch_141003_364898-12   t ɔ ə n ə ə ɦ ə t n ə ə u̯ eps s p ə k ə n t k ɔ n m ɑ k ə n ɦ ə j z ə x t z ə ə v ɑ n t ə z ə ə n v ə s t ə r ə n x v ɑ n
+dutch_141003_364898-13   ɣ ɔ ɔ x l ə x ɔ ɔ x l ə l ɑ ɑ t z ə ə n t ɑ t ɦ ə t n ɔ ɔ r t ə n ə ə n ɑ ɑ n t r ə k k ə l ə j k x ə p ə ə t ə s ɔ m ə n t ə ə n v ə s t ə r ə n
+dutch_141003_364898-14   
+dutch_141003_364898-16   
+dutch_141003_364898-17   
+dutch_141003_364898-18   b ə l ɑ n x r ə j k ɔ f ə n ə ə t ə r x ə v ɑ l v ɔ ɔ r ɦ ə t n ɔ ɔ r t ə n ə s t ɑ t ɦ ə ə l ə r x x ɔ ə t j ɑ ə s t ɑ t t ɑ n z ɔ n x ɔ ə ə ə l
+dutch_141003_364898-19   
+dutch_141003_364898-2   
+dutch_141003_364898-20   SIL ə s x eps ə k p ɑ r ə x l ɑ s v ə z ə l k ɑ p ə r l s l ə v ə r ə n x z ə k ə r ɦ ə ə t v ɑ n s t r ɔ ɔ m ə n t ɑ n ɔ ɔ k ɦ ə ə l p ə l ɑ n x r ə j k
+dutch_141003_364898-3   
+dutch_141003_364898-5   t r ʏ m p ɔ u̯ eps ə n v ə ə r v ə r t ə ə p ə n x ə n ɦ ɔ ɔ x m ə t t ə ɔ m v ɑ n x v ɑ n ʋ ə l v ə ə r t ə x v ɔ ə t p ɑ l v ə l t ə n ɦ ə t ə s ə ə n
+dutch_141003_364898-6   k n ɔ ɔ p p ʏ n t v ɔ ɔ r ə n t ə r n ə t t ɑ t ɑ t ɑ t ə ə n ə n v ə s t ə r ə n x v ə r x t v ɑ n z ə k ə r z ə s ɦ ɔ n t ə r t m ə l j ɔ ə n
+dutch_141003_364898-7   eps øː r ɔ l ə v ə r t t ə r ə x ə ɔ ɦ ɔ n t ə r t v ə j f t ə x v ɔ l t ə j t p ɑ n ə n ɔ p ə n t ɑ n m ɔ ə t j ə t ə n k ə n
+dutch_141003_364898-8   
+dutch_141003_364898-9   ɛ p ɑ n ə n ə n t ə p ɔ u̯ eps t ʏ s t ɑ t ə s n ɔ x ɑ l ʋ ɑ t t ə k ɔ m s t v ɑ n x ɔ ɔ x l ə n ɑ ɑ r x r ɔ n ə n x ə n k ɔ m t ɑ l s ə ə n v ə r r ɑ s s ə n x
+dutch_141004_365060-1   m ɑ ɑ r v ɔ ɔ r t ə v ə r ɑ n t ə r ə n x n ʏ ə ə n s ə ə n k ə ə r t j ə ɔ p ə ə n z ɑ t ə r t ɑ x v ɑ n t ɑ ɑ x ɦ ɔ r ə n ʋ ə v ɑ n f r ɑ n s
+dutch_141004_365060-10   d ɔ x eps t ə r t ə ə v ɔ ɔ r ɦ ə t ə ə r s t n ɑ ɑ r s x eps ɔ ɔ l x ɑ ɑ t ə n t ə x ə l ə j k v ə r t ə l t ɦ ə j ɔ n s
+dutch_141004_365060-11   ɔ v ə r t ə x r ɔ t ə s t ɑ p p ə n v ɑ n t ə ə k l ə ə n ə p ə ə n t j ə s ɦ ə t x ə t ə x eps t ɔ m s p ɑ n t
+dutch_141004_365060-12   ɦ ɑ ɑ r ɦ ə l ə l ə v ə n v ɑ n t ə ʋ ə ə x t ɔ t ɦ ɑ ɑ r z ə l f s t ɑ n t ə x ɦ ə ə t ɑ l s z ə x r ɔ ɔ t ə s ɦ ə j z ə ə t n ə ə t ɑ l l ə ə n ɦ ə t k ə n t
+dutch_141004_365060-13   m ɑ ɑ r ɔ ɔ k ɦ ə t t ɔ ə k ɔ m s t ə x ə m ə ə s j ə z ə j n k l ə ə n ə t ɔ x eps t ə r t j ə l ə ə f t n ɔ x ə n t ə
+dutch_141004_365060-14   v ə ə l ə x ɦ ə ə t v ɑ n ə ə n p ə k ə n t ə t ɦ ʏ ə s ə n ə ə n ə ə u̯ eps ə x ɦ ə t ə n ə n ɦ ə t m ə ə s j ə
+dutch_141004_365060-15   v ɑ n s t r ɑ k s s t ɑ ɑ t ə n t ə s t ɑ r t p l ɔ k k ə n v ɔ ɔ r ɦ ə t v ɔ l ʋ ɑ s s ə n l ə v ə n m ɑ ɑ r t ə v ɑ t ə r ə n m ɔ ə t ə r
+dutch_141004_365060-16   d ə ə ɦ ə r ə n n ə r ə n z ə x eps ɦ ə t v ə r l ə t ə n v ɑ n s t r ɑ k s ə n t ə t ɔ ə k ɔ m s t v ɑ n n ʏ n ʏ ɑ l v ɔ ə l ə n
+dutch_141004_365060-17   z ə ɦ ə t ɦ ə ə m ʋ ə ə v ɑ n s t r ɑ k s n ɑ ɑ r ɦ ə t m ɔ m ə n t v ɑ n n ʏ ə n ʋ ə j ʋ ə j k ə j k ə n m ə t
+dutch_141004_365060-18   
+dutch_141004_365060-19   s ɔ n n ə t ə n v ɔ ə l ɦ ɔ ə t ə t ə j t ə r ɔ n v ə r p ə t t ə l ə j k ə n v ɔ ɔ r p ə j x ɑ ɑ t
+dutch_141004_365060-2   eː eps n x ə t ə x eps t ə ə n ɔ n ʋ ɑ ɑ r s x eps ə j n l ə j k s ə m p ə l s t ʏ k j ə t ɑ ɑ l ʋ ɑ t j ə t ɔ x eps ɑ ɑ n ɦ ə t t ə n k ə n z ə t
+dutch_141004_365060-20   ʋ ɑ n t ʋ ɑ t ʋ ɑ s k ɔ m t n ɔ ɔ ə t n ɔ ɔ ə t m ə ə r t ə r ʏ x ə ə n ɔ x ə n p l ə k ɔ p ə n
+dutch_141004_365060-3   
+dutch_141004_365060-4   k l ə ʏ t ə r s x eps ɔ ɔ l ɦ ə ə m ʋ ə ə p ə j t ɔ ə v ɑ l v ɔ
+dutch_141004_365060-5   n t ə k ɦ ə t x ə t ə x eps t k l ə ʏ t ə r s x eps ɔ ɔ l v ɑ n ə v ɔ t ə ʋ ə j s ə ə n ə x eps t t ɑ ɑ l k ʏ n s t ə n ɑ ɑ r
+dutch_141004_365060-6   b ə ɦ ɑ l v ə x r ɑ p p ə x ə s x eps r ə ə f ɦ ə j ɔ ɔ k s ə r ə ə ʏ z ə t ə k s t ə n z ɔ ɑ l s t ə t x ə t
+dutch_141004_365060-7   i̯ x eps t j ɑ ɦ ə t l ə j k t ə ə n v ɔ ʏ t ə x ɦ ə t t ʏ ʏ r t z ə l f s ʋ ə l ə ə n t j ə v ɔ ɔ r j ə
+dutch_141004_365060-8   m ə r k t t ɑ t j ə ə ə n ɦ ə ʏ s x ə t ə x eps t ɑ ɑ n ɦ ə t l ə z ə n p ə n t z ɔ s ə m p ə l z ə j n t ə ʋ
+dutch_141004_365060-9   oː eps r t ə n ə n z ɔ n ɑ t ʏ ʏ r l ə j k r ə j m ə n r ə t m ə t ə t ə x eps t ə r r ə x eps t z ə x eps t ɔ t z ə j n
+dutch_141004_365064-1   
+dutch_141004_365064-11   m ɑ ɑ r v ɑ n ɑ f n ɔ v ə m p ə r t ɔ t ə n m ə t m ɑ ɑ r t ʋ ɑ s ɦ ə t j ɑ ʋ ɑ s ɦ ə t z ʋ ɑ ɑ r ə n t ə m ə n s n ə ə u̯ eps ə n s ɔ m s n ə ə t ə ə n s
+dutch_141004_365064-12   t r ɑ ə n ə n t ɔ ɔ r z ə x m ɑ ɑ r t ɔ ɔ r ɦ ə t ʋ ə ə r t ɔ ɔ r ɦ ə t ə j s ɔ p ɦ ə t v ə l t ə n t ɑ n k ɔ m j ə ɦ ə ə r ə ɦ z ə x m ɑ ɑ r p ə j ɦ ə t ɑ n t ə r ə
+dutch_141004_365064-13   œy̯ eps t ə r s t ə ɔ m t ɑ t j ə z ə x m ɑ ɑ r m ə t t ə r t ə x x r ɑ t ə n ə v ə n ə n t ə m ə t t ɑ x m ɔ ə t t r ɑ ə n ə n ɔ f s ɑ v ɔ n t s
+dutch_141004_365064-14   eː eps n ʋ ə t s t r ə j t ɦ ə p t m ə t p l ʏ s t ə r t ə x t ʏ s j ɑ ʋ ɑ t t ɑ t p ə t r ə f t ə s ɦ ə t v ɑ n ɦ ə t ə n ə n ɑ ɑ r ɦ ə t ɑ n t ə r ə ʏ ə t ə r s t ə
+dutch_141004_365064-15   
+dutch_141004_365064-16   v ɑ n n ə t ə r l ɑ n t p ə j ə s l ɑ k ɑ m p ə ɔ ə n v ɑ n p ɔ l ə n t ʏ s t ə t j ɑ ɑ r ʋ ɔ r t t ɦ ə t k ɑ m p ə ɔ ə n m ə t n ə ʋ
+dutch_141004_365064-18   SIL l ʏ p s ə n t ə ɔ p p ɔ u̯ eps z ə x m ɑ ɑ r t ə ə ɦ ə t ɑ l l ə m ɑ ɑ l m ɔ ə t ə n x ɑ ɑ n t ɔ ə n ɔ p ɦ ɔ x ə r n ə v ə ɑ ʏ
+dutch_141004_365064-19   m ɑ ɑ r ə j ɑ ə ə n t ə n x ʋ ɑ t m ə j t ɑ ɑ r ə n ɔ ɔ k ɦ ə ə f t ɑ ɑ n x ə s p r ɔ k ə n ə s ɦ ə t z ə x m ɑ ɑ r
+dutch_141004_365064-2   
+dutch_141004_365064-5   v ɔ ɔ r l ɔ p ə x j ɑ ɦ ə p ə k ɦ ə t x ɔ ə t n ɑ ɑ r m ə j n z ə n ə n m ə j n f ɑ m ə l ə ə ɦ ə ə f t ɦ ə t ɔ ɔ k x ɔ ə t n ɑ ɑ r ɦ ɑ ɑ r z ə n t ʏ s t ɑ t ə s ɑ l l ə m ɑ ɑ l p ɔ s ə t ə ə f
+dutch_141004_365064-7   ɔ p z ə x eps v ɑ l t ɦ ə t ʋ ə l m ə ə ə k t ə n k k ʏ ɑ ə n t ə n s ə t ə ə t z ə x m ɑ ɑ r m ə t ʋ ɑ t ə k v ɔ ɔ r ɦ ə ə n x ə ʋ ə n t p ə n x ə ʋ ə ə s t t ɑ t
+dutch_141004_365064-8   ɦ ə t ɔ p z ə x eps ʋ ə l m ə ə v ɑ l t ɦ ə t ə s ə l k j ɑ ɑ r ə v n ə k ə j k m ɑ ɑ r ɦ ɔ ə ɦ ə t v ɔ ə l t ə k ɦ ə p x ə ə n l ɑ s t v ɑ n p l ə s s ʏ r ə s ə n t ɑ t s ɔ ɔ r t
+dutch_141011_366499-11   
+dutch_141011_366499-12   v ə l t ɦ ɔ v ə n v ə n l ɔ ə n n ə ə u̯ eps ə x ə ə n ʋ ə ə x eps t ɑ l l ə n ə t ə r l ɑ n t s ə s t ə t ə n x ə ɦ ɑ t
+dutch_141011_366499-14   t ə x ɑ ɑ n n ɑ ɑ r ɑ ʏ s t r ɑ l ə ə ɦ ɔ p ə l ə j k v ɔ l x ə n t j ɑ ɑ r v ɔ ɔ r ə ə n v ɑ k ɑ n t ə ə m ɑ ɑ r ɑ n t ə r s k ɔ n t ə n ʋ ə j ə x eps t
+dutch_141011_366499-19   t ɦ ə ɑ t ə r ə n ɦ ə t ʋ ɑ s z ɔ l ə ʏ k ə n ʋ ə ɦ ə p p ə n ə ə n ɑ ʏ s t r ɑ l ə s x eps ə k ɔ ɔ r ɔ v ə r x ə v l ɔ x ə n
+dutch_141011_366499-20   
+dutch_141011_366499-7   s t ə k k ə l ə ʏ k ʋ ə ɦ ə p p ə n z ɔ x ə n ɔ t ə n m ə t ɦ ə t p ʏ p l ə ə k ə n z ə ʋ ɑ r ə n ɑ l l ə m ɑ ɑ l z ɔ ə n t ɦ ɔ ʏ s ə ɑ s t ɦ ə t ʋ ɑ s ə x eps t ɦ ɑ r t s t ə k k ə l ə ʏ k
+dutch_141022_368669-1   eː eps n m ɔ ə ə l ə j k ə m ɑ n f r ɑ n s ɦ ə r t ɔ x
+dutch_141022_368669-10   l ə j k ə m ɑ n v r ɑ ɑ x t t ə ə n ə t ɑ m ə ɑ ɑ n t ə ɑ n t ə r ə ɔ ɦ m ə n s ə n p ɑ m ɦ ə l ə
+dutch_141022_368669-11   m ɑ ɑ l r ɑ ɑ k ʋ ɑ t ə ə n ɦ ə r k ə n p ɑ r ə s ə t ʏ ɑ t ə ə ə n ʋ ɑ t ə ə n s ʏ p t ə ə l s t ʏ k j ə t ɑ ɑ l
+dutch_141022_368669-12   SIL ɑ n t ɦ ə t p ə l ɑ n x r ə j k s t ə s t ʏ k j ə v ɑ n t ə z ə v r ɑ ɑ x ə s ɔ ɔ k z ɔ n t ə t ɑ m ə s
+dutch_141022_368669-13   z ɔ ʏ n ɔ ɔ ə t t ʏ r v ə n v r ɑ x ə n ɦ ə ə f t ʏ ə ə n m ɔ ə ə l ə j k ə m ɑ n ʋ ɑ n t ɦ ɑ ɑ r l ɔ t x ə n ɔ t ə z ɔ ʏ m
+dutch_141022_368669-14   ɛ t ə ə n x ə v r ɑ ɑ x t ɦ ə p p ə n ɦ ɔ ə z ɔ ɦ ɔ ə p ə t ɔ ə l t ʏ j ɑ z ə x z ɔ ə ə t s v r ɑ ɑ x j ə n ə ə t
+dutch_141022_368669-15   ɦ ə m ɑ ɑ r t ə t ɔ ə v ɔ ə x ə n x v ɑ n ɔ ɔ k z ɔ n v ə r r ɑ ɑ t t t ə p ə t ɔ ə l ə n x v ɑ n t ə v r ɑ ɑ x
+dutch_141022_368669-16   SIL ə v r ɑ ɑ x t n ə ə t ɔ f t ə m ɑ n m ɔ ə ə l ə j k ə s j ɑ t ɑ t z ə ə t z ə z ə l f ʋ ə l m ɑ ɑ r z ə v r ɑ ɑ x t
+dutch_141022_368669-17   d ʏ s x ə ə n ə x eps t ə v r ɑ ɑ x ʋ ɑ n t z ə ʋ ə ə t ɦ ə t ɑ n t ʋ ɔ ɔ r t ɑ l ɔ ɔ k z ɔ n p ə t ə k ə n t
+dutch_141022_368669-18   j ɑ j ɑ t ɑ t ɦ ə p ə k ɔ ɔ k z ɔ ɑ l s ɦ ə p j ə ɔ ɔ k z ɔ n l ɑ s t v ɑ n ʋ ə n t ə r t ə n ə n
+dutch_141022_368669-19   ɔ f ɦ ə p t ʏ ɔ ɔ k z ɔ n z ə n ə n k ɔ f f ə ə j ɑ z ə x ʋ ɑ t ə ə n s ʏ p t ə ə l v ə r s x eps ə l ɦ ə
+dutch_141022_368669-2   z ə x t t ɑ t ɔ p t ə x ə k s t ə p l ɑ ɑ t s ə n k ɔ m j ə ə n t ə r ə s s ɑ n t ə t ɑ ɑ l v ə r s x eps ə j n s ə l ə n t ə x ə n z ə l f s ɔ p ɦ ə t t ɔ ə l ə t v ɑ n
+dutch_141022_368669-20   ɛ n ə k v r ɔ ə x m ə ɑ f ɔ f t ɑ t v ə r s x eps ə l t j p ə r ə n t ʋ ɑ s v ɔ ɔ r ɔ n z ə t ɑ ɑ l k ʏ n j ə t ɑ t
+dutch_141022_368669-3   d ɑ ɑ x n ə ə m t ɦ ə j z ɔ n t ɑ ɑ l v ə r s x eps ə j n s ə l ɔ n t ə r t ə l ɔ ə p t ɑ t ɑ ɑ n x ə ə f t ɦ ɔ ə s ʏ p t ə ə l ɦ ə t n ə t ə r l ɑ n t
+dutch_141022_368669-4   eː eps n v ɑ n t ə k l ə ə n ə x ə n ɔ ə x ə n s t ə ə ɔ n s l ə v ə n ɔ p v r ɔ l ə j k ə n ə s t ə p ə s x eps
+dutch_141022_368669-5   ɛ l k ə t ɑ x ʋ ə ə r ə ə n n ə ə u̯ eps ə v ɔ n t s t t ə k s t ə n p ə ə l t z ɔ n ə t ə r l ɑ n t s ɑ l s ɦ ə t
+dutch_141022_368669-6   
+dutch_141022_368669-7   v ə ə r ɔ ʏ t ə m ə n s ə n ɔ p r ə x eps t ə s t ɔ ə l ə n ə n t ə ʋ ɑ x eps t k ɑ m ə r ɔ f z ɔ
+dutch_141022_368669-8   t ʋ ə ə v ɔ r m ə l ɔ z ə ɔ ʏ t ə r ə t ɑ m ə s z ə t t ə n ə ə t ə r r ə x eps t s v ɑ n ə ə n k ɑ l ə ɔ ʏ t ə m ɑ n
+dutch_141022_368669-9   d ə v r ɔ u̯ eps ə n p ʏ ə x ə n z ə x eps v ɔ ɔ r l ɑ n x s n ɑ ɑ r ə l k ɑ ɑ r t ɔ ə ə ɦ ɦ ə ə f t ʏ ɔ ɔ k z ɔ m ɔ ə ə
+dutch_141119_374371-10   ɦ ɑ t ʏ ɦ ə m ʋ ə l l ə n v ə r r ɑ s s ə n ɦ ə t ə s t ə v ə r l ə t ə n t ə j t ə n ɦ ɑ t t ə ə ɔ n s ɔ p t ə v ə r k ə ə r t ə p ə ə n z ə t
+dutch_141119_374371-11   ʋ ɑ n t j ə k ʏ n t ʋ ə l t ʏ ə z ə n t z ə n n ə t j ə s v ə r z ə n n ə n m ə t ɦ ɔ ə ɦ ə p t ʏ ɦ ə m ɦ ɔ ə ɦ ə p t ʏ ɦ ə m
+dutch_141119_374371-12   l ə r ə n k ə n n ə n ɔ f ɦ ɔ ə ɦ ə p t ʏ ɦ ə m ɔ p z ə j n n ʏ m m ə r x ə z ə t m ɑ ɑ r ɦ ɔ ə ɦ ɑ t ʏ ɦ ə m t ɑ t ə s t ɔ x eps
+dutch_141119_374371-13   n ɔ x ə n ə x z ə n s v r ə ə m t p ə x ə n v ɔ ɔ r ə ə n x ə ʋ ɔ n ə z ə n ɦ ɔ ə ɦ ɑ t ʏ ɦ ə m x r ɑ ɑ x j ɑ t ɑ t l ə j k t
+dutch_141119_374371-14   ʋ ɑ t m ə ə r z ə k ə r ɦ ə ə t t ə p r ə n x ə n ɔ ɔ k ɦ ə ə r z ɔ ʏ j ə v ə r ʋ ɑ x eps t ə n ɦ ɔ ə ɦ ə p t ʏ ɦ ə m x r ɑ ɑ x m ɑ ɑ r
+dutch_141119_374371-15   ɣ r ɑ ɑ x ɦ ə p p ə n p ə t ə k ə n t x ə ʋ ɔ ɔ n ə ə t s ʋ ə l l ə n t ʏ s ɦ ɔ ə ʋ ə l t ʏ ɦ ə m m ɑ ɑ r n ə t ɑ l s j ə t ə n k t
+dutch_141119_374371-16   ɑ x eps t ə ə k ɑ n t x ɑ ɑ t ɦ ə t t ʏ s ʏ ə t t ɑ n k ɔ m t ɦ ə t v ɔ l x ə n t ə ʋ ɔ ɔ r t x ə ɦ ɑ t ɦ ɔ ə
+dutch_141119_374371-17   ɦ ɑ t ʏ ɦ ə m x r ɑ ɑ x x ə ɦ ɑ t ɦ ə ə ə k ɦ ə p t ʏ s ə ə t s x ə k r ə x ə n ʋ ɑ t ə k l ə ə v ə r n ə ə t
+dutch_141119_374371-18   ɣ ə ɦ ɑ t ɦ ɑ t m ɑ ɑ r ə k ɦ ə p t ɔ x eps n ɔ x n ə k s x ə ɦ ɑ t m ə j n ɦ ɑ r ə n k j ə m ɔ ə t n ɔ x k ɔ m ə n
+dutch_141119_374371-19   
+dutch_141119_374371-2   ʋ ə x ɑ ɑ n ə v ə n n ɑ ɑ r f r ɑ n s ɦ ə r t ɔ x s ə n t ə ə p r ɑ ɑ t ɔ v ə r ɦ ɔ l l ɑ n t s ə n ə ə u̯ eps ə v ɑ n t ɑ ɑ x
+dutch_141119_374371-20   z ɔ ʏ z ə t ɑ n ə x eps t ʋ ə l l ə n ʋ ə t ə n ʋ ɑ t ə k s t r ɑ k s l ə ə v ə r x ə ɦ ɑ t ɦ ɑ t ɦ ə t m j s t ə r ə ə x r ɔ ə ə t
+dutch_141119_374371-3   ɦ ɔ ə ɦ ɑ t ʏ ɦ ə m x r ɑ ɑ x p ə s t ə l ə k ə ə n ɦ ɑ r ə n k ə ə
+dutch_141119_374371-4   b ə j ɦ ə t v ə s s t ɑ l l ə t j ə z ə x t t ə ʏ ə t x ə p r ə ə t ə j ɔ n x ə t ɑ m ə ɔ p ə ə n n ɑ m ɑ ɑ k p l ɑ n t
+dutch_141119_374371-5   v r ə ə n t ə l ə j k t ɔ ɔ n ə ɦ ɦ ɔ ə ɦ ɑ t ʏ ɦ ə m x r ɑ ɑ x x ə ɦ ɑ t ʋ ə l l ə n ɦ ə p p ə n ə n ɑ l s ə k ə v ə n ɑ ɑ r z ə l z ə x t z ə
+dutch_141119_374371-6   m ə v ɔ ɔ r ʏ ə t j ə ɑ ʏ x ʏ r k ə ə v ɔ r k ə ə v ə r r ə k t ə n k ə k ə n ə ə n s t ɑ t ə s n ɔ ʏ n ə t z ɔ n z ə n n ə t j ə
+dutch_141119_374371-7   
+dutch_141119_374371-8   r ə x eps t s t ə ə t s ʋ ə ə r ɔ p ə ə n ɑ n t ə r v ə r k ə ə r t p ə ə n z ə t j ə p ə x ə n t x ə ʋ ɔ ɔ n m ə t ɦ ɔ ə ɦ ɑ t ʏ ɦ ə m
+dutch_141119_374371-9   SIL ɑ t ɑ n z ɔ ʏ j ə ə ə n v ə r v ɔ l x v ə r ʋ ɑ x eps t ə n ɑ l s ɦ ɔ ə ɦ ɑ t ʏ ɦ ə m t ɔ x eps n ɔ x x ə v ɔ n t ə n ɔ f ʏ
+dutch_141119_374393-10   ɦ ɑ ʏ p t m ɑ n n ɔ ʏ t ʏ ə t ə l ə j k ə r k ɑ n ɦ ə t n ə ə t t r ɔ u̯ eps ə n s ɔ n s ʋ ɔ ɔ r t ɦ ɔ ɔ f t ə s z ə l f ɔ ɔ k v ə r ʋ ɑ n t
+dutch_141119_374393-11   
+dutch_141119_374393-12   
+dutch_141119_374393-13   
+dutch_141119_374393-14   ɦ ə t l ɑ n t t ə z ə ə ə n s t ə ə k t ə r z ə j n t ʋ ə ə s ɔ ɔ r t ə n k ɑ p ə t ə ə n s t ə l ə x ə r k ɑ p ə t ə ə n
+dutch_141119_374393-15   s s t ɑ ɑ n v ə r s ə ə r t m ə t t r ə ə s t ə r r ə n ɑ ɑ n ɦ ə t ɦ ɔ ɔ f t v ɑ n t r ə ə p ə l l ə t ɔ n s s ɔ l t ɑ t ə n
+dutch_141119_374393-16   ɛ n t ə z ə ə k ɑ p ə t ə ə n s t ə ə s t ɑ ɑ n ɑ ɑ n ɦ ə t ɦ ɔ ɔ f t v ɑ n ə ə n s x eps ə p j ɑ ɔ ɔ r s p r ɔ n k ə l ə j k ʋ ɑ s z ɔ
+dutch_141119_374393-17   n s x eps ə ə p s k ɑ p ə t ə ə n n ə ə t m ə ə r t ɑ n t ə l ə x ə r ɦ ɔ ɔ f t m ɑ n v ɑ n t ə z ə ə s ɔ l t ɑ t ə n ɔ p ə ə n ɔ ɔ r
+dutch_141119_374393-18   l ɔ x s s x eps ə p z ə x m ɑ ɑ r t ə m ɑ r ə n ə ə r s m ɑ ɑ r l ɑ t ə r ʋ ə r t t ə ə k ɑ p ə t ə ə n t ə p ɑ ɑ s v ɑ n ɦ ə t ɦ ə
+dutch_141119_374393-19   l ə s x eps ə p ə n t ə ɔ ʏ t ə s x eps ə p p ə r m ɔ ə s t x ə n ɔ ə x ə n n ə m ə n m ə t ɔ n t ə r x ə s x eps ə k t ə p ɔ s ə t ə ə s ɔ
+dutch_141119_374393-2   ɛ r k ɔ m t f r ɑ n s l ɑ t ə j n ə n t ʏ ə t s ɑ ɑ n t ə p ɑ s ə n k ɑ p ə t ə ə n r ɔ p m ɑ x ɔ ɔ k n ə ə t ɔ n t p r ə k ə n m ɔ
+dutch_141119_374393-20   f k l ə ə n ə s x eps ə ə p j ə s j ɑ ə n k ɑ p ə t ə ə n r ɔ p ɦ ə v ɑ n ɦ ə t ɔ ʏ t ə s t r ə p v ə r ɦ ɑ ɑ l
+dutch_141119_374393-3   ɔ ə ʋ ɔ r t ə n ɔ m ɑ ɑ n t ə x ə v ə n t ɑ t ə ə m ɑ n t t ə p ɑ ɑ s ə s z ə x t f r ɑ n s ɦ ə r t ɔ x s ɔ n z ə t ɑ ɑ l ə k s p ə r t
+dutch_141119_374393-4   t ʋ ə ə k ɑ p ə t ə ə n s ʋ ɑ t ə ə n k ɑ p ə t ə ə n ə s j ɑ t ɑ t
+dutch_141119_374393-5   ʋ ə ə t n ɑ t ʏ ʏ r l ə j k ə ə t ə r ə ə n t ɑ t ə s ə ə n ɦ ɔ f ʋ ɑ n ɦ ə t ɦ ɔ ɔ f t v ɑ n p ə j v ɔ ɔ r p ə ə l t ə ə n t r ɔ ə p s ɦ ɔ n t
+dutch_141119_374393-6   
+dutch_141119_374393-7   
+dutch_141119_374393-8   
+dutch_141119_374393-9   ɦ ɔ ɔ f t ɦ ɔ ɔ f t m ɑ n t ʏ s ə n j ɑ ɦ ɔ ɔ r ə n ɦ ə t t ʏ ə t s ɦ ə ə t t ə k ɑ p ə t ə ə n ɔ ɔ k ʋ ə l ə ə n
+dutch_141122_375087-13   d ʏ s t r ə ə ɦ ɔ n t ə r t v ə j f ə n z ə v ə n t ə x x r ɑ m ɦ ɔ n ə n x ə ə n x ə ʋ ɔ n ə s ə m p ə l ə n ɔ r m ɑ l ə ɦ ɔ n ə n x
+dutch_141122_375087-14   
+dutch_141122_375087-15   
+dutch_141122_375087-17   ɛ n ʋ ə ɦ ɔ ʏ t ə n ə ə n p ə ə t j ə ə ə x ə ə l ɑ p ɑ r t ɔ m t ə k ɔ ə k j ə s t ə p ə s t r ə j k ə n ʋ ə p ə x ə n n ə n
+dutch_141122_375087-18   
+dutch_141122_375087-19   d ɑ t z ɑ l ə ə n m ə n ʏ ʏ t ɔ f v ə j f t ʏ r ə n t ɑ ɑ r n ɑ p l ə n t ə n ʋ ə ɑ l l ə s ə r t ɔ ɔ r ɦ ə ə n t ə
+dutch_141122_375087-2   t ɑ ɑ ə t ɑ ɑ ə SIL ɦ ə f x ə ə r t t ə j z ə n x ɑ v ɑ n r ə s t ɑ ʏ r ɑ n t ə s s ə n z ə x t v r ɔ ə x ə r m ɔ ə s t ɦ ə t t ə ə x r ʏ s t ə n m ɑ ɑ r
+dutch_141122_375087-20   b l ɔ ə m t ə ə ə ə r ə n t ə k r ʏ ə t ə n s ɔ r r j t ə ə ə ə r ə n ɦ ɑ t t ə n ʋ ə ə r ɑ l ə n ə ɦ p ɑ k p ɔ ə t ə r ɑ l l ə s ə r t ɔ ɔ r ɦ ə ə n
+dutch_141122_375087-4   v ɔ l v ə r ʋ ɑ x eps t ə n x k l ɔ p t ɔ n s ɦ ɑ r t ə ɦ ə n t ə t x ə v ɑ l k l ɔ p t m ə j n ɦ ɑ r t v ɔ ɔ r t ɑ ɑ ə t ɑ ɑ ə n ɔ x s t ə ə t s
+dutch_141122_375087-5   l ə k k ə r ə t ə n x ə n ə k t ə n k t ɑ t ə k ʋ ə l ɔ p t ə ə ə t m ɔ ə t n ɑ ɑ l t ə z ə l ə k k ə r ə t ə n x ə n ɦ ɔ ə z ə t t ɑ t m ə t j ɔ ʏ m ɔ ə t j ə j
+dutch_141129_376549-2   
+dutch_141129_376553-2   t x ə p r ə ə t v ə r s l ɑ x v ɑ n v ə r ɦ ɑ l ə n v ɑ n ʏ ə t ɑ ʏ s t r ɑ l ə ɑ ə n t ə r ə s t v ɑ n t ə ʋ ə r ə l t ə n x ə ə f u̯ eps m ə n ə n x ɔ
+dutch_141129_376553-3   v ə r t ə x r ɔ t ə v r ɑ ɑ x s t ʏ k k ə n s p s r ɑ t ə ɔ ɔ n ɑ f ɦ ɑ n k ə l ə j k x ə ə n f ɔ r m ə ə r t ə n v ə n x ə r ɑ ɑ n t ə p ɔ l s
+dutch_141129_376553-4   SIL ə k l ə v ə r ə j x ə
+dutch_141129_376553-6   u̯ n ə v ə r s ə t ə ə t ə n ɑ l z ɔ ʋ ə l z ə n ə ə t ə n l ə ə t ə n ɑ f s t ʏ t ə ə r t ə p ə ɦ ɑ ɑ l t ə m ɑ r l ə ə n v ə l t ɦ ʏ ə s ʋ ə l
+dutch_141129_376553-7   eː eps n x r ɔ ɔ t ɑ ɑ n t ɑ l x ɔ ʏ t ə n m ə t ɑ ə l l ə s p ə n n ə n ə n t ə r n ɑ t ə ɔ n ɑ ɑ l t ɔ p z ʋ ə m m ə r z ə ʋ ə r t s n ə l s t ə
+dutch_141129_376553-8   
+dutch_141129_376557-10   n ə t ə r l ɑ n t s ə n ɔ ɔ k ɦ ə t ɑ f r ə k ɑ ɑ n s ə s ə n ɦ ɔ ɔ x t ə m p ɔ ɑ ɑ n ɦ ə t v ə r t ʋ ə j n ə n
+dutch_141129_376557-11   
+dutch_141129_376557-12   
+dutch_141129_376557-13   ɣ t ə t ɑ ɑ l v ə r t ə t ə x t z ə x eps p ə j v ɔ ɔ r p ə ə l t ɔ m x ə ə n ʋ ɔ ɔ r t ə n ʏ ə t v r ə ə m t ə t ɑ l ə n m ə ə r t ə x ə p r ʏ ə k ə n
+dutch_141129_376557-14   
+dutch_141129_376557-15   
+dutch_141129_376557-16   ɣ ə n ʋ ɔ ɔ r t ə n ʋ ɑ ɑ r ʋ ə j z ə l f ɑ l l ɑ n x m ə t t ə l ə ə n ʋ ɔ ɔ r t ə n x ə n ɔ ə x ə n n ɑ m ə n v ɔ ɔ r t ə t ʏ ə t ə l ə j k ɦ ə ə t
+dutch_141129_376557-17   z ə t ə k ə v ə n ə ə n p ɑ ɑ r v ɔ ɔ r p ə ə l t ə n ɔ v ə r ə n m ɔ t ə r n n ə t ə r l ɑ n t s t ə ɑ f r ə k ɑ ɑ n s ə s l
+dutch_141129_376557-18   
+dutch_141129_376557-19   ɛ n t ɑ t x ə l t t ɦ ə l ɑ ɑ s n ɔ x n ə ə t v ɔ ɔ r v ə l r ɔ ɔ m ə n r ə m p ə l s t r
+dutch_141129_376557-20   ɛi̯ eps k r ɑ k ə ʋ ɔ ɔ r t ə n t ə ə ə ə n m ɔ ɔ ə ə v ə r v ɑ n x ə n x z ɔ ʏ t ə n z ə j n v ɔ ɔ r t ə f ɔ ə ə l ə l ə j k ə n ə t ə r l ɑ n t s ə
+dutch_141129_376557-5   ɑ f r ə k ɑ ɑ n s ə ɔ p k ə k k ə r v ə ə l t ɑ l ə n
+dutch_141129_376557-6   ʋ ɔ r t ə n m ə t ʏ ə t s t ə r v ə n p ə t r ə ə x t ɦ ɔ n t ə r t ə n ɔ ə r ɔ ʏ t ə t ɑ l ə n z ə j n
+dutch_141129_376557-7   ɛ r ɑ l v ə r t ʋ ə n ə n ɔ f s t ɑ ɑ n ɔ p t ə r ɑ n t v ɑ n t ə ə ə ʋ ə x ə ɑ f x r ɔ n t ə n z ə l f s
+dutch_141129_376557-8   ɦ ə t n ə t ə r l ɑ n t s s t ɑ ɑ t ɔ n t ə r t r ʏ k ɑ l z ʏ l l ə n t ə p ə j n ɑ t ə r t ə x m ə l j ɔ ə n s p r ə k ə r s ɦ ə t n ɔ x
+dutch_141129_376557-9   ʋ ə l ə ə n p ɑ ɑ r x ə n ə r ɑ t ə ə s ʏ ə t ɦ ɔ ʏ t ə n ɦ ə t ɑ f r ə k ɑ ɑ n s ə s ə ə n t ɔ x eps t ə r t ɑ ɑ l v ɑ n ɦ ə t
+dutch_141203_377289-10   n ɔ ʏ t ɔ x eps t ɔ x eps ə s t ə ɔ p l ɔ s s ə n x m ə s s x eps ə ə n ə ə n v ɔ ʏ t ə x ə r t ɑ n j ə t ə n k t ʋ ə p ə x ə n n ə n m ə t ə ə n m ə v ə r s t ɑ n t
+dutch_141203_377289-11   œy̯ eps t t ə ʋ ə x t ə r ʏ ə m ə n z ʋ ɑ r t ə p ə ə t ə s x ə ə n n ə x ə r s l ɑ ɑ f v ɑ n t ə s ə n t x ə ʋ ə ə s t v ɑ n ɑ f t ə v r ɔ ə x ə
+dutch_141203_377289-12   m ə t t ə l ə ə u̯ eps ə n ʋ ɑ s z ʋ ɑ r t ə p ə ə t ə ə n v ɑ n t ə v ə l ə x ə ʋ ɔ n ə ʋ ɔ ɔ r t ə n v ɔ ɔ r t ə t ʏ ə v ə l ʋ ɑ n t ɦ ə t ʋ ɔ r t
+dutch_141203_377289-13   d ʏ ə v ə l j ə t ɑ t k ɔ n j ə t ɔ x eps m ɑ ɑ r p ə t ə r n ə ə t x ə p r ʏ ə k ə n ʋ ə ə ɔ v ə r t ə t ʏ ə v ə l s p r ə ə k t
+dutch_141203_377289-14   d ə ə t r ɑ p t ɦ ə t ɔ p z ə j n s t ɑ ɑ r t t ɔ x eps ə n t ə z ʋ ɑ r t ə k l ə ʏ r v ɑ n t ə k n ə x eps t v ɑ n s ə n t ə r k l ɑ ɑ s s t ɔ n t t ʏ s
+dutch_141203_377289-15   n ə ə t t ə x ə n ɔ v ə r t ə ɦ ʏ ə t s k l ə ʏ r v ɑ n t ə s ə n t m ɑ ɑ r t ə x ə n ɔ v ə r z ə j n ɦ ə ə l ə x ɦ ə ə t s ə n t
+dutch_141203_377289-16   ɛ r k l ɑ ɑ s ʋ ɑ s z ə l f t ə z ʋ ɑ r t ə t ʏ ə v ə l t ə p ɑ ɑ s l ə x eps t t ə x ə n ɔ v ə r t ʏ ə s t ə r
+dutch_141203_377289-5   
+dutch_141203_377289-6   d ɑ ɑ r ʋ ɔ r t t ɦ ə ə l v ə r s x eps ə l l ə n t ɔ v ə r x ə t ɑ x eps t ə n t ə m ə n ə n x ə n l ɔ p ə n ɦ ɔ ɔ x ɔ p j ɑ ʋ ə j p ə x r ə j p ə n
+dutch_141203_377289-7   
+dutch_141203_377289-8   ɑ n t ə r s z ʋ ɑ r t m ɔ ə t ə n z ə j n z ə j n n ɑ ɑ m ɑ l l ə ə n ɑ l l ə j k t t ə ə z ʋ ɑ r t ɦ ə ə t v ɔ ɔ r t t ʏ r ə n t t ə ɔ n t ə r
+dutch_141203_377289-9   
+dutch_141203_377317-1   u̯ t ɑ x eps t t ɑ t ʏ ə r v ɑ n ɑ f ʋ ɑ s
+dutch_141203_377317-10   
+dutch_141203_377317-11   d ə r ə n z ə j n ə n x r ɔ t ə p ə t r ə j v ə n v ə n t ə n t ɑ t p ə l ɑ n x r ə j k ʋ ɑ n t t ə ə s p ɔ n s ə r ə n ɑ l t ə ə ə n t ɔ x eps t ə n ə n t ɔ ə s t ɑ n t ə n ə n ʋ ɑ t t ɑ t
+dutch_141203_377317-12   d ʏ s ɑ l t ə ə x r ɔ t ə p ə t r ə j v ə n t ə r m ə ə s t ɔ p p ə n ɔ m t ɑ t z ə ɑ l t ɑ t x ə t ɔ ə x ə ʋ ɔ ɔ n n ə ə t ʋ ə l l ə n
+dutch_141203_377317-13   d ɑ n v ɔ l x ə n m ə ə s t ɑ l t ə k l ə ə n t j ə s ɔ ɔ k ʋ ə l ə ə n p ə ə t j ə
+dutch_141203_377317-14   
+dutch_141203_377317-15   d ɔ ə ʋ ə l l ə n v ə r m ə j t ə n ə k p ə t ɔ ə l ɦ ə p p ə n ʋ ə n ʏ p ə j t ə ə n t ɔ x eps t ə n x ɔ ʏ t ɑ ɦ ɑ t t ə n ʋ ə p ɔ l ə t ə ə ɑ x ə n t ə n
+dutch_141203_377317-16   ɣ ə ʋ ɑ p ə n t ɑ l s z ʋ ɑ r t ə p ə ə t v ə r m ɔ m t ɔ m t ə z ʋ ɑ r t ə p ə ə t ə n t ə p ə s x eps ə r m ə n ə k v ə n t n ə ə t l ə ʏ k m ə ə r ʋ ə ə t j ə t ɑ n ɦ ə p p ə n ʋ ə t ə r
+dutch_141203_377317-17   m ə n s ə n ə r x ə ə n z ə n ə n ɦ ə t m ɔ ə t ə ə n x ə z ə l l ə x k ə n t ə r f ə ə s t z ə j n t ɑ t ə s ɦ ə t ɔ ɔ k ə k p ə n ɔ p x ə x r ɔ ə ə t
+dutch_141203_377317-18   i̯ n s ʏ r ə n ɑ m ə ə k ɦ ə p ə r t ɔ t m ə j n ɑ x eps t t ə ə n t ə x ə ʋ ɔ ɔ n t m ə j n m ɔ ə t ə r ʋ ɑ s k l ə ʏ t ə r j ʏ f ə n m ə j n m ɔ ə t ə r ɔ r x ɑ n ə s ə ə r t ə ɦ ə t s ə n t ə r k l ɑ ɑ s f ə ə s t
+dutch_141203_377317-19   m ə t ɦ ə t s x eps m ə n k ə n ʋ ə t ə t ə n ɦ ə t ɑ l l ə m ɑ ɑ l n ə ə m ɑ n t ɦ ɑ t p r ɔ p l ə m ə n ɦ ə t ʋ ɑ s ɦ ə ə l x ə z ə l l ə x
+dutch_141203_377317-20   
+dutch_141203_377317-4   ɣ r ɔ t ə p ə t r ə j v ə n ɦ ə p p ə n v ə ə l ə n t ə m ə l k t ə p r ɔ k k ə l ə n ə n x r ɔ t ə p ə t r ə j v ə n ɦ ɔ ʏ t ə n x ə ʋ ɔ ɔ n n ə ə t v ɑ n x ə z ə ʏ r
+dutch_141203_377317-5   d ɑ t z ə ə n ʋ ə ə n t ə n ə m ɑ r k ə n p ə j v ɔ ɔ r p ə ə l t l ə x ɔ t ə ə m ɑ ɑ k t ɑ l l ə m ɑ ɑ l s p ə ə l x ɔ ə t ə n l ə x ɔ
+dutch_141203_377317-6   
+dutch_141203_377317-7   
+dutch_141203_377317-8   
+dutch_141203_377317-9   ɛ n z ə ɦ ɑ t t ə n x ə ʋ ɔ ɔ n x ə ə n z ə n ə n x ə z ə ʏ r ɑ l p ə r t ɦ ə ə j n ɦ ə m ɑ ə n ɑ l l ə r l ə ə ɑ n t ə r ə m ə r k ə n ə n n ə t ə r l ɑ n t
+dutch_141206_377981-10   d ə j ɑ v ʏ ə s ə ə n x ə v ɔ ə l ʋ ɑ ɑ r p ə j j ə t ə n k t ɦ ə ə t ɑ t ɦ ə p ə k ɑ l ə ə n s ə ə r t ə r m ə ə x ə m ɑ ɑ k t ə k z ɑ x ɦ ə t ɔ n t ɑ n k t ɦ ə t f ə ə t t ɑ ə k t ə f
+dutch_141206_377981-11   r ɑ n s ə t ɑ ɑ l n ə ə t m ɑ x eps t ə x k r ə j x k r ə ə x ə k ə ə n ɦ ɑ ɑ r s x eps ə r p t ə j ɑ v ʏ ə n ə ə n t ə j ɑ v ʏ ə s ə ə n x ə v ɔ ə l ʋ ɑ ɑ r p ə j j ə t ə n k t ɦ ə ə
+dutch_141206_377981-12   v ɑ n ɦ ə ə s t k ɔ m t t ə v ə j f ə n t ə r t ə x j ɑ r ə x ə s m ə n k ɔ m p ə j ə ə n ɑ ʏ t ɔ ɔ n x ə l ʏ k s m ə n k ə n t ɦ ə ɔ
+dutch_141206_377981-13   
+dutch_141206_377981-14   d ɑ ɑ r t ɑ ɑ r s t ɑ ə k t ɑ n t ɑ m ə s ə n ɦ ə r ə ə ɦ
+dutch_141206_377981-15   ɣ ɑ ɑ n ʋ ə n ɔ x ə ɦ ʋ ɑ t ə r v ə r t ə r ɔ ɔ k x ə p ə ʏ r t ə ɦ ɦ ə t ə s ə ɦ
+dutch_141206_377981-16   ɦ ə t ə s t ə m ɔ ɔ ə s t ə t ɑ x v ɑ n m ə j n l ə v ə n
+dutch_141206_377981-18   ɛ n t ə ə ə r s t ə ə m ə t ɑ t ə ə t ə ə t ə ə x ɑ ɑ t t ɔ ə n ə s t ə ɦ ɔ n t
+dutch_141206_377981-19   ɛ n t ə t ʋ ə ə t ə ə m ə t ɑ t ə ə ə s ə ə n z ə ə ɦ ɔ n t
+dutch_141206_377981-2   z ɔ ə s ɦ ə t ʋ ə ə r ɑ ɑ n m ə t ə ə m ɑ n t z ɔ ə s ɦ ə t ʋ ə ə r ʏ ə t m ɑ ɑ r z ə l f s ɑ l s z ə t ə k
+dutch_141206_377981-20   d ə t ə r t ə ə m ə t ɑ t ə ə ə s t ə p ɑ u̯ eps
+dutch_141206_377981-3   i̯ k p ə n ɔ ɔ k ə ə n s ɔ p x ə n ɔ m ə n ʋ ɑ n t ə k ʋ ɑ s v ɔ l k ɔ m ə n k n ɔ t s ə k s
+dutch_141206_377981-4   n ə ə t m ə z ə l f m ə t m ə s s ə n ə n ə k z ɑ t ɔ n t ə r t ə k ɔ t s ə k r ə ə p t ɔ ə n z ə m ə ɦ ɑ ɑ l t ə n v ɔ ɔ r
+dutch_141206_377981-5   i̯ k ʋ ɔ r t l ə ə v ə r m ə t ə ə n ʏ f ɔ t ɔ ɔ r ə ə n m ɑ r s m ɑ n m ə ə x ə n ɔ m ə n t ɑ n t ɑ t ə k ɑ n t r ə ə s k n ə v ə l
+dutch_141206_377981-6   i̯ k ʋ ɑ s ə ə n j ɑ ɑ r ɔ f z ə v ə n ɑ x eps t t ɔ ə n m ə j n m ɔ ə t ə r z ə ə t ɑ t z ə m ə t m ə j ʋ ə l t ə p r ɑ t ə n ə n ə k z ɑ t m ə ɑ l s t ə ə k ə m t ə v ə r ɦ ə ʏ x ə n
+dutch_141206_377981-7   b ɔ r s t ə n p l ɔ t ə p ə ə m ə l s v ɔ ɔ r p ə p s ə n ə ə n t ə l ə j k ʋ ɑ s ɦ ə t z ɔ v ə r s ə k s ʏ ə l ə v ɔ ɔ r l ə x eps t ə n x ə r k ʋ ɑ m ɦ ə l ɑ ɑ s
+dutch_141206_377981-8   ɦ ə t ɦ ɑ t m ə t s ə n t ə r k l ɑ ɑ s t ə m ɑ k ə n ə n ɦ ɔ ə ʋ ə l ə k ɦ ə ə l ə x ə n t ə ə m ɑ n x ə l ɔ ɔ f t ə ʋ ə s t ə k m ə t ə ə n ʋ ɑ t ə r k ɔ m ə n x ə n x
+dutch_141206_377981-9   SIL k z ɑ x ɦ ə t ɔ n t ɑ n k t ɦ ə t f ə ə t t ɑ t ə k t ə f r ɑ n s ə t ɑ ɑ l n ə ə t m ɑ x eps t ə x ʋ ɑ s k r ə ə x ə k ə ə n ɦ ɑ ɑ r s x eps ə r p t ə j ɑ v ʏ ə n ə ə n
+dutch_141210_378729-1   l ɑ ɑ t p ʏ ə t ə n t ə s t ɔ r m ʋ ə n t n ʏ m ɑ ɑ r r ɑ z ə n ə n ɦ ə t t ɔ n k ə r ʋ ɑ n t p ə n n ə n
+dutch_141210_378729-10   d ə ə n x ə p l ə v ə n t ə j t ə n s t ə ɑ f s l ʏ ə t ə n x v ɑ n k ɔ n ə n x ə n n ə t ɑ x t ʋ ə ə t ʏ ə z ə n t z ə v ə n t ɔ ə n k ɔ n ə n x ə n p ə ɑ t r ə k s
+dutch_141210_378729-11   d ə n ɔ ɔ r t p r ɑ p ɑ n t s ə ɦ ɔ ɔ f t s t ɑ t s ɦ ə r t ɔ x ə n p ɔ s x eps p ə z ɔ x eps t z ɔ n x ə ə n v ɔ l l ə m ɑ r k t ɦ ə t l ə ə t ʏ ə t v ɔ l l ə
+dutch_141210_378729-12   b ɔ r s t m ə ə t ə t l ə ə t t ə ə r m ə t ə t ɔ ə t ɑ t ɦ ə t t ə p ɑ t ɔ v ə r ə ə n p r ɑ p ɑ n t s v ɔ l k s l ə ə t n ɔ ɔ r t p r ɑ p ɑ n t
+dutch_141210_378729-13   ɦ ə t t ɔ r p ə s ə ə n l ə ə t v ɑ n ʋ ə m z ɔ n n ə v ə l t ɦ ə t ʋ ə r t t r ə ə m ɑ ɑ l ɔ p s ə n x ə l ʏ ə t x ə p r ɑ x eps t
+dutch_141210_378729-14   
+dutch_141210_378729-15   SIL ə s ə n x ə l k ʋ ɑ m n ə ə t ɦ ɔ x ə r t ɑ n t ə z ə v ə n ə n t ʋ ə n t ə x s t ə p ɔ s ə t ə ə ə n t ə t ɔ p v ə ə r t ə x m ɑ ɑ r
+dutch_141210_378729-16   ɣ r ɔ ə ə t ə ʏ ə t t ɔ t ə ə n v ɑ n t ə p ɔ p ʏ l ɑ ə r s t ə n ə t ə r l ɑ n t s ə l ə ə t j ə s ɔ ɔ ə t ə n ʋ ɔ r t t t ɔ ɔ r ə ə t ə r ə
+dutch_141210_378729-17   ɣ ə n ə r ɑ t ə ə ʋ ə ə r ɔ n t t ə n k t
+dutch_141210_378729-19   eː eps n ɑ n t ə r ə k l ɑ s s ə ə k ə r t ə ə n ə ə t ʋ ə x t ə p r ɑ n t ə n ə s ʏ ə t t ə t ɔ p t ʋ ə ə t ʏ ə z ə n t ə s
+dutch_141210_378729-20   p ɑ s t ə r ɑ l ə n v ɑ n r ɑ m s ə s ɦ ɑ f f ə ə ə n l ə ə p ə t ɦ l ə s t t ə t ə k s t v ɑ n ɦ ə t l ə ə t p ə s x eps r ə j f t ə ə n x ə s p r ə k t ʏ s s ə n t ə
+dutch_141210_378729-3   ɦ ɔ ɔ r t p ə j n ɑ n ə t z ɔ p ə j ɦ ə t ə ə n t ə v ɑ n ɦ ə t j ɑ ɑ r ɑ l s v ʏ ʏ r ʋ ə r k ə n ɔ l ə ə p ɔ l l ə n t ə j t ə n s ɔ ʏ t ə n n ə ə u̯ eps
+dutch_141210_378729-4   v ɑ n t ə ə ə r s t ə k ə r s t t ɑ x t ɔ t t ʋ ɑ ɑ l f ʏ ʏ r ɔ ʏ t ə j ɑ ɑ r s ɑ v ɔ n t z ə n t t r ɑ t ə ɔ t ʋ ə ə n ɔ n
+dutch_141210_378729-5   s t ɔ p t ə t ɔ p t ʋ ə ə t ʏ ə z ə n t ʏ ə t t ə t j ɑ ɑ r s t ə m t ə p ə j n ɑ v ə ə r m ə l j ɔ ə n ɔ p ɦ ʏ n f ɑ v ɔ r ə ə t ə p ɔ p
+dutch_141210_378729-6   d ə ə v ɑ n k ʏ ə ə n v ɑ n t ə ə ə r s t ə p l ɑ ɑ t s s t ɔ ɔ t t ə n t ə r ə s t v ɑ n t ə l ə j s t ə s n ɔ x x ə ɦ ə ə m
+dutch_141210_378729-7   
+dutch_141210_378729-8   d ə t ɔ p t ʋ ə ə t ʏ ə z ə n t ɦ ɔ ɔ x s t x ə n ɔ t ə ə r t ə n ə t ə r l ɑ n t s ə ɑ r t ə ə s t ʋ ɑ s p ɔ ʏ t ə ʋ ə j n t ə x r ɔ ɔ t m ə t
+dutch_141210_378729-9   m ɔ s k ɔ u̯ eps ə r t ɑ l v r ə j s n ə l n ɑ ɑ r v ə r s x eps ə j n ə n x ə n ɔ r m p ɔ p ʏ l ɑ ə r ə n n ɔ ɔ r t p r ɑ p ɑ n t ə n ə s t ɑ t s ə n t s
+dutch_141217_380201-10   d ɑ n p ə t ə r ə ə n t ɑ ɑ l ə ə r s t l ə r ə n ə n t ɑ n p ɑ s t ə ɑ n t ə r ə ɔ f t ɔ x eps p ə t ə r ɑ l l ə p ə ə
+dutch_141217_380201-11   t ə x ə l ə j k t ɑ t z ə j n v r ɑ x ə n ʋ ɑ ɑ r ɔ p j ə n ɔ x n ə ə t z ɔ x ə m ɑ k k ə l ə j k ə ə n ɑ n t ʋ ɔ ɔ r t k ʏ n t v ə n t ə n
+dutch_141217_380201-12   ɛ n t ə ə t ɔ x eps ɦ ə ə l p ə l ɑ n x r ə j k z ə j n p ə j t ə ɔ p v ɔ ə t ə n x ə n t ə k ɑ n s ə n ə n ɦ ə t l ə v ə n ɔ v ə r
+dutch_141217_380201-13   
+dutch_141217_380201-14   z ə k ə r ɦ ə ə t t ə k ʏ n n ə n p ə ɑ n t ʋ ɔ ɔ r t ə n ə n ɔ v ə r ə ə n t ə n x z ə j n z ə ɦ ə t ɑ l l ə m ɑ ɑ l ɑ l ʋ ə l ə ə n s
+dutch_141217_380201-15   SIL ʋ ə ə t ɑ l ə x ə k ə n t ə r ə n ɔ n t ʋ ə k k ə l ə n v ə ə l ə k s t r ɑ k ə n n ə s ə n z ə x eps t ə n
+dutch_141217_380201-16   
+dutch_141217_380201-17   d ɑ ɑ r p ʏ ə t ə n p r ə s t ə r ə n t ʋ ə ə t ɑ l ə x ə k ə n t ə r ə n v ɑ ɑ k ɑ ɑ n t ɔ ɔ n p ɑ ɑ r p ə t ə r t ʋ ə ə t ɑ l ə x ɔ n t ə r
+dutch_141217_380201-18   ʋ ə j s l ə v ə r t ɔ ɔ k x ə ə n t ɑ ɑ l ɑ x eps t ə r s t ɑ n t ɔ p t ʋ ə ə t ɑ l ə n l ə r ə n x ɑ ɑ t ə v ə n s n ə l ɑ l s ə ə n
+dutch_141217_380201-19   ɛ n ə v ə n x ɔ ə t ɔ f z ə l f s p ə t ə r p ə j t ʋ ə ə t ɑ l ə x ə k ə n t ə r ə n z ə j n p ə j v ɔ ɔ r p ə ə l t ʋ ɔ ɔ r t p ə ə l t ə n
+dutch_141217_380201-2   
+dutch_141217_380201-20   s p ə l l ə n x p ə t ə r ə n ɑ l l ə p ə ə t ə t ɑ l ə n ə n s ɔ m s k ɑ n ɦ ə t p ə j t ʋ ə ə t ɑ l ə
+dutch_141217_380201-3   f r ɑ n s ɦ ə r t ɔ x s j ɑ ɦ ə j z ə x t t ɑ t ə r v ə ə l m ə s s t ɑ n t ə n ɔ v ə r ɦ ə t v ɔ ɔ r t ə ə l v ɑ n ə ə n ə ə n
+dutch_141217_380201-4   ɔ f t ʋ ə ə t ɑ l ə x ɔ p v ɔ ə t ə n v ɑ n t ə k ə n t ə r ə n p ə s t ɑ ɑ n ə s ɦ ə t l ə r ə n v ɑ n t ʋ ə ə t ɑ l ə n ʋ ə l z ɔ x ɔ ə t x ɑ
+dutch_141217_380201-5   ɑ t ɦ ə t n ə ə t t ə n k ɔ s t ə v ɑ n t ə ɑ n t ə r ə t ɑ ɑ l l ɔ ɔ p j ə t ɑ ɑ r t ɔ ɔ r x ə ə n t ɑ ɑ l ɑ x eps t ə r s t ɑ n t ɔ p f r ɑ n s x ɑ ɑ t v ɑ n t ɑ ɑ x
+dutch_141217_380201-6   t ʋ ə ə t ɑ l ə x ɔ p v ɔ ə t ə n ə s t ɑ t ʋ ə l x ɔ ə t v ə ə l
+dutch_141217_380201-7   i̯ m m ə x r ɑ n t ə n s t ɑ ɑ n v ɔ ɔ r ə ə n p ə l ɑ n x r ə j k ə k ə ʏ z ə v ɔ ɔ r ɦ ʏ n k ə n t ə s ɦ ə t k ə n t
+dutch_141217_380201-8   b ə t ə r ɑ f ɑ l s ɦ ə t t ʋ ə ə t ɑ l ə n l ə ə r t ɔ f j ʏ ə s t ɑ l s ɦ ə t z ə x eps p ə p ə r k t t ɔ t ə ə n t ɑ ɑ l
+dutch_141217_380201-9   l ə ə r j ə t ə ə t ɑ n n ə ə t p ə t ə r p ə j v ɔ ɔ r p ə ə l t ə n ɑ l s j ə k ə ə s t v ɔ ɔ r t ʋ ə ə t ɑ l ə n k ɑ n ɦ ə t
+dutch_141219_380597-10   
+dutch_141219_380597-11   j ɑ ɦ ə l ɑ ɑ s ə s t ɑ t ə ə n ɔ n t ə r t ə ə l v ɑ n s x eps ə j n p ɑ ɑ r v ɑ n ɔ n s m ə n s ə l ə j k p ə s t ɑ ɑ n t ɑ t ʋ ə t ə t s ɔ ɔ r t t ə n x ə n t ɔ ə n
+dutch_141219_380597-12   ɛ n m ɔ t ə r n ə ɔ ɔ r l ɔ x s v ɔ ə r ə n x x ɑ ɑ t ɔ p t ə z ə m ɑ n ə ə r ə m ə k t ə n k ɑ ɑ n t ʋ ə ə t ə n x ə n ʏ ə t ə r ɑ ɑ r t ɑ ɑ n
+dutch_141219_380597-13   
+dutch_141219_380597-14   d ɑ ɑ r ə n t ə r n ɑ t ə ɔ n ɑ l ə v ə r t r ɑ x ə n v ɔ ɔ r t ə k r ə j x ə n t ɑ t t ɑ t t ə n m ə n s t ə ɑ ɑ n p ə p ɑ ɑ l t ə p ə p ə r k ə n x ə n ʋ ɔ r t t x ə s t ə l t j ə ɦ ɔ ʏ t t n ɑ t ʏ ʏ
+dutch_141219_380597-16   d ɑ t n ə ə t n ə ə t z ɔ m ɑ ɑ r ə ə t s ə s ʋ ɑ t j ə ɔ v ə k ʏ n t l ɑ t ə n ɑ ɑ n ə ə n p ɑ ɑ r ə n x ə n ə ə ʏ r s ə n j ə p ə t r ə j f v ɑ n j ɔ n x ə n s k ə j k
+dutch_141219_380597-18   i̯ n t ə ʋ ə s t ə r s ə ʋ ə r ə l t z ɔ n ɑ ɑ n t ɑ l ə s x ə ʋ ə ə s t ʋ ɑ ɑ r p ə j j ə t ʏ s ə n f ə ə t ə t ə
+dutch_141219_380597-19   d ə ɦ ɑ r t ə s x eps r ə j v ə n t ə ə ʋ ɔ r t ə n ɑ ɑ n x ə v ɑ l l ə n t ə ə t ə ə ʋ ɔ r t ə n t ʏ s p ə s x eps ɑ t ə x t ɔ p z ɔ n m ɑ n ə ə r t ɑ t j ə z ə n ə ə t
+dutch_141219_380597-20   m ə ə r k ʏ n t x ə p r ʏ ə k ə n t ʏ s j ə m ɔ ə t t ɑ n ə n f ə ə t ə j ə ɦ ɑ r t ʋ ɑ r ə ɔ ɔ k x ɑ ɑ n v ə r v ɑ n x ə n j ɑ z ɔ ə ə t s ɦ ə p
+dutch_141219_380597-4   
+dutch_141219_380597-5   ɑ l t ɑ t z ɔ t ə n x ə n v ə r s x eps r ə k k ə l ə j k m ɔ ə ə l ə j k ɔ m ə ə n s m ɔ k ə n x x ʏ n t ə v ə n t ə n
+dutch_141219_380597-7   d ə n x ə n v ɑ n t ə ɑ ɑ n k ɔ m ə n ɦ ə p p ə n ʋ ə t ɑ t ɔ ɔ k x ə z ə ə n t ɑ t z ə m ə t r ʏ s l ɑ n t ɔ p x ə p ə ə t v ɑ n
+dutch_141219_380597-8   ɛ s t l ɑ n t ə n ʋ ə z ə ə n t ɑ t ɔ ɔ k m ə t ə ɦ v ɑ n ʏ ə t n ɔ ɔ r t k ɔ r ə ɑ ɔ p t ə n x ə n ə n s ɑ ʏ t ə ɑ r ɑ p ə ə
+dutch_141219_380597-9   
+dutch_141224_381553-10   n ə t ə r l ɑ n t ə r s z ə j n ɔ v ə r ɦ ə t ɑ l x ə m ə ə n ə ə n p ə ə t j ə n ʏ x eps t ə r ʋ ɑ t t ɑ t ɑ ɑ n x ɑ ɑ t t ə n k ə k ə n m ə s s x eps ə ə n ʋ ɑ s t ɑ t n ə t ə v ə n ə ə n p ə ə t j ə t ə v ə ə l v ɑ n
+dutch_141224_381553-13   
+dutch_141224_381553-14   
+dutch_141224_381553-15   ɦ ɔ n t ə r t v ə j f t ə x x r ɑ m p ɔ t ə r ɦ ɔ n t ə r t x r ɑ m s ʏ ə k ə r ə n ə ə n ə ə x ə ə l p ɑ k
+dutch_141224_381553-16   ɔ n z ə m ə n x p ə k ə r m ə t t ə v l ə n t ə r ʋ ə ə r v ɔ ɔ r t ə v ɔ ɔ r t ə k ə ʏ k ə n m ɑ x eps ə n ə ə n
+dutch_141224_381553-19   d ə p ɔ t ə r ɑ l s j ə ə r m ə ə p ə x ə n t z ɔ ʏ ə k ɔ p k ɑ m ə r t ə m p ə r ɑ t ʏ ʏ r ɦ ə p p ə n ɑ n t ə r s t ʏ ʏ r t ɦ ə t x ə ʋ ɔ ɔ n t ə l ɑ n x
+dutch_141224_381553-2   iː eps t j ə s m ɑ k ə n ə s ə t ə ɑ ɑ l j ə k ʏ n t z ə ɑ ɑ n t ə p ɔ ɔ m ɦ ɑ n x ə n m ɑ ɑ r j ə k ʏ n t z ə n ɑ t ʏ ʏ r l ə j k ɔ ɔ k p ə j t ə k ɔ f f ə ə ɦ ə p p ə n
+dutch_141224_381553-20   d ʏ s t ə p ɔ t ə r ɔ p k ɑ m ə r t ə m p ə r ɑ t ʏ ʏ r ɦ ə p p ə n t ɑ n ə s ɦ ə t ɑ l l ə m ɑ ɑ l k l ɑ ɑ r ə n ə ə n p ɑ ɑ r m ə n ʏ t ə n ʋ ə l ɑ t ə n ɦ ə t ə v ə n ɔ p s t ə j x ə n
+dutch_141224_381553-3   ʋ ə ə t ɑ l s x ə ə n ɑ n t ə r ɦ ɔ ə j ə k ə n t ə r ə n m ɔ ə t p ə t r ə k k ə n p ə j t ə v ɔ ɔ r p ə r ə ə t ə n x ə n v ɑ n ɦ ə t k ə r s t f ə ə s t ə n ɦ ə t
+dutch_141224_381553-5   ɦ ɑ n x ə n ʋ ə ɦ ə t z ə l f s ɑ ɑ n t ə k ə r s t p ɔ ɔ m ʋ ɑ n t t ə k ə r s t k r ɑ n s ə n ɦ ə p p ə n k l ə ə n ə x ɑ ɑ t j ə ə n t ə m ə t t ə l ɦ ɑ n x ə n ʋ ə ə v ə n ə ə n t ɔ u̯ eps
+dutch_141224_381553-8   j ɑ ə k ʋ ə ə t ə ə x ə n l ə j k n ə ə t ʋ ɑ ɑ r ɔ m ʋ ɑ n t ʋ ə ɦ ɔ ʏ t ə n ʋ ə l v ɑ n z ɔ ə t ə t ə n x ə n m ɑ ɑ r m ə s s x eps ə ə n t ɑ t t ɑ t n ə t ə v ə n t ə z ɔ ə t ʋ ɑ s
+dutch_141224_381577-1   ɦ ə ə f t p ə j z ɔ n t ə r ə p ɔ r t r ə t t ə n x ə m ɑ ɑ k t v ɑ n ə n k ə l ə p ə ʋ ɔ n ə r s z ɔ x ə n ɑ ɑ m t ə s p ə ə x ə l p ə ə l t ə n t ə f ɔ t ɔ s ʋ ə r t ə n x ə m ɑ ɑ k t m ə t ə ə n
+dutch_141224_381577-11   j ɑ ɦ ə t ə s ə k ɦ ə p ə ə n l ə v ə n x ə ɦ ɑ t t ɔ ə n ʋ ɑ s ə k z ɔ n ʏ p ə n ə k j ɑ ɔ ʏ t ə r m ɑ ɑ r ʋ ɑ t ə k
+dutch_141224_381577-12   d ʏ ə t ə l ə j k n ɔ x ə v ə n t j ə s t ə k ə r s t s t ɑ ɑ t n ɑ t ʏ ʏ r l ə j k v ɔ ɔ r t ə t ə ʏ r v ɔ ɔ r v ə l ə n ə s ɦ ə t ə ə n ɦ ə l ə f ə ə s t ə l ə j k ə ɑ ɑ n x ə
+dutch_141224_381577-2   d ə f ɔ t ɔ ɔ p t ə v ɔ ɔ r ɔ f ɑ x eps t ə r x r ɔ n t v ɑ n t ɔ ə n z ə n ɔ x j ɔ n x ʋ ɑ r ə n ɦ ə t r ə s ʏ l t ɑ ɑ t ə s k r ɑ x eps t ə x ə p ə ə l t ə n
+dutch_141224_381577-3   
+dutch_141224_381577-4   
+dutch_141224_381577-5   l l ə m ɑ n z ə j n t ə s p ə ə x ə l p ə ə l t ə n ɦ ə ə l p ə l ɑ n x r ə j k v ɔ ɔ r ɦ ə t v ə r z ɔ r x ə n t p ə r s ɔ n ə ə l ɔ m ə ə n ɑ n t ə r x ə z ə x eps t t ə l ɑ t ə n z ə ə n
+dutch_141224_381577-6   v ɑ n t ə ɔ ʏ t ə r ə n ɔ ɔ k ɦ ə l p ə n z ə ɔ ʏ t ə r ə n ə n z ə k ə r t ə x ə n ə n t ə ə k ɑ m p ə n m ə t t ə m ə n t ə ə ɔ f ɑ l z ɦ ə ə m ə r ɔ m ɦ ə t
+dutch_141224_381577-7   
+dutch_141224_381577-9   ɦ ə l ə k r ɑ x eps t ə x ə p ə ə l t ə n p ə j v ɔ ɔ r p ə ə l t ə ə n m ɑ n t ə ə ə n t ə s p ə ə x ə l k ə j k t v ɑ n t ə ɑ x eps t ə r k ɑ n t k ɑ n j ə z ə ə n t ɑ t ɦ ə t ɔ m ə ə n p ə j
+dutch_141224_381639-10   ɛ n ə n t ɔ t x eps r ə s t ə n m ɑ k ə n n ɔ ʏ z ʏ l k ə k l ə ə n ə k l ɑ n k v ə r ɑ n t ə r ə n x ə n z ə j n ə n ɑ l l ə t ɑ l ə n
+dutch_141224_381639-11   ɦ ə ə l x ə ʋ ɔ ɔ n ɦ ə t ə n x ə l s ɦ ə ə f t p ə j v ɔ ɔ r p ə ə l t t ə ə v ɑ n x eps r ə s t x ə ʋ ɑ ɑ r t m ɑ ɑ r t ɑ n ʋ ə ə r t ə m ə s t ɔ t
+dutch_141224_381639-12   m ɑ s x ə m ɑ ɑ k t j ɑ m ə s s x eps ə ə n ʋ ə l ɔ m ɦ ə t ʋ ɔ ɔ r t m ə s s k n ɔ ə ə p ɔ ə l t ə v ə r m ə j t ə n
+dutch_141224_381639-13   ɛ n ɦ ə t n ə t ə r l ɑ n t s ɦ ə ə f t t ʏ s j ʏ ə s t t ə ɑ n t ə r ə k l ə n k ə r s v ə r ʋ ə s s ə l t ɦ ə t t ʋ ə ə t ə ʋ ɔ ɔ r t ə s m ə s ə n
+dutch_141224_381639-14   d ə m ə s ə s t ə n ɑ ɑ m v ɑ n ə r ə t ə ə n s t v ɑ n t ə k ɑ t ɦ ɔ l ə ə k ə k ə r k ə n t ə ə m ə s
+dutch_141224_381639-15   d ə ə ʋ ə r t v r ɔ ə x ə r ɑ l t ə j t ɑ f x ə s l ɔ t ə n m ə t t ə l ɑ t ə j n s ə ɑ ɑ n s p ɔ r ə n x ə t ə m ə s ɑ ə s t
+dutch_141224_381639-16   ɔ f t ə ʋ ə l x ɑ ɑ t ɦ ə ə n z ə j ɦ ə t ə s v ə r z ɔ n t ə n ə n ə n t ə ə p ə t ə k ə n ə s l ə ə f t ɦ ə t ʋ ɔ ɔ r t
+dutch_141224_381639-17   
+dutch_141224_381639-18   r ɑ ɑ t s ə l m ə s ʋ ə r t t ɑ l x ɑ u̯ eps ə ə n s ɔ ɔ r t ɑ x eps t ə r v ɔ ə x s ə l z ɔ ɑ l s ə n t ə k ə r k ə l ə j k ə f ə ə s t ə n
+dutch_141224_381639-19   d ɑ x v ɑ n m ɑ r ə ɑ l ə x eps t m ə s ə n ɔ ɔ k ə n k ə r m ə s ə s m ə s ɦ ə t t ʋ ə ə t ə x ə t ə ə l t ə n ʏ
+dutch_141224_381639-2   v ɑ n t ɑ ɑ x ə ə n k ə r s t p ə j t r ɑ x ə v ɑ n f r ɑ n s ɦ ə r t ɔ x s t ə ə ɔ n s m ə ə r v ə r t ə l t ɔ v ə r ɦ ə t ʋ ɔ ɔ r t k ə r s t m ə s ə n
+dutch_141224_381639-20   b ə j k ə r k t ɑ ɑ r ə s t ə l ɑ ɑ t s t ə k ʋ ə x x ə v ɑ l l ə n ə n t ə k ə r k m ə s ɔ f k ə r m ə s s t ɔ n t v ɑ ɑ k l ə t t ə r l ə j k
+dutch_141224_381639-3   ʋ ɑ t t ɑ ɑ r m ə ə s ɑ m ə n ɦ ɑ n x t l ə t ɔ ɔ k ə v ə n ɔ p ɦ ə t m ʏ z ə ə k j ə v ɔ ɔ r ɑ f j ə ɦ ɔ ɔ r t f r ɑ n s z ə l f t ə
+dutch_141224_381639-4   k ə r s t m ə s k ə r s t m ə s ɔ p ɦ ə t
+dutch_141224_381639-5   z ʏ ə t ə l ə j k ɦ ɑ l f r ɔ n t j ɑ ɦ ə t ə s ə ə n p ə ə t j ə ə ə n v r ə ə m t x ə p ə ʏ r ə n z ɔ
+dutch_141224_381639-6   aː eps n ɦ ə t p ə x ə n v ɑ n t ə z ɔ m ə r j ə x ɑ ɑ t j ə ɑ f v r ɑ x ə n j ɑ ʋ ɑ t v ə ə r ə n ʋ ə n ɔ ʏ ə ə x ə n l ə j k
+dutch_141224_381639-7   
+dutch_141224_381639-8   ɣ ə m ɑ ɑ k t v ɑ n t ʋ ə ə ɑ ɑ n ə l k ɑ ɑ r x ə p l ɑ k t ə ʋ ɔ ɔ r t ə n k ə r s t ə n m ə s ə n ɦ ə t ə ə r s t ə ʋ ɔ ɔ r t k ə r s t
+dutch_141224_381639-9   i̯ s ə ə n ʏ ə t s p r ɑ ɑ k v ɑ r ə ɑ n t v ɑ n x eps r ə s ɔ f x eps r ə s t ʏ s z ɔ ɑ l s ə n ɦ ə t ʋ ɔ ɔ r t k ə r s t
+dutch_141227_382117-15   SIL ɑ ɑ r t ɑ n v ə r ʋ ɑ x eps t j ə t ɔ x eps
+dutch_141227_382117-16   ʋ ə l m ə t ɔ ʏ t ə n n ə ə u̯ eps ə ə n n ə ə u̯ eps j ɑ ɑ r s t ɔ ə s p r ɑ ɑ k v ɑ n ɦ ə m
+dutch_141227_382117-2   iː eps t ə r j ɑ ɑ r x ə ə f t t ə n ə t ə r l ɑ n t s ə k ɔ n ə n x ɔ f k ɔ n ə n x ə n x ə ə f t ə ə n s p ə ə x eps
+dutch_141227_382117-3   d ə k ɔ n ə n x ə n ə n ə n x ə l ɑ n t x ə ə f t ə ə n s p ə ə x eps ɔ p ɑ m ɑ x ə ə f t ə ə n s p ə ə x eps x ə ə f t p r ə s ə t ə n t s ʏ m ɑ ɔ ɔ k
+dutch_141227_382119-10   b ə t r ɔ f ɦ ə j s t ɔ n t ɑ l ə n ɦ ə t p ə x ə n v ɑ n z ə j n t ɔ ə s p r ɑ k ɑ p ɑ r t s t ə l p ə j ɦ ə t v ə r t r ə ə t ɔ m f ɑ m ə l ə ə l ə t ə n ə n v r ə ə
+dutch_141227_382119-11   n t ə n t ə ə z ə j n ɔ m x ə k ɔ m ə n p ə j t ə v l ə ə x r ɑ m p ɔ p eps ɛ v ʌ n t i n eps ʏ l ə z ɔ ɑ l s ɦ ə j z ə ə ə ə n r ɑ m p t ə ə t ə t k ə r s t f ə ə s t
+dutch_141227_382119-12   v ɔ ɔ r t ʏ ə z ə n t ə n m ə n s ə n ə n ɔ n s l ɑ n t ə n t ɑ ɑ r p ʏ ə t ə n ɔ v ə r s x eps ɑ t u̯ eps t ɦ ə j z ə ə v ɔ ɔ r ɑ l l ə n t ə ə t ɔ ɔ r t ə t l ə ə t
+dutch_141227_382119-13   ɣ ə t r ɔ f f ə n z ə j n ə s t ə t x ə ə n t ɑ x v ɑ n l ə x eps t m ɑ ɑ r v ɑ n l ə ə x t ə x ə ə n t ɑ x v ɑ n ʋ ɑ r m t ə ə n ʋ ə l t ɑ ɑ t m ɑ ɑ r v ɑ n
+dutch_141227_382119-14   s t ə l x ə m ə s ə n ə k t ə n k ə n t ə r t ɑ ɑ t t ɑ t m ə n s ə n z ə x eps t ɑ ɑ r ə n k ʏ n n ə n ɦ ə r k ə n n ə n t ɑ t z ə ɦ ə t ɔ ɔ k p r ə t t ə x z ʏ l l ə n ɦ ə p p ə n
+dutch_141227_382119-16   
+dutch_141227_382119-17   z ɔ n t ə r v ə r s x eps ə ə t ə n ɦ ə ə t ə s v ə r s t ə k k ə n t v ə r s x eps ə ə t ə n ɦ ə ə t z ɔ n t ə r ə ə n ɦ ə ə t ə s
+dutch_141227_382119-18   ɛ n t ɑ n ə x eps t t ə z ə n t ə ə ɔ v ə r ɑ l p ɔ v ə n ə s k ɔ m ə n t ə s t ɑ ɑ n n ə t ə r l ɑ n t ə s m ə ə r z ə n z ə
+dutch_141227_382119-19   v ə n t ə ə n m ə l j ɔ ə n s ə l f ə ə s ʋ ə ɦ ə p p ə n ə l k ɑ ɑ r n ɔ t ə x s t ə r k ə r t ɑ n ʋ ə z ə l f v ɑ ɑ k p ə s ə f f ə n ə ə t ə r s x eps ɑ
+dutch_141227_382119-2   ɑ x eps t ə r t ə r ʏ x t ə k ə r s t t ɔ ə s p r ɑ ɑ k v ɑ n k ɔ n ə n x ʋ ə l l ə n ɑ l ə k s ɑ n t ə r ə n ɦ ə j k ə ə k t ə r ʏ x ɔ p ə ə n
+dutch_141227_382119-20   p ə n v ɑ ɑ r t ə x ɦ ə t ə n z ə j n ʋ ɑ ɑ r t ə v ɔ l ə n p ə l ɑ n x r ə j k v ɔ ɔ r ɑ l t ə ə z ə n n ə n t ə ə z ə j n ə n
+dutch_141227_382119-4   oː eps k ʏ ə t x ə p r ə ə t x ə t ɑ ɑ n l ə ə t t ə ɔ n t ʋ ə k k ə l ə n x ə n ə n p ə n n ə n ə n p ʏ ə t ə n l ɑ n t t ə r ə v ʏ ə p ɑ s s ə r ə n ə n v ɔ ɔ r ɑ l
+dutch_141227_382119-5   oː eps k ʋ ɑ ɑ r z ə n ə t ə r l ɑ n t r ɑ ɑ k t ə n j ɑ ʋ ɑ t p ə n n ə n l ɑ n t p ə t r ə f t s p ɑ n n ə n x ə n ə n ə ə x ə n l ɑ n t t ə ə t ə s ɑ m ə n
+dutch_141227_382119-6   ɛ n ɦ ɑ n x p ə t r ə ə x ə n z ɔ z ə ə t ə ə t ɑ t l ɑ n t ə l ə j k m ɑ ɑ r ɔ ɔ k t ə x eps t p ə j ɦ ʏ ə s ɔ p ʋ ə j k ə n ɔ p s x eps ɔ l ə n ɔ p ɦ ə t ʋ ə r k
+dutch_141227_382119-7   ɔ p ə n t ə r n ə t k ɔ n ə n x s t ə p t ə ɔ ɔ k ɑ ɑ n ʋ ɑ t ɦ ə j n ɔ ə m t ə t ə f ə l l ə k r ɑ x eps t m ə t ə n x ə n ɑ ɑ n t ə
+dutch_141227_382119-8   r ɑ n t ə n v ɑ n ə ʏ r ɔ p ɑ m ɑ ɑ r ɦ ə j s p r ɑ k ʋ ə l v ə ə l ə n ɑ l x ə m ə n ə t ə r m ə n z ɔ n t ə r ɔ n t ʋ ə k k ə l ə n x
+dutch_141227_382119-9   
+dutch_141230_382507-13   ɔ l ə ə t ɑ t t ɑ t n ə ə t ɑ l l ə m ɑ ɑ l ɔ m ɦ ɔ ɔ x s p ʏ t t ə r t ə n t ɑ t j ə t ɑ ɑ r x ə ə n p r ɑ n t ʋ ɔ n t ə n v ɑ n k r ə j x t
+dutch_141230_382507-14   
+dutch_141230_382507-15   ɛ n s ʏ ə k ə r m ə k s ə n ʋ ə s ɑ m ə n ə n ə ə n p ə k ə r ə ə n p ə ə t j ə v l ə n t ə r ə n t ə r ə n
+dutch_141230_382507-16   ɔ f j ə t ə ə x m ə k s ə r ə n t ɑ n l ɑ n x z ɑ ɑ m ʋ ɑ r m ə ʋ ɑ t ə r ə r p ə j ʋ ɑ n t j ə m ɔ ə t
+dutch_141230_382507-17   ɦ ə t x ə s t t ʏ s t ɑ t m ɔ ə t ʋ ɑ k k ə r x ə m ɑ ɑ k t ʋ ɔ r t ə n x ɔ ə t m ə n x ə n n ɑ t
+dutch_141230_382507-18   t ə t ɔ ə k ə r ɔ v ə r ɦ ə ə n ə n l ɑ ɑ t m ɑ ɑ r s t ɑ ɑ n k ʏ n j ə x ə ʋ ɔ ɔ n ə n t ə m ɑ x eps ə n ə l ɑ t ə n s t ɑ ɑ n ɔ ɔ k t ɔ t t ɑ t ɦ ə t t ʏ p p ə l
+dutch_141230_382507-20   ɣ ɑ ɑ t ɦ ə t ə ə n p ə ə t j ə l ɑ n x z ɑ m ə r m ɑ ɑ r ə ɦ n ɔ ʏ m ɑ ɑ k n ɑ t ʏ ʏ r l ə j k n ə ə t t ə f ɔ ʏ t ɔ m ə r ɦ ə ə t ʋ ɑ t ə r ə n t ə t ɔ ə n ʋ ɑ n t
+dutch_141230_382507-3   b ɔ l l ə n x ə p r ʏ ə k ə n ʋ ə ə ə n k ə l ɔ p l ɔ ə m ə ə n l ə ə t ə r ʋ ɑ t ə r t ə ə n x r ɑ m
+dutch_141230_382507-4   z ɔ ʏ t v ə j f t ə x x r ɑ m s ʏ ə k ə r v ə j f ə n t ə r t ə x x r ɑ m x ə t r ɔ ɔ x t ə x ə s t t r ə ə x r
+dutch_141230_382507-5   
+dutch_141230_382507-6   
+dutch_141230_382507-9   m ə t ə ə n p ə ə t j ə ɔ l ə ə t ə r ə n ʋ ɑ n t ɦ ə t s p ʏ t t ə r t ɑ l t ə j t ə ə n p ə ə t j ə ə n j ə ʋ ə l t t ə ə ɔ l ə ə ɑ l t ə j t x ɔ ə t
+dutch_141231_382791-10   v ɑ n ɑ n t ə r ə x ə n ɔ m ə n ə ə r t ə n m ɔ ə t j ə t ə n k ə n ɑ ɑ n ʋ ɔ ɔ r t ə n ɑ l s v ɔ x ə l p ɔ n t t ɦ ə ə ɦ ɑ r t x ə z ə ə n m ɔ ə s t ʏ ə n
+dutch_141231_382791-11   
+dutch_141231_382791-12   d ɑ t ə ə ə n ʋ ə x k ə j k s t ɑ ɑ t v ɔ ɔ r ɑ l ʋ ɔ ɔ r t ə n t ə ə n ɑ t ʏ ʏ r l ə j k ɦ ə ə l v ə ə l z ə x x ə n ɔ v ə r t ə t j ɑ ɑ r ə n t ɔ t ɑ ɑ l
+dutch_141231_382791-13   d ʏ s z ə s t ə x t ʏ ə z ə n t m ə n s ə n ɦ ʏ n s t ə m ʏ ə t x ə p r ɑ x eps t ə n t ə v ə r k ə ə z ə n x t ə ə ʋ ɑ s x ə ɔ r x ɑ n ə s ə ə r t t ɔ ɔ r
+dutch_141231_382791-14   
+dutch_141231_382791-17   
+dutch_141231_382791-18   
+dutch_141231_382791-2   
+dutch_141231_382791-4   
+dutch_141231_382791-5   
+dutch_141231_382791-6   l ɑ s t ə n ə n t ə ə t ɑ n t ɔ x eps v ɔ ɔ r ɑ l t ə r ə x eps t z ɔ ʏ t ə n m ɔ ə t ə n k ɔ m ə n p ə j t ə s ʏ p ə r r ə j k ə n m ə n s ə n t ə ə p ə s t m ə ə r p ə l ɑ s
+dutch_141231_382791-7   
+dutch_141231_382791-8   
+dutch_141231_382791-9   
+dutch_141231_382793-13   j ɑ ə n t ɔ ə n ʋ ə ʋ ɑ t ɔ ʏ t ə r ʋ ə r t ə n t ɑ n ʋ ɑ s ɦ ə t x ə z ə l l ə x ə ə n p ə ə r t j ə t r ə n k ə n m ə t j ə ɔ ʏ t ə r s
+dutch_141231_382793-15   j ɑ s ɔ m m ə x ə s t r ɑ t ə n t ə ə ɦ ɑ t t ə n ɑ l t ə j t ɔ p ɦ ə t k r ʏ ə s p ʏ n t ʋ ə r t ə n ɑ l l ə k ə r s t p ɔ m ə n v ə r p r ɑ n t t
+dutch_141231_382793-19   d ɑ n k ʏ n j ə n ə ə t f ɔ ʏ t x ɑ ɑ n ə ə n t ɑ n ə ɦ z ɔ ə t ə ɑ p p ə l ə n x ə f r ə t ʏ ʏ r t p ə s l ɑ x
+dutch_141231_382793-5   ɣ ə ʋ ə ə s t z ə j n ɑ l s ə n t ə r ə s t v ɑ n n ə t ə r l ɑ n t ʋ ɑ n t ʋ ə j ʋ ə t ə n n ɑ t ʏ ʏ r l ə j k n ə ə t ʋ ɑ t ə r ə n ɦ ə t z ʏ ə t ə n x ə p ə ʏ r t m ɑ ɑ r ʋ ə j ɦ ɑ t t ə n
+dutch_141231_382793-6   ɔ v ə r ɦ ə t ɑ l x ə m ə ə n ɑ l t ə j t ɔ l ə ə p ɔ l l ə n k r ə n t ə n p ɔ l l ə n ə n ɑ p p ə l f l ɑ p p ə n t ʏ s s ə n t ə k ə r s t
+dutch_141231_382793-7   ɛ n ɔ ʏ t ə n n ə ə u̯ eps s t ɔ n t ə r ɑ l t ə j t ʋ ɑ t ɔ p t ɑ f ə l t ɑ t ʋ ɑ s m ə ə s t ɑ l ə ə n p ə ə t j ə t ə t r ɑ t ə t ə ə p ə j ɔ n s t ɦ ʏ ə s ə n ɔ ɔ k
+dutch_141231_382793-8   ɛ m p ə j v r ə ə n t ə n ə n f ɑ m ə l ə ə ɑ l s j ə ɦ ə t ɦ ʏ ə s p ə n n ə n l ə ə p s t ɔ n t ə r ɑ l t ə j t ə ə n s x eps ɑ ɑ l ɔ p t ɑ f ə l
+dutch_150103_383339-12   p ɔ x eps ə r ə n ɔ f j ə k ɔ ɔ p t x ə p ɔ x eps ə ə r t ə ə k ʏ n j ə t ə x ə n ʋ ɔ ɔ r t ə x ɔ ɔ k k ɔ
+dutch_150103_383339-13   
+dutch_150103_383339-14   d ʏ s ɑ l s ə ə t ə r ə ə n x ə ʋ ɔ ɔ n x ə z ɔ n t ə s ə n t ə f ɑ m ə l ə ə ə n ɑ l s j ə x ə ʋ ɔ ɔ n n ə t j ə s x ɔ ə ə ə ə ə ə r ə n k ɔ ɔ p t
+dutch_150103_383339-17   d ɑ t ʋ ə t ʏ s ɔ p s p l ə t s ə n ə n t ə ʋ ə t t ə ə n ə n t ə x ə ə l ɦ ɔ n t ə r t x r ɑ m k ɑ s t ə r t s ʏ ə k ə r
+dutch_150103_383339-18   
+dutch_150103_383339-19   t ʋ ɑ ɑ l f x r ɑ m x ə l ɑ t ə n ə p ɔ ə t ə r ə n t ə r t ə x m ə l ə l ə t ə r ʋ ɑ t ə r
+dutch_150103_383339-2   j ɑ n ʏ ɑ r ə ə s t ə v ɑ k ɑ n t ə ə m ɑ ɑ n t ə n ɑ ʏ s t r ɑ l ə ə t ʏ s ɔ ɔ k ə n t ə k ə ʏ k ə n m ɑ k ə n ʋ ə ɦ ə t ɔ n s x ə m ɑ k k ə l ə j k
+dutch_150103_383339-5   
+dutch_150103_383339-6   ɛ n ə x ə ʋ ɑ ɑ r ʋ ə ə ə n p ə ə t j ə r ə k ə n ə n x m ə ə m ɔ ə t ə n ɦ ɔ ʏ t ə n ə s ʋ ə ɦ ɔ ʏ t ə n t ə ə ə ə r ə n r ɑ u̯ eps
+dutch_150103_383339-8   i̯ k ɦ ə p ə r n ɔ ɔ ə t x ə ə n p r ɔ p l ə m ə n m ə ə x ə ɦ ɑ t m ɑ ɑ r t ə x ə n ʋ ɔ ɔ r t ə x m ɔ ə t j ə t ɔ x eps ʋ ə l ə ə n ʋ ɑ ɑ r s x eps u̯ eps ə n x x ə v ə n ʋ ɑ n t
+dutch_150103_383339-9   j ə z ʏ l t ɦ ə t m ɑ ɑ r n ə t z ə ə n t ɑ t ə ə m ɑ n t t ɑ t ə r ə ə n ɔ ʏ t ə r p ə r s ɔ ɔ n ɔ f ə ə n k ə n t
+dutch_150106_383735-10   t ɑ ɑ l ɑ n t ə r ə j ɑ ɑ r t ɑ l l ə n ə n z ə p ə x ə n n ə n ɦ ʏ n n ə ə u̯ eps ə j ɑ ɑ r ɔ p v ɔ l l ə t ə x ɑ n t ə r ə
+dutch_150106_383735-11   d ɑ x ə n ə n ɔ n s n ə ə u̯ eps j ɑ ɑ r s t ɑ ɑ t ɔ p t ə z ə p l ɑ n ə ə t ɦ ə l ə m ɑ ɑ l ɑ n
+dutch_150106_383735-12   l l ə ə n ə n t ɑ n n ɔ x ɦ ə ʋ ə v ə ə r ə n ɦ ə t t ʋ ə ə t ʏ ə z ə n t v ə j f t ə ə n t ə j ɑ ɑ r v ɑ n
+dutch_150106_383735-13   ɔ n z ə j ɑ ɑ r t ə l l ə n x ɦ ə t j ɑ ɑ r t ə s ɦ ə r ə n t ʋ ə ə t ʏ ə z ə n t v ə j f t ə ə n j ɑ ɑ r n ɑ
+dutch_150106_383735-14   d ə x ə p ɔ ɔ r t ə v ɑ n x eps r ə s t ʏ s t ʏ s m ɑ ɑ r t ə s t ə x eps t ə r v ɑ n ɦ ə t x eps r ə s t ə n t ɔ m
+dutch_150106_383735-15   ʋ ɑ s t ʋ ə ə t ʏ ə z ə n t v ə j f t ə ə n j ɑ ɑ r x ə l ə t ə n ɦ ɔ ɔ x s ʋ ɑ ɑ r s x eps ə j n l ə j k ɑ l ə ə n p ɑ ɑ r j ɑ ɑ r
+dutch_150106_383735-16   ɔ ʏ t ɦ ə j x ə p ɔ r ə n z ə j n ə n ɦ ə t j ɑ ɑ r z ə s ɔ f v ə ə r v ɔ ɔ r x eps r ə s t ʏ s
+dutch_150106_383735-17   n ɔ ʏ t ɑ ɑ r x ə n x t ɔ x eps t ʏ ə t ə l ə j k ə ə t s m ə s ə n t ɑ n t ə t ɑ x ɦ ə
+dutch_150106_383735-18   i̯ n j ɑ n ʏ ɑ r ə j ɑ ə ə n n ə ə u̯ eps j ɑ ɑ r m ɔ ə t l ɔ x ə s x eps ə r ʋ ə j s p ə x ə n n ə n p ə j ə ə n
+dutch_150106_383735-19   k ɔ s m ə s x eps ə x ə p ə ʏ r t ə n ə s z ɔ ɑ l s ɦ ə t l ɑ n x ə r ɔ f k ɔ r t ə r ʋ ɔ r t ə n v ɑ n t ə t ɑ x ə n m ɑ ɑ r
+dutch_150106_383735-2   f r ɑ n s ɦ ə r t ɔ x s m ə t x ɔ ə t ə m ə n s ə n v ɔ ɔ r ɦ ə t n ə ə u̯ eps ə j ɑ ɑ r x ɔ ə t ə v ɔ ɔ r n ə m ə n s ɦ ə ə f t ɦ ə j
+dutch_150106_383735-20   ʋ ə j ʋ ə j p ə x ə n n ə n ɔ n s n ə ə u̯ eps ə j ɑ ɑ r z ɔ m ɑ ɑ r ə n ɦ ə t ʋ ə l t ə ʋ ə x ə ə n t ɑ x
+dutch_150106_383735-3   ɣ ɔ ə t ə v ɔ ɔ r n ə m ə n s ʋ ə j v ə ə r ə n m ə t z ə j n ɑ l l ə n
+dutch_150106_383735-4   ɦ ə t n ə ə u̯ eps ə j ɑ ɑ r k ʏ s j ə s v ʏ ʏ r ʋ ə r k ə n p r ɔ ɔ s t ɦ ɔ ɔ r ɑ l ʋ ə ə r
+dutch_150106_383735-5   eː eps n j ɑ ɑ r v ɔ ɔ r p ə j ə n m ɔ x ə ɦ ə t n ə ə u̯ eps ə j ɑ ɑ r v ɔ ɔ r ə ə t ə r ə ə n x ə l ʏ k k ə x ə n ʋ ə l v ɑ r ə n t
+dutch_150106_383735-6   z ə j n ə ɦ m ɑ ɑ r ʋ ə ə z ə j n ʋ ə j l ʏ ə t r ʏ x eps t ə x ə n ə ə u̯ eps j ɑ ɑ r s
+dutch_150106_383735-7   f ə ə s t v ə ə r t ə r s n ɔ u̯ eps ə j z ə j n r u̯ eps ʋ ə x ɦ ə t x eps r ə s t ə l ə j k ə t ə ə l v ɑ n t ə ʋ ə r ə l t
+dutch_150106_383735-8   x eps ə n ə s ə n m ɔ ɦ ɑ m m ə t ɑ n ə n ɦ ə n t ʏ s r ʏ s s ə n ə n z ʏ ə t ɑ z
+dutch_150106_383735-9   ɛ ɑ t ə n m ə l j ɑ r ə n ɑ n t ə r ə n ɦ ə p p ə n ə ə n ɦ ə ə l ɑ n t ə r n ə ə u̯ eps j ɑ ɑ r z ə ɦ ə p p ə n ə ə n t ɔ
+dutch_150106_383737-12   n ɔ ʏ t ə n m ə n s t ə ɦ ə t ʋ ɑ t ə r ʋ ə r ə ɑ l ə s ə r ə n t ə t s j s t ə ə m j ɑ s ɑ m ə n m ə t
+dutch_150106_383737-13   eː eps n ɑ ʏ s t r ɑ l ə s x eps ə ɑ ɑ n m ə n ə r j ɔ ɦ n ɦ ɔ l l ɑ n t t ə ə v ɔ ɔ r t ə ɔ p t r ɑ x eps t x ə v ə r ɔ ɔ k ʋ ə ə r ə ə n
+dutch_150106_383737-14   eː eps n s ɔ l ɑ r ə n s t ɑ l l ɑ t ə ə p ɔ u̯ eps t ə n t ə ə s ɔ l ɑ r ə n s t ɑ l l ɑ t ə ə t ə ə
+dutch_150106_383737-15   v ʏ l t ə ə x ə n l ə j k ɦ ə t ɦ ə t z ɔ ʏ t ə ʋ ɑ t ə r ʋ ɑ t ʏ ə t t ə ʏ ə t t ə p ɑ ɑ ə k ɔ m t t ə ə v l ɑ k p ə j p ɔ r t ɑ ʏ x ʏ s t ɑ l ɔ ɔ p t
+dutch_150106_383737-17   SIL ə p j ə n ɑ t ʏ ʏ r l ə j k ʋ ɑ t ə r n ɔ t ə x m ɑ ɑ r j ə ɦ ə p t ɔ ɔ k ʋ ɑ r m t ə n ɔ t ə x ə n t ə ʋ ə n t ə r m ɑ ɑ n t ə n ʋ ɑ n t ə r z ə j n ɔ ɔ k p ə r ə ɔ
+dutch_150106_383737-18   d ə n z ɔ t ɑ t t ə ə k ɑ s s ə n ʋ ɑ r m m ɔ ə t ʋ ɔ r t ə n ɔ ɔ k t ɑ ɑ r v ɔ ɔ r z ɔ r x t s ɔ l ɑ r
+dutch_150106_383737-19   
+dutch_150106_383737-2   
+dutch_150106_383737-20   ɛ ə x ə n l ə j k ə ə n x r ɔ t ə s j s t ə ə m ə n t ɑ t ə s ɔ ɔ k ɦ ə t ʏ n ə ə k ə v ɑ n t ə t s j s t ə ə m t ɑ t j ə x ə ə n f ɔ ɔ t p r ə n t ɦ ə p t ə ə x ə n l ə j k
+dutch_150106_383737-3   
+dutch_150106_383737-4   
+dutch_150106_383737-5   
+dutch_150106_383737-7   
+dutch_150106_383737-8   ɛ n t ə ə ə n ə ə t ə r x ə v ɑ l ə n ə ə n k ə ə r x ə k ɔ ə l t ʋ ɔ r t t ə r z ə j n ʋ ə l ɑ n t ə r ə p ə t r ə j v ə n t ə ə t ə z ə ɔ m v ɑ n x ɦ ə p p ə n m ɑ ɑ r t ə ə ɦ ə p p ə n t ə r n ə ə t
+dutch_150106_383737-9   i̯ n ə ə n k ə ə r z ɔ n ə ə r x ə z ə t ə n z ə k ə r n ə ə t ə n ə n ə ə n ə ə n ɔ n ɦ ə r p ə r x z ɑ m ə
+dutch_150107_384077-1   ɣ ɑ ɑ t ə r p ə s l ə s t n ə ə t ɔ p v ɔ ɔ r ʏ ə t ɦ ə j z ɑ x ə r ɦ ə ə l m ɑ x ə r ʏ ə t t ə j t ə n s z ə j n l ɑ ɑ t s t ə ə n t ə r
+dutch_150107_384077-10   ɛ n z ə l f s m ɑ l ə m ɑ ɦ ə ə f t p r ɔ p l ə m ə n p ə j z ə j n ə ə x ə n p ɑ r t ə j t ə ə f f ə ə n ɔ p s t ɑ n t p ə n n ə n
+dutch_150107_384077-2   v ə ə ʋ ə n t ə v ɔ r ə x ə ɑ f l ə v ə r ə n x v ɑ n p l ə k ɔ p z ʏ ə t ɑ f r ə k ɑ v ə r t ə l t ə ɑ l ə t t ə v ɑ n r ə n s p ʏ r x ɑ l t ɑ t
+dutch_150107_384077-9   s x eps ə ə n ʋ ə r t x ə z ə ə n ɑ l s z ə j n ɔ p v ɔ l x ə r m ɑ ɑ r t ə ə t ɑ x ə n z ə j n x ə l ɔ ɔ f ə k v ɔ ɔ r p ə j
+dutch_150107_384085-1   l ə x t m ə t ɑ n t ə r ə ʋ ɔ ɔ r t ə n ɔ p ɦ ə t t ə p j ə v ɑ n j ə t ɔ n x m ɑ ɑ r ʋ ɦ ə r ə t ə t ə t x ɔ n ɔ ʏ t ɑ t x ə p ə ʏ r t
+dutch_150107_384085-10   aː eps n ɔ f j ə p r ə ə n ɑ f t ɑ k ə l t ɔ f j ə n ə ə t m ə ə r ɔ p j ə x ə ɦ ə ʏ x ə n k ʏ n t v ə r t r ɔ u̯ eps ə n
+dutch_150107_384085-11   ɛ n ɦ ə t v ə r s x eps ə j n s ə l l ə j k t v ɑ k ə r v ɔ ɔ r t ə k ɔ m ə n n ɑ ɑ r m ɑ t ə j ə ɔ ʏ t ə r ʋ ɔ r t t m ɑ ɑ r p ə n j ə
+dutch_150107_384085-12   d ɑ n ə x eps t ɔ p ʋ ə x n ɑ ɑ r x ə ɦ ə ʏ x ə n v ə r l ə ə s n ɔ ʏ t ɑ ɑ r ə s ʋ ə t ə n s x eps ɑ p p ə l ə j k ɔ n t ə r z ɔ ə k n ɑ ɑ r x ə t ɑ ɑ n
+dutch_150107_384085-13   ɦ ɔ n t ə r t ə n p r ɔ ə f k ɔ n ə j n ə n t ʏ s s ə n t ə ɑ x eps t t ə ə n ə n t ə ɦ ɔ n t ə r t j ɑ ɑ r ɔ ʏ t k r ə x ə n k ɔ r t ə p ə
+dutch_150107_384085-14   s x eps r ə j v ə n x ə n ɔ f p l ɑ ɑ t j ə s ə n t ə ə m ɔ ə s t ə n t ɑ n ɔ p ɦ ə t j ʏ ə s t ə ʋ ɔ ɔ r t ɔ f t ə j ʏ ə s t ə n ɑ ɑ m z ə ə n t ə k ɔ m ə n
+dutch_150107_384085-15   ɛ l k t ɔ n x p ʏ n t m ɔ m ə n t j ə ʋ ə r t n ɑ u̯ eps k ə ʏ r ə x x ə r ə x ə s t r ə ə r t p ə j v ɔ ɔ r p ə ə l t p ə j
+dutch_150107_384085-16   ɛ ɦ ɦ ɔ ə ɦ ə ə t z ɔ n k ɔ ə p ə l ʋ ɑ ɑ r ɔ p j ə ɦ ə m ə l l ə x eps ɑ m ə n k ʏ n t z ə ə n ɔ f ɦ ɔ ə ɦ ə ə t t ə t ʋ ə
+dutch_150107_384085-17   
+dutch_150107_384085-18   ɔ ʏ t ə r ə n ə n t ə r t ɑ ɑ t t ɔ n x p ʏ n t m ɔ m ə n t ə n ɦ ɑ t t ə n m ɑ ɑ r t ɔ ə n t ə ɔ n t ə r z ɔ ə k ə r s r ə k ə n ə n x ɦ ə ə l t ə n m ə t t ə ɑ n t ə
+dutch_150107_384085-19   ɛ ɑ l x ə m ə n ə ɔ n t ʋ ə k k ə l ə n x v ɑ n t ə t ə ə l n ə m ə r s p l ə ə k t ɑ t t ɔ x eps ɑ n t ə r s t ə l ə x x ə n t ə ə t ɔ n x p ʏ n t m ɔ m ə n t ə n
+dutch_150107_384085-2   v ə ə l m ə n s ə n ə n ɑ l s ɦ ə t ə ə n p ɑ ɑ r x ə p ə ʏ r t t ɑ n x ɑ j ɑ j ə ɑ f v r ɑ x ə n ɔ f j ə v ə r x ə ə t ɑ x eps t ə x p ə n t x ə ʋ ɔ r t ə n
+dutch_150107_384085-20   d ə ə ɦ ə ə l t ə n ɑ p s ɔ l ʏ ʏ t x ə ə n v ə r p ɑ n t m ə t p ə x ə n n ə n t x ə ɦ ə ʏ x ə n v ə r l ə ə s n ɔ ʏ x ə l ʏ k k ə x
+dutch_150107_384085-3   ɔ f z ɔ ʏ j ə z ə l f s t ə m ə n t ʋ ɔ r t ə n t ɑ t ə s ʋ ə l ɦ ə ə l ə k s t r ə ə m ɦ ə t ɔ v ə r k ʋ ɑ m ɔ n z ə t ɑ ɑ l
+dutch_150107_384085-4   
+dutch_150107_384085-5   ɦ ə t p ʏ n t j ə v ɑ n t ə t ɔ n x ɦ ə t l ə x t ɔ p ɦ ə t p ʏ n t j ə v ɑ n m ə j n t ɔ n x
+dutch_150107_384085-6   j ɑ t ɑ t z ə x j ə ɑ l s j ə n ə ə t ɔ p ə ə n ʋ ɔ ɔ r t k ʏ n t k ɔ m ə n ɑ l s ɔ f ɦ ə t ʋ ɔ ɔ r t n ə ə t
+dutch_150107_384085-7   n ɑ ɑ r p ʏ ə t ə n ʋ ə l ɑ l s ə ə n ɔ n ʋ ə l l ə x ə ɦ ɔ n t j ɔ n x ɔ f ɔ ʏ t ə ə t ə r ə ə n ɦ ə ə f t ʋ ə l ə ə n s
+dutch_150107_384085-8   z ɔ n v ə r v ə l ə n t m ɔ m ə n t ə n v ɔ ɔ r ɑ l ɔ ʏ t ə r ə m ə n s ə n m ɑ k ə n z ə x eps t ɑ n p ə z ɔ r x t ɔ f z ə m ə s s x eps ə ə n
+dutch_150107_384085-9   n ə ə t t ɔ x eps ɑ l ə ə n p ə x ə n v ɑ n x ə ɦ ə ʏ x ə n v ə r l ə ə s ɔ f t ə m ə n t ə ə ɦ ə p p ə n ɦ ə t v ɔ ə l t
+dutch_150109_384455-11   d ɑ n ɔ ɔ k p ɔ ɔ s z ə j n ɔ v ə r p ə p ɑ ɑ l t ə s t ʏ k k ə n t ə ə ʋ ɔ r t ə n x ə s x eps r ə v ə n ɔ m t ɑ t z ə t ə n k ə n t ɑ t ʋ ə x ə ə n
+dutch_150109_384455-12   ʋ ə t ə r ɦ ɔ ɔ r ə s t ɔ ə x ə p ɑ s t ɔ f ʋ ɑ t t ɑ n ɔ ɔ k m ɑ ɑ r t r ə ə x ə m ə n t ə n t ə ə ɦ ə ə r ɔ p t ʏ ə t ə n t ɑ t ə s
+dutch_150109_384455-19   z ə l t z ɑ ɑ m ʋ ə ɦ ə p p ə n ɔ ɔ k n ɔ ɔ ə t z ɔ n s ɔ ɔ r t p l ɑ t x ə ɦ ɑ t n ə ə x ə ə n p l ɑ t ʋ ɑ t ɔ p t ə ə m ɑ n ə ə r ɔ ɔ k ə x eps t j ɑ r ə n l ɑ n x
+dutch_150109_384455-2   ɛ r ə s t ɔ x eps ʋ ə l ɦ ə ə l x ə s x eps ɔ k t x ə r ə ɑ x ə ə r t t ə t ə s ə ə t s ʋ ɑ t j ə t ɔ t ɑ ɑ l n ə ə t v ə r ʋ ɑ x eps t ɦ ə j ə ʋ ə ə t
+dutch_150109_384455-20   ɑ x eps t ə r m ə k ɑ ɑ r ɦ ə ə f t v ɔ l x ə ɦ ɔ ʏ t ə n j ə ɦ ə p t n ɑ t ʏ ʏ r l ə j k ə n ɑ m ə r ə k ɑ ɦ ə p j ə t ə n ə ʋ j ɔ r k ə r ʋ ɑ t t r ɔ u̯ eps ə n s ɔ ɔ k
+dutch_150109_384455-3   d ɑ t t ə ə t r ə ə x ə m ə n t ə r z ə j n x ə ʋ ə ə s t m ɑ ɑ r t ɔ x eps ə s ə r s t ə ə t s t ə x ə t ɑ x eps t ə v ɑ n j ɑ t ɑ t z ɑ l t ɔ x eps ʋ ə l
+dutch_150109_384455-4   n ə ə t z ɔ n v ɑ ɑ r t l ɔ p ə n z ɔ ə t ə ɔ ɔ t z ɑ l ɦ ə t n ə ə t ʋ ɔ r t ə n ə n ɑ l s ʋ ə t ɑ n ʏ ə t ə ə n t ə l ə j k
+dutch_150109_384455-5   t ɔ x eps x ə p ə ʏ r t t ɑ n ə s t ɑ t ə ə n ə n ɔ r m ə k l ɑ p ə n t ə n ə t ə r l ɑ n t s ə p ɔ n t v ɔ ɔ r j ɔ ʏ r n ɑ l ə s t ə n
+dutch_150109_384455-6   ɦ ə ə f t ɔ ɔ k ɔ p x ə r ɔ ə p ə n ɔ m ə ə n m ə n ʏ ʏ t s t ə l t ə ə n ɑ x eps t t ə n ə m ə n z ə x m ɑ ɑ r ɔ p ə ɦ v ɑ n ɔ x eps t ə n t ɔ m ə ə n ʏ ʏ r ɔ f
+dutch_150109_384455-7   
+dutch_150109_384455-8   ɣ ə s x eps ɔ k t x ə r ə ɑ x ə ə r t ə n ɦ ə ə l v ə ə l ɑ ɑ n t ɑ x eps t ɑ ɑ n p ə s t ə ə t ə n t ə k r ɑ n t ə n ə n ə ɦ ɔ p
+dutch_150110_384751-1   
+dutch_150110_384751-10   m ə t ə ə n m ə t ə ə n s t ə r k ə p ɑ l l ə t ə n ʋ ɑ t ʋ ə ɦ ə ə r t ɔ ə n ʋ ə x ə p r ʏ ə k ə n t ə ə n p ə r ə n m ɑ ɑ k t n ə ə t z ɔ
+dutch_150110_384751-11   ɦ ə ə l v ə ə l ʏ ə t ʋ ɑ t v ɔ ɔ r p ə r ə n j ə ɦ ə ə r v ɔ ɔ r x ə p r ʏ ə k t x ə p r ʏ ə k ə ə n r ə t ə l ə j k x r ɔ t ə m ɑ ɑ t ə n p ɑ
+dutch_150110_384751-12   k n ə ə t t ə p ə r ə n t ə ə t ə z ɑ x eps t z ə j n t ʏ s n ə ə m p ə r ə n t ə ə ə ə n p ə ə t j ə p ɔ x eps ə r ə n k ʏ n n ə n
+dutch_150110_384751-13   ɦ ə p p ə n t ə ə s x eps ə l l ə n ʋ ə t ə ə ɦ t ə k ə r n ɦ ɑ l ə n ʋ ə ə r ʏ ə t
+dutch_150110_384751-16   k ə p p ɔ x eps ə r ə n ʋ ə j n m ə t ə ə n p ə ə t j ə r ɔ z ə m ɑ r ə j n x ə p r ʏ ə k v ə r s ə r ɔ z ə m ɑ r ə j n
+dutch_150110_384751-17   
+dutch_150110_384751-19   ɑ l l ə ə n n ə ə t p ɔ v ə n ɔ p m ə k ɑ ɑ r ɑ l l ə m ɑ ɑ l n ə t j ə s ɔ p m ə k ɑ ɑ r ə n t ə p ɑ n x ə p r ʏ ə k t ə j ʏ ə s t ə p ɑ n ɦ ə n ə ə t
+dutch_150110_384751-20   t ə k l ə ə n n ə ə t t ə x r ɔ ɔ t ɑ n t ə r s z ə t j ə ʋ ə j n n ə ə t ɦ ɔ ɔ x x ə n ɔ ə x ɔ f t ɑ n z ə t j ə ʋ ə j n t ə l ɑ ɑ x
+dutch_150110_384751-4   
+dutch_150114_385543-1   
+dutch_150114_385543-11   
+dutch_150114_385543-12   oː eps k n ɔ x ʋ ə l ə n f ɔ r m ɑ t ə ə ɑ ɑ r t ə x ə ə n f ɔ r m ɑ t ə ə n ɑ ɑ r p ɔ v ə n ə s x ə k ɔ m ə n n ɔ ʏ j ɑ ɦ ə ə l ɑ ɑ r
+dutch_150114_385543-13   d ə x t ə p ɑ t ə n t ə p ə n n ə n t ə r ə x ə r ə n x ɔ v ə r ɦ ɔ ə v ə ə l ə x ɦ ə t n ə ə u̯ eps ə
+dutch_150114_385543-15   d ɑ t z ɑ l t ɑ n ʋ ə l m ɑ ɑ r ə r z ə j n ɔ ɔ k ə n t ɑ t x ə l t t ɔ ɔ k v ɔ ɔ r ɦ ə l ə p ɔ ə l ɑ n t ə r ə ə n f ɔ r m ɑ t ə ə t ə ə ɔ p z ɔ n ɔ p ə n p ɑ r
+dutch_150114_385543-16   ɦ ə ə t t ɑ x ʋ ɔ r t t p r ə j s x ə x ə v ə n ɔ p ə ə n ə ə n ɔ f ɑ n t ə r x eps r ə s t ə l ə j k ə p ɔ n t v ɑ n s x eps ɔ ə n ʋ ə n k ə l ə ə r s n ɔ ʏ t ɑ t k ʏ n j ə n ə ə t
+dutch_150114_385543-19   m ɑ ɑ r ɔ k ə ə ə n t ɑ n t ɔ x eps n ɑ ɑ r t ə v ɔ ɔ r ɔ ɔ r l ɔ x s x eps ə x ə s x eps ə ə t ə n ə s m ə t k ɔ n ə n x ə n ʋ ə l ɦ ə l m ə n ɑ ə s
+dutch_150114_385543-3   v ɑ n t ə f ə ə t ə n t ə ə ɑ ɑ n ɦ ə t l ə x eps t z ə j n x ə k ɔ m ə n ɔ p t ə j ɑ ɑ r l ə j k s ə ɔ p ə n p ɑ ɑ r ɦ ə ə t s t ɑ x t ɑ t ə s t ə
+dutch_150114_385543-4   t r ɑ t ə t ə ɔ n ə ə l t ə ə ə r s t ə t ə n s t ɑ x v ɑ n j ɑ n ʏ ɑ r ə ɑ l s t ə ɦ ɔ n t ə r t ə n m ə t ə r s n ɑ t ə ɔ n ɑ ɑ l ɑ r
+dutch_150114_385543-5   x eps ə ə f ɑ ɑ n t ə ɔ p ə n p ɑ ɑ r ɦ ə ə t ʋ ɔ r t ə n p r ə j s x ə x ə v ə n ə ɦ t ə ɑ r x eps ə ə f t ə l ə n t ə ə t ɔ t t ɑ n t ɔ ə v ɔ ɔ r ʋ ɑ t v ɔ ɔ r r ə t ə n
+dutch_150114_385543-6   
+dutch_150114_385543-7   
+dutch_150114_385543-8   
+dutch_150114_385543-9   
+dutch_150114_385559-10   ʋ ɑ s t ə l ə j f s p r ə ʏ k v ɑ n ʋ ə l l ə m t ə z ʋ ə j x ə r j ɑ j ɑ j ɑ t ə ə v ɑ n ɦ ə t ʋ ə l ɦ ə l m ʏ s
+dutch_150114_385559-11   ɦ ə j ə r f t ə ə n v ə j f t ə ə n v ə ə r ə n v ə ə r t ə x t ə p r ə n s ə l ə j k ə m ɑ ɑ r v ɔ l l ə t ə x l ə x ə
+dutch_150114_385559-12   
+dutch_150114_385559-13   j ə m ə ə n t ə n t r ɑ ə x eps ɑ l l ɔ n s n ɔ u̯ eps ə l l ə m v ə r ɑ n t ə r t ə t ɑ t ə n j ə m ə n t ə n t r ɑ ə
+dutch_150114_385559-14   n ɑ s s ɑ ʏ ə n t ɑ t p l ə j k t t ʏ s z ə j n t ɔ ə l n ɑ s s ɑ ʏ t ə ɦ ɑ n t ɦ ɑ v ə n ɔ k ə ə
+dutch_150114_385559-15   j ɑ ɑ r x ə l ə t ə n ʋ ə r t j ə m ə n t ə n t r ɑ ə t ə ʋ ɑ p ə n s p r ə ʏ k v ɑ n ɔ n s k ɔ n ə n k r ə j k j ɑ
+dutch_150114_385559-16   
+dutch_150114_385559-17   t r ɔ u̯ eps ə n s ʋ ə l k ə m j s t ə r ə ə ʏ z ə ə k s p r ə ə k t ɦ ə ə r ə s ɦ ə t ɔ n s k ɔ n ə n k r ə j k
+dutch_150114_385559-18   ɔ f s p r ə ə k t ɦ ə ə r ɔ n z ə n ə t ə r l ɑ n t s ə l ə ə u̯ eps n ə ə m ə n s ə n ɔ n z ə n ɑ t ə ɔ n ɑ l ə ʋ ɑ p ə n s p r ə ʏ k
+dutch_150114_385559-19   
+dutch_150114_385559-2   
+dutch_150114_385559-20   ɣ ə ɦ ɑ n t ɦ ɑ ɑ f t ʋ ɔ r t ə n n ə t ə r l ɑ n t ə s j ʏ ə s t ə ə n v ɑ n t ə m ə ə s t v ɔ r ʏ ə t s t r ə v ə n t ə l ɑ n t ə n t ə r ʋ ə r ə l t
+dutch_150114_385559-3   n ɑ l ə n ə t ə r l ɑ n t s ə ʋ ɑ p ə n s p r ə ʏ k ɔ f t ə ʋ ə l j ə m ə n t ə n t r ɑ ə ɔ f z ɔ ɑ l s ʋ ə ɔ p s x eps
+dutch_150114_385559-4   
+dutch_150114_385559-5   ɦ ɑ ɑ f t ʋ ɔ r t ə n ə s t ə ʋ ɑ p ə n s p r ə ʏ k n ɔ x ʋ ə l v ɑ n t ɔ ə p ɑ s s ə n x v ɑ n t ɑ ɑ x ə n ʋ ɑ ɑ r ɔ m ə n
+dutch_150114_385559-6   j ɑ ɦ ə t z ɔ ʏ n ɑ t ʏ ʏ r l ə j k f r ɑ n s n ə ə t z ə j n f r ɑ n s ɦ ə r t ɔ x s ə n t ə t x ə v ɑ l ɑ l s ɦ ə j t ɑ ɑ r v ɔ ɔ r x ə ə n ɑ l t ə r n ɑ t ə ə
+dutch_150114_385559-8   p ə n s p r ə ʏ k v ɑ n ɦ ə t k ɔ n ə n k r ə j k t ə r n ə t ə r l ɑ n t ə n ə n t ə z ə f r ɑ n s ə s p r ə ʏ k p ə t ə k ə n t
+dutch_150114_385559-9   i̯ k z ɑ l ɦ ɑ n t ɦ ɑ v ə n ə k z ɑ l ə n s t ɑ n t ɦ ɔ ʏ t ə n j ə m ə n t ə n t r ɑ ə
+dutch_150117_386277-12   
+dutch_150117_386277-14   v ɑ n j ə m ɔ ə t ə r p ə j m ɔ ə t ə n j ɑ z ə k ə r t ɑ t m ɔ ə t t ʏ ə t ə l ə j k z ə j n t ɑ t t ə ə n ə t ə r l ɑ n t s ə ʋ ɑ s ɔ p ɦ ə t m ɔ m ə n t t ɑ t j ə j x ə p ɔ r ə n
+dutch_150117_386277-16   ɦ ɑ n x t ɑ l t ə j t ɦ ə l ə m ɑ ɑ l ɑ f v ɑ n t ə s ə t ʏ ɑ t ə ə ə ə n v ɑ n t ə z ə m ə n s ə n p ə j v ɔ ɔ r p ə ə l t
+dutch_150117_386277-17   r ə x eps t t ə t ɔ t t ə x ə m ə ə n t ə ə n n ə t ə r l ɑ n t ʋ ɑ ɑ r j ə m ɔ ə t ə r v ɑ n t ɑ ɑ n k ɔ m t
+dutch_150117_386277-2   
+dutch_150117_386277-3   v ə ɑ ə ə n ɔ p t ə ə v ə r k l ɑ r ə n x ʋ ɑ t ə s t ə t v ɔ ɔ r ə ə n v ə r k l ɑ r ə n x m ɑ ɑ r ə ə r s t t ə ɑ m p ɑ s s ɑ t ə ʏ r t ə ə v ə r t ə l t
+dutch_150117_386277-5   t ɑ x eps t ə x x ə p ɔ r ə n z ə j n ə n t ɑ t ɦ ʏ n m ɔ ə t ə r n ə t ə r l ɑ n t s ə s ə n t ə ə x ə t r ɔ u̯ eps t ʋ ɑ s m ə t ə ə n n ə ə t n ə t ə r
+dutch_150117_386277-6   
+dutch_150117_386281-10   t m ɑ s ə s l ɑ n t ə n t ə k ɔ k ɔ s ə n k ə ə l ə n x ə s l ɑ n t m ɑ ɑ r t ɑ ɑ r ə s n ɔ x n ə ə t ə ə r t ə r x ə z ɔ x eps t n ɑ ɑ r
+dutch_150117_386281-11   
+dutch_150117_386281-12   v ə ə r ɑ n t ə r ə z ə j n ɑ l l ə m ɑ ɑ l x ə v ɔ n t ə n v ɔ ɔ r t ə k ʏ s t v ɑ n ʋ ə
+dutch_150117_386281-14   d ə f ɔ r t ʏ ə n ə s ə ə n s x eps ə p x ə p ɔ u̯ eps t ə n eps ɛ v ʌ n t i n t w i n t ʌ h θ r i
+dutch_150117_386281-15   eps ɛ v ʌ n t i n t w i n t ʌ h θ r i eps n r ə t ə l ə j k x ɔ ə t ə s t ɑ ɑ t ɑ ɑ n x ə k ɔ m ə n p ə j k ɑ ɑ p t ə x ɔ ə t ə ɦ ɔ ɔ p
+dutch_150117_386281-2   i̯ n ɑ ʏ s t r ɑ l ə s x eps ə ʋ ɑ t ə r v ə r l ɔ r ə n x ə n x f ɔ r t ʏ ə n ʋ ɑ s ɦ ə t n ɑ ɑ m v ɑ n t ə t ɔ n f ɔ r t ʏ ə n l ə j k ə s x eps ə p
+dutch_150117_386281-4   eː eps n x r ɔ ə p ɑ ʏ s t r ɑ l ə s x eps ə ə n n ə t ə r l ɑ n t s ə ɔ n t ə r ʋ ɑ t ə r ɑ r x eps ə ɔ l ɔ x ə n t ə ə ɑ
+dutch_150117_386281-5   
+dutch_150117_386281-6   d ɑ t ə n eps ɛ v ʌ n t i n t w i n t ʌ h v i r eps p t ə ə ə r s t ə t ə p ə s t ə r ə ə s v ɑ n n ə t ə r l ɑ n t n ɑ ɑ r p ɑ t ɑ
+dutch_150117_386281-7   v ə ɑ v ə r l ɔ r ə n ə s x ə x ɑ ɑ n ə n z ə z ə j n ə r ɦ ə ə l l ɑ n x n ɑ ɑ r ɔ p z ɔ ə k x ə ʋ ə ə s t ə n z ə ɦ ə p p ə n
+dutch_150117_386281-8   k ɑ ɑ r t ə n ʋ ə n t r ə x eps t ə n x ə n ə n z ə ɦ ə p p ə n n ʏ ɦ ə t ə t ə ə
+dutch_150117_386281-9   d ɑ t t ə f ɔ r t ʏ ə n ʋ ə l l ə x eps t ɔ p t ə k l ə p p ə n ə s x ə l ɔ p ə n p ə j x eps r ə s
+DONE
+

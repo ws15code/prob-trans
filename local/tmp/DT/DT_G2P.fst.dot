@@ -1,0 +1,107 @@
+digraph FST {
+rankdir = LR;
+size = "8.5,11";
+label = "";
+center = 1;
+orientation = Landscape;
+ranksep = "0.4";
+nodesep = "0.25";
+0 [label = "0", shape = circle, style = bold, fontsize = 14]
+	0 -> 1 [label = "eps:eps", fontsize = 14];
+1 [label = "1", shape = doublecircle, style = solid, fontsize = 14]
+	1 -> 1 [label = "<silence>:SIL", fontsize = 14];
+	1 -> 1 [label = "B:b", fontsize = 14];
+	1 -> 1 [label = "b:b", fontsize = 14];
+	1 -> 1 [label = "b:p", fontsize = 14];
+	1 -> 2 [label = "C:x", fontsize = 14];
+	1 -> 2 [label = "c:x", fontsize = 14];
+	1 -> 1 [label = "D:d", fontsize = 14];
+	1 -> 1 [label = "d:d", fontsize = 14];
+	1 -> 1 [label = "d:t", fontsize = 14];
+	1 -> 1 [label = "F:f", fontsize = 14];
+	1 -> 1 [label = "f:f", fontsize = 14];
+	1 -> 1 [label = "G:ɣ", fontsize = 14];
+	1 -> 1 [label = "g:ɣ", fontsize = 14];
+	1 -> 1 [label = "g:x", fontsize = 14];
+	1 -> 1 [label = "H:ɦ", fontsize = 14];
+	1 -> 1 [label = "h:ɦ", fontsize = 14];
+	1 -> 1 [label = "J:j", fontsize = 14];
+	1 -> 1 [label = "j:j", fontsize = 14];
+	1 -> 1 [label = "K:k", fontsize = 14];
+	1 -> 1 [label = "k:k", fontsize = 14];
+	1 -> 1 [label = "L:l", fontsize = 14];
+	1 -> 1 [label = "l:l", fontsize = 14];
+	1 -> 1 [label = "M:m", fontsize = 14];
+	1 -> 1 [label = "m:m", fontsize = 14];
+	1 -> 1 [label = "N:n", fontsize = 14];
+	1 -> 1 [label = "n:n", fontsize = 14];
+	1 -> 3 [label = "n:eps", fontsize = 14];
+	1 -> 1 [label = "P:p", fontsize = 14];
+	1 -> 1 [label = "p:p", fontsize = 14];
+	1 -> 1 [label = "R:r", fontsize = 14];
+	1 -> 1 [label = "r:r", fontsize = 14];
+	1 -> 1 [label = "S:s", fontsize = 14];
+	1 -> 1 [label = "s:s", fontsize = 14];
+	1 -> 1 [label = "T:t", fontsize = 14];
+	1 -> 1 [label = "t:t", fontsize = 14];
+	1 -> 1 [label = "V:v", fontsize = 14];
+	1 -> 1 [label = "v:v", fontsize = 14];
+	1 -> 1 [label = "W:ʋ", fontsize = 14];
+	1 -> 1 [label = "w:ʋ", fontsize = 14];
+	1 -> 1 [label = "Z:z", fontsize = 14];
+	1 -> 1 [label = "z:z", fontsize = 14];
+	1 -> 1 [label = "a:ɑ", fontsize = 14];
+	1 -> 4 [label = "a:aː", fontsize = 14];
+	1 -> 1 [label = "i:i̯", fontsize = 14];
+	1 -> 1 [label = "u:u̯", fontsize = 14];
+	1 -> 5 [label = "u:u̯", fontsize = 14];
+	1 -> 1 [label = "e:ɛ", fontsize = 14];
+	1 -> 1 [label = "e:ə", fontsize = 14];
+	1 -> 6 [label = "e:eː", fontsize = 14];
+	1 -> 7 [label = "e:eps", fontsize = 14];
+	1 -> 1 [label = "i:ɪ", fontsize = 14];
+	1 -> 1 [label = "i:ə", fontsize = 14];
+	1 -> 8 [label = "i:iː", fontsize = 14];
+	1 -> 9 [label = "i:ɛi̯", fontsize = 14];
+	1 -> 9 [label = "i:iː", fontsize = 14];
+	1 -> 9 [label = "i:ə", fontsize = 14];
+	1 -> 1 [label = "o:ɔ", fontsize = 14];
+	1 -> 10 [label = "o:oː", fontsize = 14];
+	1 -> 11 [label = "o:uː", fontsize = 14];
+	1 -> 1 [label = "u:ʏ", fontsize = 14];
+	1 -> 12 [label = "u:yː", fontsize = 14];
+	1 -> 13 [label = "u:œy̯", fontsize = 14];
+	1 -> 14 [label = "u:yu̯", fontsize = 14];
+	1 -> 15 [label = "x:k", fontsize = 14];
+	1 -> 1 [label = "y:ɪ", fontsize = 14];
+	1 -> 1 [label = "y:j", fontsize = 14];
+	1 -> 1 [label = "q:k", fontsize = 14];
+2 [label = "2", shape = circle, style = solid, fontsize = 14]
+	2 -> 1 [label = "h:eps", fontsize = 14];
+3 [label = "3", shape = circle, style = solid, fontsize = 14]
+	3 -> 1 [label = "g:ŋ", fontsize = 14];
+4 [label = "4", shape = circle, style = solid, fontsize = 14]
+	4 -> 1 [label = "a:eps", fontsize = 14];
+5 [label = "5", shape = circle, style = solid, fontsize = 14]
+	5 -> 1 [label = "w:eps", fontsize = 14];
+6 [label = "6", shape = circle, style = solid, fontsize = 14]
+	6 -> 1 [label = "e:eps", fontsize = 14];
+7 [label = "7", shape = circle, style = solid, fontsize = 14]
+	7 -> 1 [label = "u:øː", fontsize = 14];
+8 [label = "8", shape = circle, style = solid, fontsize = 14]
+	8 -> 1 [label = "e:eps", fontsize = 14];
+9 [label = "9", shape = circle, style = solid, fontsize = 14]
+	9 -> 1 [label = "j:eps", fontsize = 14];
+10 [label = "10", shape = circle, style = solid, fontsize = 14]
+	10 -> 1 [label = "o:eps", fontsize = 14];
+11 [label = "11", shape = circle, style = solid, fontsize = 14]
+	11 -> 1 [label = "e:eps", fontsize = 14];
+12 [label = "12", shape = circle, style = solid, fontsize = 14]
+	12 -> 1 [label = "u:eps", fontsize = 14];
+13 [label = "13", shape = circle, style = solid, fontsize = 14]
+	13 -> 1 [label = "i:eps", fontsize = 14];
+14 [label = "14", shape = circle, style = solid, fontsize = 14]
+	14 -> 1 [label = "w:eps", fontsize = 14];
+15 [label = "15", shape = circle, style = solid, fontsize = 14]
+	15 -> 1 [label = "eps:s", fontsize = 14];
+}

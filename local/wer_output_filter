@@ -1,0 +1,2 @@
+# Scoring should ignore geminate vs. regular distinction
+sed 's/ː//g'
