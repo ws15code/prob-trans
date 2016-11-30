@@ -1,0 +1,26 @@
+tgt=hindi
+srcasr=wsj/s5	#subdirectory of egs/
+amdir=tri3b		#acoustic model files
+
+mfcc=mfcc
+srcdict=dict
+
+srcxtgt=srcxtgt
+tgtxsrcmap=tgtxsrc_map.txt
+
+tgtdict=dict
+tgtlang=lang
+tgtlangtest=lang_test
+tgtlmdir=lm
+tgtgraphdir=graph
+tgtdecodedir=decode
+
+# Directories used
+srcname=`dirname $srcasr`
+srcdir=../$srcasr
+datadir=$tgt/data
+localdir=$datadir/local
+edir=$tgt/$srcname/exp
+expdir=$edir/$amdir
+mfccdir=$tgt/$mfcc
+xdir=$edir/$srcxtgt #contains cross(x)-lingual data/files
